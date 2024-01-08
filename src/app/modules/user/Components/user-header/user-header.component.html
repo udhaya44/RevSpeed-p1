@@ -1,4 +1,4 @@
-<!-- <p>header works!</p> -->
+<p>user-header works!</p>
 <p>
     <mat-toolbar color="primary">
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
@@ -6,12 +6,10 @@
       </button>
       <span>My App</span>
       <span class="example-spacer"></span>
-      <button routerLink="../front-page/fibernet-broadband" mat-button>FibernetBroadband</button>
       <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
         <mat-icon>favorite</mat-icon>
       </button>
-      <button routerLink="../login" mat-button>login</button>
-      <button routerLink="../registeration" mat-button>Sing Up</button>
+      <button (click)="logOut()" mat-button>logout</button>
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
         <mat-icon>share</mat-icon>
       </button>

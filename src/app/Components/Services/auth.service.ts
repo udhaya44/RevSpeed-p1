@@ -1,19 +1,95 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService  {
 
-  // constructor(private http:HttpClient,private rout:Router) { }
+  constructor(private http:HttpClient,private rout:Router) { }
 
 
-  // login({email,password}:any){
-  //   if(email==='aakashsolanke@gmail.com' && password==='Aakash@123'){
-  //     this.rout.navigate(['admin']);
-  //     console.log("login successful");
-  //   }
+  isAdminUser:any;
+  isUserUser:any
+  private isAuthenticated = false;
+  
+
+  isAuthenticatedUser(): boolean {
+    
+    return this.isAuthenticated
+  }
+
+
+
+  getToken(){
+    return localStorage.getItem("token")
+  }
+
+
+  logOut(){
+    localStorage.removeItem("token")
+    
+    return true
+  }
+  
+  // This will authenticate user and return Jwt token 
+  genrateToken({email,password}:any){
+   return this.http.post("http://localhost:8081/user/login",{email,password})
+
+  }
+
+
+  // Add new user 
+  public registerNewUser(user:any){
+    
+    return this.http.post("http://localhost:8081/user/create-user",user)
+
+  }
+
+  // getUserDetails(): Observable<any> {
+  //   // Include the JWT token in the headers
+  //   const headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'));
+
+  //  console.log("this is header",headers);
+  
+  //   return this.http.get("http://localhost:8081/user/getAUser", { headers });
   // }
+
+  thisIsAutherizesUser:any;
+  isAdmin(): boolean {
+    const isAutherize=localStorage.getItem("token")
+    if(isAutherize){
+      this.thisIsAutherizesUser=true
+    }
+    return  this.thisIsAutherizesUser && localStorage.getItem("userRole") === 'ADMIN';
+  }
+  
+  isUser(): boolean {
+    const isAutherize=localStorage.getItem("token")
+    if(isAutherize){
+      this.thisIsAutherizesUser=true
+    }
+    return this.thisIsAutherizesUser &&  localStorage.getItem("userRole")=== 'USER';
+  }
+  getUserDetails(): Observable<any>{
+    return this.http.get("http://localhost:8081/user/getAUser", {
+      headers: this.createAuhtorizationHeader() || {}
+    })
+  }
+
+  private createAuhtorizationHeader() {
+    const jwtToken = localStorage.getItem('token');
+    if (jwtToken) {
+      console.log("JWT token found in session storage", jwtToken);
+      return new HttpHeaders().set(
+        "Authorization", "Bearer " + jwtToken
+      )
+    } else {
+      console.log("JWT token not found in session storage");
+    }
+    return null;
+  }
+
 }

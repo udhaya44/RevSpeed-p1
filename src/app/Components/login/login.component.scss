@@ -1,0 +1,31 @@
+.body-colour {
+  height: 100vh;
+  background-color: #e7e6e6;
+  display: flex;
+//   flex-direction: column;
+  justify-content: space-between;
+  padding: 0 70px;
+  .left {
+    width: 32%;
+  }
+  
+}
+.textcolour {
+  color: red;
+}
+form {
+  input {
+    outline: none;
+    margin: 20px 0;
+  }
+}
+.login-svg-set {
+  display: flex;
+  justify-content: space-around;
+}
+.loginsvg {
+  width: 50%;
+}
+.right{
+    width: 40%;
+}

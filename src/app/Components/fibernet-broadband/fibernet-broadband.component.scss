@@ -1,0 +1,28 @@
+.spotligth{
+    overflow: hidden;
+    margin-bottom: 30px;
+    margin: 6%;
+}
+html{
+    font-family: sans-serif;
+}
+.spotlight-right{
+    width: 50%;
+    float: right;
+    margin-left: 5%;
+}
+
+.spotlight-left{
+    margin-top: 5%;
+    h1{
+        margin-top: 10%;
+        font-size: 27px;
+        font-weight: 600;
+        text-transform: none;
+        color: red;
+        margin-left: 10%;
+    }
+    p{
+        margin-left: 10%;
+    }
+}

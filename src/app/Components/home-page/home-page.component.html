@@ -1,1 +1,84 @@
 <!-- <p>home-page works!</p> -->
+<div class="crad-diaplay">
+  <div class="card" [class.expanded]="!isExpanded" (click)="toggleCard()">
+    <div class="card-content">
+      <div class="card-header">
+        <h3>{{ cardTitle }}</h3>
+      </div>
+      <p>{{ cardDescription }}</p>
+      <p>khskahgsdkakfkjldhflkjahdkfjhkajhdfkjadfkjfkldjlkjfdkjfkjdfk</p>
+    </div>
+  </div>
+
+  <div class="card" [class.expanded]="!isExpanded1" (click)="toggleCard1()">
+    <div class="card-content">
+      <div style="overflow: hidden;" class="card-header">
+        <h1 style="color: #ed3034">40 Mbps</h1>
+        <img
+          class="card-router-svg"
+          src="../assets/images/speed-thunder-svg.svg"
+        />
+        <h4>free</h4>
+        <!-- <div class = "vertical"></div> -->
+        <img
+          class="card-router-svg"
+          src="../assets/images/free-router-svg.svg"
+        />
+        <h4>free</h4>
+        <!-- <div class = "vertical"></div> -->
+        <img
+          class="card-router-svg"
+          src="../assets/images/free-installation-svg.svg"
+        />
+        <h4>free</h4>
+      </div>
+      <!-- <h2 style="color: black;font-size: large;">{{ cardDescription }}</h2> -->
+
+      <div *ngIf="isExpanded1">
+        <div class="discription-for-card-contaenet">
+          <div class="left">
+            <h5>600 GB Broadband Data</h5>
+            <h2 style="color: black; font-size: large">
+              {{ cardDescription }}
+            </h2>
+            <h3>$750/month*</h3>
+          </div>
+
+          <div class="ott right">
+            <h5>Ott App Inclued</h5>
+            <div class="ott-div">
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/disney_plus_ott.webp"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/netflix-ott.png"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/zee-5-ott.png"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/jio-cinema-ott.png"
+              />
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <button mat-fab extended color="warn">Buy Now</button>
+  </div>
+
+  <div class="card" [class.expanded]="!isExpanded2" (click)="toggleCard2()">
+    <div class="card-content">
+      <div class="card-header">
+        <h3>{{ cardTitle }}</h3>
+      </div>
+      <p>{{ cardDescription }}</p>
+      <!-- Additional details go here -->
+    </div>
+  </div>
+</div>

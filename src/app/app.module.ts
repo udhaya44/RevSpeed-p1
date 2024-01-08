@@ -20,6 +20,17 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from './Components/registration/registration.component';
+import { HttpClientModule } from '@angular/common/http';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { RouterModule } from '@angular/router';
+import { authGuard } from './guards/auth.guard';
+import { DatePipe } from '@angular/common';
+import { adminGuardGuard } from './guards/admin-guard.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +47,7 @@ import { RegistrationComponent } from './Components/registration/registration.co
     SpeedtestComponent,
     ContactUsComponent,
     RegistrationComponent,
+
   
   ],
   imports: [
@@ -44,11 +56,22 @@ import { RegistrationComponent } from './Components/registration/registration.co
     NgbModule,
     BrowserAnimationsModule,
     MatToolbarModule,MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatIconModule,
+    MatSnackBarModule
+ 
   ],
   providers: [
-    provideClientHydration()
+    DatePipe,
+    
+  
+    provideClientHydration(),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

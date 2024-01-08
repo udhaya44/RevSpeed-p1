@@ -12,31 +12,48 @@ import { ForgotPasswordComponent } from './Components/forgot-password/forgot-pas
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { authGuard } from './guards/auth.guard';
 import { RegistrationComponent } from './Components/registration/registration.component';
+import { adminGuardGuard } from './guards/admin-guard.guard';
+import { userGuardGuard } from './guards/user-guard.guard';
 
 const routes: Routes = [
-  {path: 'front-page', component:FrontPageComponent ,
- children:[
-  {path:'', redirectTo:'home-page',pathMatch:'full'},
-  {path:'home-page',component:HomePageComponent},
-  {path:'speed-test',component:SpeedtestComponent},
-  {path:'about-us',component:AboutUsComponent},
-  {path:'contact-us',component:ContactUsComponent},
-  {path:'fibernet-broadband',component:FibernetBroadbandComponent},
-  {path:'business-broadband',component:BusinessBroadbandComponent},
-  
- ]
-},
-{ path:'login', component:LoginComponent},
-{ path:'registeration', component:RegistrationComponent},
-{ path:'forgot-password', component:ForgotPasswordComponent},
-{ path:'',redirectTo:'/front-page',pathMatch:'full'},
-{ path:'admin',canActivate:[authGuard],loadChildren: () => import('./modules/admin/admin.module').then((m)=>m.AdminModule)},   //lazy loading
-{path:'user',loadChildren : () => import('./modules/user/user.module').then((m)=>m.UserModule)},
-{ path:'**',component:NotFoundComponent}
+  {
+    path: 'front-page',
+    component: FrontPageComponent,
+    children: [
+      { path: '', redirectTo: 'home-page', pathMatch: 'full' },
+      { path: 'home-page', component: HomePageComponent },
+      { path: 'speed-test', component: SpeedtestComponent },
+      { path: 'about-us', component: AboutUsComponent },
+      { path: 'contact-us', component: ContactUsComponent },
+      { path: 'fibernet-broadband', component: FibernetBroadbandComponent },
+      { path: 'business-broadband', component: BusinessBroadbandComponent },
+    ],
+  },
+  { path: 'login', component: LoginComponent },
+  { path: 'registeration', component: RegistrationComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: '', redirectTo: '/front-page', pathMatch: 'full' },
+  {
+    path: 'admin',
+    canActivate: [adminGuardGuard],
+    // data: { expectedRole: 'admin' },
+    loadChildren: () =>
+      import('./modules/admin/admin.module').then((m) => m.AdminModule),
+  }, //lazy loading
+  {
+    path: 'user',
+    canActivate: [userGuardGuard],
+    // data: { expectedRole: 'user' },
+    loadChildren: () =>
+      import('./modules/user/user.module').then((m) => m.UserModule),
+  },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
+
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,0 +1,91 @@
+.card {
+    display: block;
+    flex-direction: row;
+    border: 2px solid #ed3034;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 10px;
+  }
+  
+  .card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-content {
+    flex-grow: 1;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card.expanded {
+    
+    background-color:#e9edf0;
+    width: 300px; /* Adjust the width as needed */
+    border: 2px solid #b4b0b0
+  }
+  
+  .card.expanded .card-content {
+    overflow: auto;
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .crad-diaplay{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+  }
+    .card-router-svg{
+    height: 40px;
+    // width: 50px;
+    // object-fit: contain;
+  }
+  .ott-div{
+    max-width: 3000;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: end;
+    img{
+      border-radius: 10%;
+
+    }
+  }
+  .vertical {
+    border-left: 2px solid  rgb(157, 149, 149);
+    height: 50px;
+    position:absolute;
+    left: 40%;
+}
+.card-header{
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-direction: row;
+}
+.discription-for-card-contaenet{
+  display:flex ;
+  justify-content: space-between;
+  .ott{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left{
+    width: 30%;
+  }
+
+  .right{
+    width: 60%;
+  }
+}
