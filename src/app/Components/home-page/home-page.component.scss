@@ -1,3 +1,19 @@
+
+.section-title{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2%;
+  h1{
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 1.875;
+    color: #ed3034;
+  }
+
+}
+// card css
 .card {
     display: block;
     flex-direction: row;
@@ -89,3 +105,76 @@
     width: 60%;
   }
 }
+
+
+
+
+// testimonial-section starts
+.testimonial-section {
+  position: relative;
+
+
+  .carousel {
+    position: relative;
+   
+
+    .carousel-inner {
+      overflow: hidden; // Ensure that the inner content doesn't overflow
+      height: 40rem;
+    }
+  }
+
+  .card {
+    max-width: 30rem;
+    margin-right: 15px; // Add some spacing between cards
+    background-color: #e26060; // Card background color
+    color: white; // Text color
+    border: 1px solid #b34c4c; // Card border color
+    border-radius: 10px; // Card border radius
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Card box shadow
+
+    .card-header {
+      background-color: #d45c43; // Header background color
+      font-size: 3.6rem;
+      color: white; // Header text color
+      font-weight: bold; // Bold font for the name
+    }
+
+    .card-title{
+      margin-bottom: 0;
+    }
+
+    .card-subtitle {
+      font-size: 1rem;
+      color: white;
+    }
+
+    .card-body {
+      padding: 1rem; // Add padding to the card body
+    }
+
+    .card-text {
+      font-size: 14px; // Font size for the comment
+    }
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px; // Add some spacing between card containers
+  }
+}
+.star-rating img {
+  margin-left: 5px;
+}
+
+// .carousel-control-prev-icon{
+//   color: black;
+// }
+// .carousel-control-next-icon{
+//   color: black;
+// }
+
+// .carousel-indicators{
+//   display: none;
+// }

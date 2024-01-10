@@ -1,7 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -92,4 +92,29 @@ export class AuthService  {
     return null;
   }
 
+
+ 
+
+  //businees broadband service request form 
+  submitForm(formData: any): Observable<any> {
+    return this.http.post("http://localhost:3000/formData", formData);
+  }
+
+  // rating
+  getReviews(): Observable<any[]> {
+    return this.http.get<any[]>("http://localhost:3000/reviews")
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    console.error('An error occurred:', error);
+    return throwError('Something went wrong; please try again later.');
+  }
+
+  // Email 
+  sendEmail(Email:any){
+
+  }
 }

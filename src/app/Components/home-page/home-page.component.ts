@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../Services/auth.service';
 
 @Component({
   selector: 'app-home-page',
@@ -6,6 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './home-page.component.scss'
 })
 export class HomePageComponent {
+
+  reviews: any[];
+  activeReviewIndex: number = 0;
+
+  constructor(private auth: AuthService) {
+    this.reviews = [];
+  }
+
   cardTitle = 'Card Title';
   cardDescription = 'RevSpeed Basic Combo';
   isExpanded = false;
@@ -30,5 +39,21 @@ export class HomePageComponent {
     
 
   }
+  
+
+
+ 
+  //calling service for review card
+  ngOnInit(): void {
+    this.auth.getReviews().subscribe((data) => {
+      this.reviews = data;
+    });
+  }
+
+  getStars(rating: number): number[] {
+    // Assuming you have 5 stars
+    return Array.from({ length: rating }, (_, index) => (index < rating ? 1 : 0));
+  }
+  
 
 }

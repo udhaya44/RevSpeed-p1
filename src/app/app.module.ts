@@ -30,6 +30,11 @@ import { RouterModule } from '@angular/router';
 import { authGuard } from './guards/auth.guard';
 import { DatePipe } from '@angular/common';
 import { adminGuardGuard } from './guards/admin-guard.guard';
+import {MatDialogModule} from '@angular/material/dialog';
+import { SuccessPopupComponent } from './Components/success-popup/success-popup.component';
+import { FormPopComponent } from './Components/form-pop/form-pop.component';
+import { AuthService } from './Components/Services/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -47,6 +52,8 @@ import { adminGuardGuard } from './guards/admin-guard.guard';
     SpeedtestComponent,
     ContactUsComponent,
     RegistrationComponent,
+    SuccessPopupComponent,
+    FormPopComponent,
 
   
   ],
@@ -62,11 +69,13 @@ import { adminGuardGuard } from './guards/admin-guard.guard';
     MatInputModule,
     MatSelectModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
  
   ],
   providers: [
     DatePipe,
+    AuthService,
     
   
     provideClientHydration(),
