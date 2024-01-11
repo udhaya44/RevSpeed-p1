@@ -43,18 +43,72 @@
 <!-- cards -->
 <section>
   <div class="section-title">
-    <h1>Plans</h1>
+    <h1>BroadBand Plans</h1>
+    
   </div>
+
 <div class="crad-diaplay">
   
   <div class="card" [class.expanded]="!isExpanded" (click)="toggleCard()">
     <div class="card-content">
-      <div class="card-header">
-        <h3>{{ cardTitle }}</h3>
+      <div style="overflow: hidden;" class="card-header">
+        <h1 style="color: #ed3034">200 Mbps</h1>
+        <img
+          class="card-router-svg"
+          src="../assets/images/speed-thunder-svg.svg"
+        />
+        <h4>free</h4>
+        <!-- <div class = "vertical"></div> -->
+        <img
+          class="card-router-svg"
+          src="../assets/images/free-router-svg.svg"
+        />
+        <h4>free</h4>
+        <!-- <div class = "vertical"></div> -->
+        <img
+          class="card-router-svg"
+          src="../assets/images/free-installation-svg.svg"
+        />
+        <h4>free</h4>
       </div>
-      <p>{{ cardDescription }}</p>
-      <p>khskahgsdkakfkjldhflkjahdkfjhkajhdfkjadfkjfkldjlkjfdkjfkjdfk</p>
+      <!-- <h2 style="color: black;font-size: large;">{{ cardDescription }}</h2> -->
+
+      <div *ngIf="isExpanded">
+        <div class="discription-for-card-contaenet">
+          <div class="left">
+            <h5>1200 GB Broadband Data</h5>
+            <h2 style="color: black; font-size: large">
+              {{ cardDescription }}
+            </h2>
+            <h3>$1250/month*</h3>
+          </div>
+
+          <div class="ott right">
+            <h5>Ott App Inclued</h5>
+            <div class="ott-div">
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/disney_plus_ott.webp"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/netflix-ott.png"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/zee-5-ott.png"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/jio-cinema-ott.png"
+              />
+            </div>
+          </div>
+          
+        </div>
+      </div>
     </div>
+    <button mat-fab extended color="warn" class="buy-now-button">Buy Now</button>
   </div>
 
   <div class="card" [class.expanded]="!isExpanded1" (click)="toggleCard1()">
@@ -116,34 +170,131 @@
         </div>
       </div>
     </div>
-    <button mat-fab extended color="warn">Buy Now</button>
+    <button mat-fab extended color="warn" class="buy-now-button">Buy Now</button>
   </div>
 
   <div class="card" [class.expanded]="!isExpanded2" (click)="toggleCard2()">
     <div class="card-content">
-      <div class="card-header">
-        <h3>{{ cardTitle }}</h3>
+      <div style="overflow: hidden;" class="card-header">
+        <h1 style="color: #ed3034">40 Mbps</h1>
+        <img
+          class="card-router-svg"
+          src="../assets/images/speed-thunder-svg.svg"
+        />
+        <h4>free</h4>
+        <!-- <div class = "vertical"></div> -->
+        <img
+          class="card-router-svg"
+          src="../assets/images/free-router-svg.svg"
+        />
+        <h4>free</h4>
+        <!-- <div class = "vertical"></div> -->
+        <img
+          class="card-router-svg"
+          src="../assets/images/free-installation-svg.svg"
+        />
+        <h4>free</h4>
       </div>
-      <p>{{ cardDescription }}</p>
-      <!-- Additional details go here -->
+      <!-- <h2 style="color: black;font-size: large;">{{ cardDescription }}</h2> -->
+
+      <div *ngIf="isExpanded2">
+        <div class="discription-for-card-contaenet">
+          <div class="left">
+            <h5>800 GB Broadband Data</h5>
+            <h2 style="color: black; font-size: large">
+              {{ cardDescription }}
+            </h2>
+            <h3>$950/month*</h3>
+          </div>
+
+          <div class="ott right">
+            <h5>Ott App Inclued</h5>
+            <div class="ott-div">
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/disney_plus_ott.webp"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/netflix-ott.png"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/zee-5-ott.png"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/jio-cinema-ott.png"
+              />
+            </div>
+          </div>
+          
+        </div>
+      </div>
     </div>
+    <button mat-fab extended color="warn" class="buy-now-button">Buy Now</button>
   </div>
 </div>
 </section>
 
 
+<!-- t & c -->
+<section class="centered-section">
+  <p>*Prices indicated above are the effective prices for long-term plans. T&amp;C Apply.</p>
+  <div>
+    <button class="beautiful-button">View All Plans</button>
+  </div>
+</section>
 
 
+<!-- entertenment -->
+<div class="container">
+  <div class="text-center">
+    <h2 class="section-title">Entertainment</h2>
+    <span class="seperator seperator-red"></span>
+    <h3 class="section-description">One subscription to stream them all!</h3>
+    <div class="ott-blocks-home">
+      <p class="ott-descp">Pay just ₹ 250 and bring home unlimited entertainment with</p>
+      <ul class="ott-listings">
+        <li class="flex-center">
+          <img src="../../../assets/images/ottPlatform/disney_plus_ott.webp" alt="disney" height="50px" width="50px" class="img-fluid">
+        </li>
+        <li>+</li>
+        <li class="flex-center">
+          <img src="../../../assets/images/ottPlatform/zee-5-ott.png" alt="zee5" height="50px" width="50px" class="img-fluid">
+        </li>
+        <li>+</li>
+        <li class="flex-center">
+          <img src="../../../assets/images/ottPlatform/sony-live-ott-plat.jfif" alt="sony" height="50px" width="50px" class="img-fluid">
+        </li>
+        <li>+</li>
+        <li class="flex-center">
+          <img src="../../../assets/images/ottPlatform/netflix-ott.png" alt="netFlix" height="50px" width="50px" class="img-fluid">
+        </li>
+        <li>+</li>
+        <li class="flex-center">
+          <img src="../../../assets/images/ottPlatform/jio-cinema-ott.png" alt="sunnxt" height="50px" width="50px" class="img-fluid">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<!-- Testimonial section starts-->
+
+<!-- Testimonial section starts -->
+
+<div class="text-center">
+  <h2 class="section-title">Testimonials</h2>
+  <span class="seperator seperator-red"></span>
+</div>
 <section class="testimonial-section">
   <ngb-carousel >
     <ng-template ngbSlide *ngFor="let review of reviews; let i = index">
       <div class="card-container">
       <div class="card card-3d">
         <div class="card-header">
-          <h5 class="card-title">{{review.userName | uppercase}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{review.companyName}}</h6>
+          <h4 class="card-title">{{review.userName | uppercase}}</h4>
+          <!-- <h6 class="card-subtitle mb-2 text-muted">{{review.companyName}}</h6> -->
           <div class="star-rating">
             <!-- Display stars based on the rating -->
             <img *ngFor="let star of getStars(review.rating)" src="../../../assets/images/OIG.jpg" alt="Star" class="rounded-pill">

@@ -106,10 +106,54 @@
   }
 }
 
+.card-content {
+  position: relative;
+}
 
+.buy-now-button {
+  position: absolute;
+  left: 200px; /* Adjust the distance from the left border */
+  bottom: 20px; /* Adjust the distance from the bottom */
+}
+
+@media screen and (max-width: 600px) {
+  .buy-now-button {
+    left: 10px; /* Adjusted distance from the left for smaller screens */
+  }
+}
+
+/* Media query for screens between 601px and 1200px */
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+  .buy-now-button {
+    left: 15px; /* Adjusted distance from the left for medium-sized screens */
+  }
+}
 
 
 // testimonial-section starts
+
+.text-center {
+  text-align: center;
+  margin: 20px; /* Adjust margin as needed */
+  h2{
+    color: red;
+  }
+}
+
+.section-title {
+  font-size: 2em;
+  /* Additional styling for the title if required */
+}
+
+.seperator {
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: red;
+  margin: 0 10px; /* Adjust margin as needed */
+
+}
+
 .testimonial-section {
   position: relative;
 
@@ -126,6 +170,7 @@
 
   .card {
     max-width: 30rem;
+  
     margin-right: 15px; // Add some spacing between cards
     background-color: #e26060; // Card background color
     color: white; // Text color
@@ -134,13 +179,14 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Card box shadow
 
     .card-header {
-      background-color: #d45c43; // Header background color
+      background-color: #ffffff; // Header background color
       font-size: 3.6rem;
-      color: white; // Header text color
+        max-height: 20rem;
+      color: rgb(36, 29, 29); // Header text color
       font-weight: bold; // Bold font for the name
     }
 
-    .card-title{
+    .card-title{ 
       margin-bottom: 0;
     }
 
@@ -178,3 +224,106 @@
 // .carousel-indicators{
 //   display: none;
 // }
+
+// t &  c
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.centered-section {
+  text-align: center;
+  padding: 4%;
+}
+
+.beautiful-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.beautiful-button:hover {
+  background-color: #333;
+}
+
+/* Add more styles as needed for buttons, links, etc. */
+// seprator 
+.seprator{
+content: "";
+    width: 20px;
+    height: 4px;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: inline-block;
+}
+
+// entertenement
+.container {
+
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.seperator {
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: red;
+  margin: 0 10px;
+}
+
+.section-description {
+  font-size: 1.2em;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.ott-blocks-home {
+  margin-top: 20px;
+}
+
+.ott-descp {
+  font-size: 1.1em;
+}
+
+.ott-listings {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ott-listings li {
+  margin: 0 10px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

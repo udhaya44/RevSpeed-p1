@@ -10,12 +10,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UserOngoingPlansComponent } from './Components/user-ongoing-plans/user-ongoing-plans.component';
 
 
 @NgModule({
   declarations: [
     UserDashboardComponent,
-    UserHeaderComponent
+    UserHeaderComponent,
+    UserOngoingPlansComponent
   ],
   imports: [
     CommonModule,
