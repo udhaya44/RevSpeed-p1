@@ -1,13 +1,3 @@
 <!-- <p>admin-dashboard works!</p> -->
 <app-admin-header></app-admin-header>
-
-<div class="card-container">
-  <div class="card" (click)="loadComponent('plans')">Total Plans</div>
-  <div class="card" (click)="loadComponent('users')">Total Users</div>
-  <div class="card" (click)="loadComponent('subscriptions')">Total Subscriptions</div>
-</div>
-<div class="component-container">
-  <!-- Dynamic component placeholder -->
-  <ng-container #componentContainer></ng-container>
-</div>
-
+<router-outlet></router-outlet>

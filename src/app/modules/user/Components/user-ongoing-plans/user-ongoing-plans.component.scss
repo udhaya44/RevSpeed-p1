@@ -269,3 +269,30 @@ body {
 .white-sm-btn:hover {
   background-color: #ddd; /* Adjust the button background color on hover as needed */
 }
+
+.carouselExampleDark{
+  .carousel-inner{
+    width:50% !important ;
+
+    img{
+      width: 50% !important;
+    }
+  }
+}
+.imgCenter{
+  width: 1000px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  h2{ text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 1.875;
+    color: #ed3034;
+  }
+}

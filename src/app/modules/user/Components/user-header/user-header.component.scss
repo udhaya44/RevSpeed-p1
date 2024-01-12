@@ -34,16 +34,17 @@
 }
 
 .dropdown {
+
   /* Add any necessary styles for the dropdown */
- img{
-  margin-left: 30%;
-  width: 20%;
-  border-radius: 50%;
- }
+ 
   position: relative;
   display: inline-block;
 }
-
+img{
+  margin-left: 50%;
+  width: 3%;
+  border-radius: 50%;
+ }
 .dropdown-menu {
   /* Add any necessary styles for the dropdown menu */
   display: none;
@@ -51,9 +52,10 @@
   background-color: #dfdfdf; /* Adjust the background color as needed */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add box shadow as needed */
   z-index: 1;
-  margin-top: 7%;
+  margin-top: 5%;
   margin-left: 50%;
   padding-left: 15%;
+  
   li{
     padding: 2%;
   }
