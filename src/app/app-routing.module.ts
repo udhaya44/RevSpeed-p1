@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/front-page', pathMatch: 'full' },
   {
     path: 'admin',
-    canActivate: [adminGuardGuard],
+    // canActivate: [adminGuardGuard],
     // data: { expectedRole: 'admin' },
     loadChildren: () =>
       import('./modules/admin/admin.module').then((m) => m.AdminModule),
