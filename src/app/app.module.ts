@@ -28,13 +28,14 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { RouterModule } from '@angular/router';
 import { authGuard } from './guards/auth.guard';
-import { DatePipe } from '@angular/common';
+import { DatePipe, JsonPipe } from '@angular/common';
 import { adminGuardGuard } from './guards/admin-guard.guard';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SuccessPopupComponent } from './Components/success-popup/success-popup.component';
 import { FormPopComponent } from './Components/form-pop/form-pop.component';
 import { AuthService } from './Components/Services/auth.service';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,10 @@ import { AuthService } from './Components/Services/auth.service';
     MatSelectModule,
     MatIconModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCheckboxModule,
+    JsonPipe,
+    MatPaginatorModule,
  
   ],
   providers: [

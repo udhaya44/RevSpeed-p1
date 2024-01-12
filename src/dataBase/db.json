@@ -1,126 +1,293 @@
 {
-    "reviews": [
-      {
-        "userName": "udhaya",
-        "companyName": "revature",
-        "rating": "3",
-        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m",
-        "submissionDate": "2024-01-02T17:55:07.804Z",
-        "id": 1
-      },
-      {
-        "userName": "hari",
-        "companyName": "htc",
-        "rating": "4",
-        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
-        "submissionDate": "2024-01-02T17:55:07.804Z",
-        "id": 2
-      },
-      {
-        "userName": "madhan",
-        "companyName": "ibm",
-        "rating": "1",
-        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ",
-        "submissionDate": "2024-01-02T17:55:07.804Z",
-        "id": 3
-      },
-      {
-        "userName": "janani",
-        "companyName": "zoho",
-        "rating": "5",
-        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
-        "submissionDate": "2024-01-02T17:55:07.804Z",
-        "id": 1
-      },
-      {
-        "userName": "rahul",
-        "companyName": "tcs",
-        "rating": "4",
-        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ",
-        "submissionDate": "2024-01-02T17:55:07.804Z",
-        "id": 2
-      },
-      {
-        "userName": "sehna",
-        "companyName": "accenture",
-        "rating": "1",
-        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
-        "submissionDate": "2024-01-02T17:55:07.804Z",
-        "id": 3
+  "reviews": [
+    {
+      "userName": "udhaya",
+      "companyName": "revature",
+      "rating": "3",
+      "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m",
+      "submissionDate": "2024-01-02T17:55:07.804Z",
+      "id": 1
+    },
+    {
+      "userName": "hari",
+      "companyName": "htc",
+      "rating": "4",
+      "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+      "submissionDate": "2024-01-02T17:55:07.804Z",
+      "id": 2
+    },
+    {
+      "userName": "madhan",
+      "companyName": "ibm",
+      "rating": "1",
+      "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ",
+      "submissionDate": "2024-01-02T17:55:07.804Z",
+      "id": 3
+    },
+    {
+      "userName": "janani",
+      "companyName": "zoho",
+      "rating": "5",
+      "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+      "submissionDate": "2024-01-02T17:55:07.804Z",
+      "id": 1
+    },
+    {
+      "userName": "rahul",
+      "companyName": "tcs",
+      "rating": "4",
+      "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ",
+      "submissionDate": "2024-01-02T17:55:07.804Z",
+      "id": 2
+    },
+    {
+      "userName": "sehna",
+      "companyName": "accenture",
+      "rating": "1",
+      "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+      "submissionDate": "2024-01-02T17:55:07.804Z",
+      "id": 3
+    }
+  ],
+  "formData": [
+    {
+      "fullName": "udhaya",
+      "phone": "7550002492",
+      "email": "udhaya@gmail.com",
+      "businessName": "skyup",
+      "address": "qwertyuioplkjhgfdsa",
+      "zipCode": "600039",
+      "id": 1
+    },
+    {
+      "fullName": "Udhaya",
+      "phone": "9940124180",
+      "email": "udhaya99401@gmail.com",
+      "businessName": "skyup",
+      "address": "No:70 ,Sharma Nagar, Chennai-600039",
+      "zipCode": "60003",
+      "id": 3
+    },
+    {
+      "fullName": "aakash",
+      "phone": "1234567890",
+      "email": "aakash@gmail.com",
+      "businessName": "aaaksh entirprise",
+      "address": "qwertyuioplkjhgfdsaZxcvbnm",
+      "zipCode": "55555",
+      "id": 4
+    },
+    {
+      "fullName": "madhan",
+      "phone": "0987654321",
+      "email": "madhan@gmail.com",
+      "businessName": "madhan real estate",
+      "address": "zxcvbnm,lkjhgfdsa",
+      "zipCode": "99999",
+      "id": 5
+    },
+    {
+      "fullName": "hari",
+      "phone": "1234567895",
+      "email": "hari@gmail.com",
+      "businessName": "krish",
+      "address": "annanagar",
+      "zipCode": "60004",
+      "id": 6
+    },
+    {
+      "fullName": "hari",
+      "phone": "1234567890",
+      "email": "madhan@gmail.com",
+      "businessName": "madhan real estate",
+      "address": "zxcvbnm,lkjhgfdsa",
+      "zipCode": "99999",
+      "id": 7
+    },
+    {
+      "fullName": "krish",
+      "phone": "6789054322",
+      "email": "af@gmail.com",
+      "businessName": "asdf",
+      "address": "chennai",
+      "zipCode": "60004",
+      "id": 8
+    },
+    {
+      "fullName": "krish",
+      "phone": "7894561234",
+      "email": "k@gmail.com",
+      "businessName": "k",
+      "address": "chennai",
+      "zipCode": "12345",
+      "id": 9
+    }
+  ],
+  "plans": [
+    {
+      "id": 1,
+      "planName": "REV A - Max 500",
+      "datalimit": "Unlimited",
+      "bandWidth": "50 Mbps",
+      "validity": "1 Month",
+      "price": "₹500",
+      "otts": {
+        "AmazonPrime": true,
+        "Hotstar": false,
+        "Netflix": true,
+        "Zee5": false,
+        "aha": true
       }
-    ],
-    "formData": [
-      {
-        "fullName": "udhaya",
-        "phone": "7550002492",
-        "email": "udhaya@gmail.com",
-        "businessName": "skyup",
-        "address": "qwertyuioplkjhgfdsa",
-        "zipCode": "600039",
-        "id": 1
-      },
-      {
-        "fullName": "Udhaya",
-        "phone": "9940124180",
-        "email": "udhaya99401@gmail.com",
-        "businessName": "skyup",
-        "address": "No:70 ,Sharma Nagar, Chennai-600039",
-        "zipCode": "60003",
-        "id": 3
-      },
-      {
-        "fullName": "aakash",
-        "phone": "1234567890",
-        "email": "aakash@gmail.com",
-        "businessName": "aaaksh entirprise",
-        "address": "qwertyuioplkjhgfdsaZxcvbnm",
-        "zipCode": "55555",
-        "id": 4
-      },
-      {
-        "fullName": "madhan",
-        "phone": "0987654321",
-        "email": "madhan@gmail.com",
-        "businessName": "madhan real estate",
-        "address": "zxcvbnm,lkjhgfdsa",
-        "zipCode": "99999",
-        "id": 5
-      },
-      {
-        "fullName": "hari",
-        "phone": "1234567895",
-        "email": "hari@gmail.com",
-        "businessName": "krish",
-        "address": "annanagar",
-        "zipCode": "60004",
-        "id": 6
-      },
-      {
-        "fullName": "hari",
-        "phone": "1234567890",
-        "email": "madhan@gmail.com",
-        "businessName": "madhan real estate",
-        "address": "zxcvbnm,lkjhgfdsa",
-        "zipCode": "99999",
-        "id": 7
-      },
-      {
-        "fullName": "krish",
-        "phone": "6789054322",
-        "email": "af@gmail.com",
-        "businessName": "asdf",
-        "address": "chennai",
-        "zipCode": "60004",
-        "id": 8
-      },
-      {
-        "fullName": "krish",
-        "phone": "7894561234",
-        "email": "k@gmail.com",
-        "businessName": "k",
-        "address": "chennai",
-        "zipCode": "12345",
-        "id": 9
+    },
+    {
+      "id": 2,
+      "planName": "REV Bronze",
+      "datalimit": "Unlimited",
+      "bandWidth": "50 Mbps",
+      "validity": "1 Month",
+      "price": "₹549",
+      "otts": {
+        "AmazonPrime": true,
+        "Hotstar": false,
+        "Netflix": true,
+        "Zee5": false,
+        "aha": true
       }
-    ]
-  }
+    },
+    {
+      "id": 3,
+      "planName": "REV Basic",
+      "datalimit": "500GB",
+      "bandWidth": "40 Mbps",
+      "validity": "1 Month",
+      "price": "₹549",
+      "otts": {
+        "AmazonPrime": false,
+        "Hotstar": true,
+        "Netflix": false,
+        "Zee5": true,
+        "aha": false
+      }
+    },
+    {
+      "id": 4,
+      "planName": "REV Starter",
+      "datalimit": "Unlimited",
+      "bandWidth": "50 Mbps",
+      "validity": "1 Month",
+      "price": "₹549",
+      "otts": {
+        "AmazonPrime": true,
+        "Hotstar": true,
+        "Netflix": false,
+        "Zee5": false,
+        "aha": true
+      }
+    },
+    {
+      "id": 5,
+      "planName": "REV Starter",
+      "datalimit": "Unlimited",
+      "bandWidth": "40 Mbps",
+      "validity": "1 Month",
+      "price": "₹549",
+      "otts": {
+        "AmazonPrime": false,
+        "Hotstar": false,
+        "Netflix": true,
+        "Zee5": true,
+        "aha": true
+      }
+    },
+    {
+      "id": 6,
+      "planName": "REV Welcome",
+      "datalimit": "Unlimited",
+      "bandWidth": "50 Mbps",
+      "validity": "1 Month",
+      "price": "₹549",
+      "otts": {
+        "AmazonPrime": true,
+        "Hotstar": true,
+        "Netflix": false,
+        "Zee5": false,
+        "aha": false
+      }
+    },
+    {
+      "id": 7,
+      "planName": "REV Hosur Bronze",
+      "datalimit": "1000GB",
+      "bandWidth": "75 Mbps",
+      "validity": "1 Month",
+      "price": "₹549",
+      "otts": {
+        "AmazonPrime": true,
+        "Hotstar": false,
+        "Netflix": true,
+        "Zee5": true,
+        "aha": true
+      }
+    },
+    {
+      "id": 8,
+      "planName": "REV Silver",
+      "datalimit": "1500GB",
+      "bandWidth": "60 Mbps",
+      "validity": "1 Month",
+      "price": "₹549",
+      "otts": {
+        "AmazonPrime": false,
+        "Hotstar": true,
+        "Netflix": false,
+        "Zee5": false,
+        "aha": true
+      }
+    },
+    {
+      "id": 9,
+      "planName": "REV Bronze",
+      "datalimit": "1000GB",
+      "bandWidth": "75 Mbps",
+      "validity": "1 Month",
+      "price": "₹549",
+      "otts": {
+        "AmazonPrime": true,
+        "Hotstar": true,
+        "Netflix": false,
+        "Zee5": false,
+        "aha": false
+      }
+    },
+    {
+      "id": 10,
+      "planName": "REV Swift",
+      "datalimit": "1 TB",
+      "bandWidth": "50 Mbps",
+      "validity": "1 Month",
+      "price": "₹549",
+      "otts": {
+        "AmazonPrime": false,
+        "Hotstar": true,
+        "Netflix": true,
+        "Zee5": true,
+        "aha": true
+      }
+    },
+    {
+      "planName": "REV Excellent",
+      "dataLimit": "400gb",
+      "bandWidth": "15mps",
+      "validity": "30",
+      "price": "499",
+      "otts": {
+        "AmazonPrime": false,
+        "Hotstar": true,
+        "Netflix": false,
+        "Zee5": true,
+        "aha": false
+      },
+      "id": 11
+    }
+  ]
+}
