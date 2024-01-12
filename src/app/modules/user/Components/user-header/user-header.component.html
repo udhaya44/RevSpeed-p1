@@ -20,39 +20,43 @@
          
         </li>
 
-        <div class="navbar-right">
+        <!-- <div class="navbar-right">
           <ul class="nav navbar-nav navbar-nav-bordered">
               <li class="dropdown user active" id="user-drop">
-                <span class="caret">Aakash Solanke</span>
-                <img ng-if="internImageUrl" ng-src="https://app.revature.com/core/resources/download/interns/150088/image?t=1704962420993" alt="" id="user-dropa" class="img-circle profileUpdate ng-scope" src="https://app.revature.com/core/resources/download/interns/150088/image?t=1704962420993" style="">
-
-                  <!-- <a href="" class="user ng-binding" ng-click="userDrop()" id="user-dropa">
-                      
-                     
-                     
-                  </a> -->
+                <span class="caret"  >Aakash Solanke</span>
+                <img   alt="" src="https://app.revature.com/core/resources/download/interns/150088/image?t=1704962420993" style="">
+  
                   <ul class="dropdown-menu cust-drpdown" role="menu">
-                      <!-- ngIf: menuDetails.isProfileEnabled -->
-                      <li ng-if="menuDetails.isProfileEnabled" ng-class="{ active: !activePortfolio &amp;&amp; checkCurrentPath('profile') }" class="ng-scope">
-                          <a href="" ng-click="toMyProfile()"><i class="fa fa-user"></i><span>User Profile</span></a>
+                    
+                      <li  class="ng-scope">
+                          <a routerLink="/user/user-profile" ng-click="toMyProfile()"><i class="fa fa-user"></i><span>User Profile</span></a>
                       </li>
-                      <!-- <H6>User Profile</H6> -->
-                      <!-- end ngIf: menuDetails.isProfileEnabled -->
-                      <!-- ngIf: menuDetails.isPortfolioEnabled -->
-                      <!-- <li ng-if="menuDetails.isPortfolioEnabled" ng-class="{ active: activePortfolio || checkCurrentPath('portfolio') }" class="ng-scope">
-                          <a href="" ng-click="toMyPortfolio()"><i class="fa fa-fw fa-pie-chart"></i><span></span></a>
-                      </li> -->
-                      <!-- end ngIf: menuDetails.isPortfolioEnabled -->
-                      <!-- ngIf: !adminToken -->
-                      <li ng-if="!adminToken" class="ng-scope">
-                          <a href=""(click)="logOut()"  onclick="return!1"><i class="fa fa-sign-out"></i> <span>Signout</span></a>
+                    
+                      <li class="ng-scope">
+                          <a href=""(click)="logOut()"><i class="fa fa-sign-out"></i> <span>Signout</span></a>
                       </li>
-                      <!-- end ngIf: !adminToken -->
-                      <!-- ngIf: adminToken -->
+                    
                   </ul>
               </li>
           </ul>
-        </div>
+        </div> -->
+
+
+        <img [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"   alt="" src="../../../../../assets/images/home-page/profilr-svg.jpg" style="">
+   
+        <mat-menu #menu="matMenu">
+      
+          <button mat-menu-item >
+        
+           <span routerLink="/user/user-profile" > Profile</span>
+        
+          </button>
+          <button mat-menu-item>
+
+            <span (click)="logOut()">Log Out</span>
+          </button>
+     
+        </mat-menu>
  
       </ul>
     </div>

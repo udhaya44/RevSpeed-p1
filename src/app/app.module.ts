@@ -28,14 +28,15 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { RouterModule } from '@angular/router';
 import { authGuard } from './guards/auth.guard';
-import { DatePipe, JsonPipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { adminGuardGuard } from './guards/admin-guard.guard';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SuccessPopupComponent } from './Components/success-popup/success-popup.component';
 import { FormPopComponent } from './Components/form-pop/form-pop.component';
 import { AuthService } from './Components/Services/auth.service';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { UserProfileComponent } from './Components/user-profile/user-profile.component';
+import { UpdateProfileComponent } from './Components/update-profile/update-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -55,6 +56,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     RegistrationComponent,
     SuccessPopupComponent,
     FormPopComponent,
+    UserProfileComponent,
+    UpdateProfileComponent,
 
   
   ],
@@ -71,10 +74,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatSelectModule,
     MatIconModule,
     MatSnackBarModule,
-    MatDialogModule,
-    MatCheckboxModule,
-    JsonPipe,
-    MatPaginatorModule,
+    MatDialogModule
  
   ],
   providers: [

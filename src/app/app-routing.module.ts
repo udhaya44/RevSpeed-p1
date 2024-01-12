@@ -14,6 +14,7 @@ import { authGuard } from './guards/auth.guard';
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { adminGuardGuard } from './guards/admin-guard.guard';
 import { userGuardGuard } from './guards/user-guard.guard';
+import { UserProfileComponent } from './Components/user-profile/user-profile.component';
 
 const routes: Routes = [
   {
@@ -33,9 +34,10 @@ const routes: Routes = [
   { path: 'registeration', component: RegistrationComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: '', redirectTo: '/front-page', pathMatch: 'full' },
+  // {path:'user-profile', component:UserProfileComponent},
   {
     path: 'admin',
-    // canActivate: [adminGuardGuard],
+    canActivate: [adminGuardGuard],
     // data: { expectedRole: 'admin' },
     loadChildren: () =>
       import('./modules/admin/admin.module').then((m) => m.AdminModule),
