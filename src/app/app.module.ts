@@ -36,6 +36,7 @@ import { FormPopComponent } from './Components/form-pop/form-pop.component';
 import { AuthService } from './Components/Services/auth.service';
 import { UserProfileComponent } from './Components/user-profile/user-profile.component';
 import { UpdateProfileComponent } from './Components/update-profile/update-profile.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { UpdateProfileComponent } from './Components/update-profile/update-profi
     MatSelectModule,
     MatIconModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
  
   ],
   providers: [
