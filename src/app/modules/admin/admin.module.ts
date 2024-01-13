@@ -11,6 +11,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminHeaderComponent } from './Components/admin-header/admin-header.component';
 
+import { AddPlanAdminComponent } from './Components/add-plan-admin/add-plan-admin.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatCardModule} from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { TotalPlansComponent } from './Components/total-plans/total-plans.component';
+import { TotalUsersComponent } from './Components/total-users/total-users.component';
+import { TotalSubscriptionsComponent } from './Components/total-subscriptions/total-subscriptions.component';
+import { MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +34,12 @@ import { AdminHeaderComponent } from './Components/admin-header/admin-header.com
     MatToolbarModule,
     MatIconModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatPaginatorModule,
+    MatCardModule,
+    MatTableModule,
+    MatSelectModule
     HttpClientModule,MatButtonModule
   ]
 })
