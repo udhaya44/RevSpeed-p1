@@ -1,0 +1,65 @@
+<!-- form-popup.component.html -->
+<h1 mat-dialog-title class="popup-title">Ready to get started with RevSpeed Business?</h1>
+<div mat-dialog-content class="popup-subtitle">Complete the form below to be contacted by Revspeed Business
+
+<div class="form-popup">
+    <div mat-dialog-actions>
+        <button class="close-button" mat-button mat-dialog-close>Close</button>
+    </div>
+    <form [formGroup]="formData" (ngSubmit)="submitForm()" class="popup-form">
+
+        <label for="fullName">Full Contact Name</label>
+        <input type="text" id="fullName" name="fullName" formControlName="fullName"
+            placeholder="Enter your full name">
+        <div class="textcolour" *ngIf= "formControls['fullName'].touched && formControls['fullName'].hasError('required')">
+            Full Contact Name is required
+        </div>
+
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" formControlName="phone"
+            placeholder="Enter your phone number"/>
+        <div class="textcolour" *ngIf= "formControls['phone'].touched && formControls['phone'].hasError('required')">
+            Phone is required
+        </div>
+        <div class="textcolour" *ngIf= "formControls['phone'].touched && formControls['phone'].hasError('pattern')">
+            Invalid phone number format
+        </div>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" formControlName="email"
+            placeholder="Enter your email address">
+        <div class="textcolour" *ngIf= "formControls['email'].touched && formControls['email'].hasError('required')">
+            Email is required
+        </div>
+        <div class="textcolour" *ngIf= "formControls['email'].touched && formControls['email'].hasError('pattern')">
+            Invalid email format
+        </div>
+
+        <label for="businessName">Business Name</label>
+        <input type="text" id="businessName" name="businessName" formControlName="businessName"
+            placeholder="Enter your business name">
+        <div class="textcolour" *ngIf= "formControls['businessName'].touched && formControls['businessName'].hasError('required')" >
+            Business Name is required
+        </div>
+
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" formControlName="address"
+            placeholder="Enter your address">
+        <div class="textcolour" *ngIf= "formControls['address'].touched && formControls['address'].hasError('required')">
+              address is required
+        </div>
+
+        <label for="zipCode">ZIP Code</label>
+        <input type="text" id="zipCode" name="zipCode" formControlName="zipCode"
+            placeholder="Enter your ZIP code">
+        <div class="textcolour" *ngIf= "formControls['zipCode'].touched && formControls['zipCode'].hasError('required')">
+            ZIP Code is required
+        </div>
+        <div class="textcolour" *ngIf= "formControls['zipCode'].touched && formControls['zipCode'].hasError('pattern')">
+            Invalid ZIP code format
+        </div>
+
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+</div>
+</div>

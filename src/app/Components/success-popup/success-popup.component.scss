@@ -1,0 +1,14 @@
+/* success-popup.component.scss */
+
+/* Styling for the dialog container */
+.mat-dialog-container {
+    background-color: #2faaf1;
+    color: white;
+  }
+    /* Styling for the OK button */
+      
+      /* Centering the OK button */
+    .ok-btn-container{
+        display: flex;
+        justify-content: center;
+      }

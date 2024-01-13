@@ -1,0 +1,40 @@
+.plan-conatiner {
+    max-width: 400px;
+    margin: 15px;
+  }
+  
+  .card-body {
+    padding: 16px;
+  }
+  
+  .card-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-property {
+    flex: 0 0 48%;
+    margin-bottom: 8px;
+  }
+  
+  .card-value {
+    font-weight: bold;
+  }
+  
+  .card-subtitle {
+    margin-bottom: 8px;
+  }
+  
+  .ott-buttons button {
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+  

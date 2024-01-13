@@ -1,0 +1,34 @@
+
+<!-- Add button -->
+<button mat-raised-button (click)="openDialog()" >Add Plan </button> 
+
+<mat-card class="plan-conatiner" *ngFor="let card of obs | async">
+  <mat-card-header>
+    <mat-card-title>{{ card.title }}</mat-card-title>
+    <mat-card-subtitle>{{ card.subtitle }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="card-body">
+      <div class="card-row">
+        <div class="card-title">{{ card.plan.planName }}</div>
+        <div class="card-property">Data Limit: <span class="card-value">{{ card.plan.datalimit }}</span></div>
+        <div class="card-property">Speed: <span class="card-value">{{ card.plan.bandWidth }}</span></div>
+        <div class="card-property">Validity: <span class="card-value">{{ card.plan.validity }}</span></div>
+        <div class="card-property">Price: <span class="card-value">{{ card.plan.price }}</span></div>
+      </div>
+      <div *ngIf="card.plan.otts" class="card-row">
+        <h6 class="card-subtitle">OTTs:</h6>
+        <div class="ott-buttons">
+          <button *ngIf="card.plan.otts.AmazonPrime">Amazon Prime</button>
+          <button *ngIf="card.plan.otts.Hotstar">Hotstar</button>
+          <button *ngIf="card.plan.otts.Netflix">Netflix</button>
+          <button *ngIf="card.plan.otts.Zee5">Zee5</button>
+          <button *ngIf="card.plan.otts.aha">aha</button>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator> 
+
+

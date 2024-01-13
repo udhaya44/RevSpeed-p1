@@ -1,0 +1,227 @@
+<app-header></app-header>
+<div class="formdivclass">
+  <img width="30%" src="../assets/images/register-svg.jpg" />
+  <div class="form">
+    <div class="container">
+      <div class="title">Registration</div>
+      <div class="content">
+        <form [formGroup]="myGroup" (ngSubmit)="onSubmit()">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">First Name</span>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                formControlName="firstName"
+              />
+              <div
+                class="textcolour"
+                *ngIf="
+                  formControls['firstName'].touched &&
+                  formControls['firstName'].hasError('required')
+                "
+              >
+                First Name is required
+              </div>
+              <div
+                class="textcolour"
+                *ngIf="
+                  formControls['firstName'].touched &&
+                  formControls['firstName'].hasError('maxlength')
+                "
+              >
+                First Name should be at most 50 characters long
+              </div>
+            </div>
+
+            <div class="input-box">
+              <span class="details">Last Name</span>
+              <input
+                type="text"
+                placeholder="Enter your last name"
+                formControlName="lastName"
+              />
+              <div
+                class="textcolour"
+                *ngIf="
+                  formControls['lastName'].touched &&
+                  formControls['lastName'].hasError('required')
+                "
+              >
+                Last Name is required
+              </div>
+              <div
+                class="textcolour"
+                *ngIf="
+                  formControls['lastName'].touched &&
+                  formControls['lastName'].hasError('maxlength')
+                "
+              >
+                Last Name should be at most 50 characters long
+              </div>
+            </div>
+
+            <div class="input-box">
+              <span class="details">Email</span>
+              <input
+                type="text"
+                placeholder="Enter your email"
+                formControlName="email"
+              />
+              <div
+                class="textcolour"
+                *ngIf="
+                  formControls['email'].touched &&
+                  formControls['email'].hasError('required')
+                "
+              >
+                Email is required
+              </div>
+              <div
+                class="textcolour"
+                *ngIf="
+                  formControls['email'].touched &&
+                  formControls['email'].hasError('email')
+                "
+              >
+                Invalid email format
+              </div>
+            </div>
+
+            <div class="input-box">
+              <span class="details">Phone Number</span>
+              <input
+                type="text"
+                placeholder="Enter your number"
+                formControlName="phoneNo"
+              />
+              <div
+                class="textcolour"
+                *ngIf="
+                  formControls['phoneNo'].touched &&
+                  formControls['phoneNo'].hasError('required')
+                "
+              >
+                Phone Number is required
+              </div>
+              <div
+                class="textcolour"
+                *ngIf="
+                  formControls['phoneNo'].touched &&
+                  formControls['phoneNo'].hasError('pattern')
+                "
+              >
+                Invalid phone number format
+              </div>
+            </div>
+
+            <div class="input-box">
+              <span class="details">Password</span>
+              <input
+                type="password"
+                placeholder="Enter your password"
+                formControlName="password"
+              />
+              <div
+                class="textcolour"
+                *ngIf="
+                  formControls['password'].touched &&
+                  formControls['password'].hasError('required')
+                "
+              >
+                Password is required
+              </div>
+              <div
+                class="textcolour"
+                *ngIf="
+                  formControls['password'].touched &&
+                  formControls['password'].hasError('minlength')
+                "
+              >
+                Password should be at least 8 characters long
+              </div>
+              <div
+              class="textcolour"
+              *ngIf="
+                formControls['password'].touched &&
+                formControls['password'].hasError('createPasswordStrengthValidator')
+              "
+            >
+              Password Should be Start with Capital letter and contains number
+            </div>
+            </div>
+
+            <div class="input-box">
+              <span class="details">Confirm Password</span>
+              <input
+                type="password"
+                placeholder="Confirm your password"
+                formControlName="confirmPassword"
+              />
+              <div
+                class="textcolour"
+                *ngIf="
+                  formControls['confirmPassword'].touched &&
+                  formControls['confirmPassword'].hasError('required')
+                "
+              >
+                Confirm Password is required
+              </div>
+              <div
+                class="textcolour"
+                *ngIf="
+                  formControls['confirmPassword'].touched &&
+                  formControls['confirmPassword'].hasError('minlength')
+                "
+              >
+                Confirm Password should be at least 8 characters long
+              </div>
+              <div
+                class="textcolour"
+                *ngIf="
+                  formControls['confirmPassword'].touched &&
+                  formControls['confirmPassword'].hasError('confirmPassword')
+                "
+              >
+                Passwords do not match
+              </div>
+            </div>
+
+            <div class="input-box">
+              <span class="details">Address</span>
+              <input
+                type="text"
+                placeholder="Enter your address"
+                formControlName="address"
+              />
+              <div
+                class="textcolour"
+                *ngIf="
+                  formControls['address'].touched &&
+                  formControls['address'].hasError('required')
+                "
+              >
+                Address is required
+              </div>
+              <div
+                class="textcolour"
+                *ngIf="
+                  formControls['address'].touched &&
+                  formControls['address'].hasError('maxlength')
+                "
+              >
+                Address should not exceed 255 characters
+              </div>
+            </div>
+          </div>
+            <div class="button" >
+            <input type="submit" value="Register"  [disabled]="!myGroup.valid" />
+          </div>
+        </form>
+        <div class="card-footer text-right">
+          <small><a routerLink="../login">Allready Register ? login here</a></small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

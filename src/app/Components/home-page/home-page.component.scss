@@ -1,0 +1,329 @@
+
+.section-title{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2%;
+  h1{
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 1.875;
+    color: #ed3034;
+  }
+
+}
+// card css
+.card {
+    display: block;
+    flex-direction: row;
+    border: 2px solid #ed3034;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 10px;
+  }
+  
+  .card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-content {
+    flex-grow: 1;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card.expanded {
+    
+    background-color:#e9edf0;
+    width: 300px; /* Adjust the width as needed */
+    border: 2px solid #b4b0b0
+  }
+  
+  .card.expanded .card-content {
+    overflow: auto;
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .crad-diaplay{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+  }
+    .card-router-svg{
+    height: 40px;
+    // width: 50px;
+    // object-fit: contain;
+  }
+  .ott-div{
+    max-width: 3000;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: end;
+    img{
+      border-radius: 10%;
+
+    }
+  }
+  .vertical {
+    border-left: 2px solid  rgb(157, 149, 149);
+    height: 50px;
+    position:absolute;
+    left: 40%;
+}
+.card-header{
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-direction: row;
+}
+.discription-for-card-contaenet{
+  display:flex ;
+  justify-content: space-between;
+  .ott{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left{
+    width: 30%;
+  }
+
+  .right{
+    width: 60%;
+  }
+}
+
+.card-content {
+  position: relative;
+}
+
+.buy-now-button {
+  position: absolute;
+  left: 330px; /* Adjust the distance from the left border */
+  bottom: 20px; /* Adjust the distance from the bottom */
+}
+
+@media screen and (max-width: 600px) {
+  .buy-now-button {
+    left: 10px; /* Adjusted distance from the left for smaller screens */
+  }
+}
+
+/* Media query for screens between 601px and 1200px */
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+  .buy-now-button {
+    left: 15px; /* Adjusted distance from the left for medium-sized screens */
+  }
+}
+
+
+// testimonial-section starts
+
+.text-center {
+  text-align: center;
+  margin: 20px; /* Adjust margin as needed */
+  h2{
+    color: red;
+  }
+}
+
+.section-title {
+  font-size: 2em;
+  /* Additional styling for the title if required */
+}
+
+.seperator {
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: red;
+  margin: 0 10px; /* Adjust margin as needed */
+
+}
+
+.testimonial-section {
+  position: relative;
+
+
+  .carousel {
+    position: relative;
+   
+
+    .carousel-inner {
+      overflow: hidden; // Ensure that the inner content doesn't overflow
+      height: 40rem;
+    }
+  }
+
+  .card {
+    max-width: 30rem;
+  
+    margin-right: 15px; // Add some spacing between cards
+    background-color: #e26060; // Card background color
+    color: white; // Text color
+    border: 1px solid #b34c4c; // Card border color
+    border-radius: 10px; // Card border radius
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Card box shadow
+
+    .card-header {
+      background-color: #ffffff; // Header background color
+      font-size: 3.6rem;
+        max-height: 20rem;
+      color: rgb(36, 29, 29); // Header text color
+      font-weight: bold; // Bold font for the name
+    }
+
+    .card-title{ 
+      margin-bottom: 0;
+    }
+
+    .card-subtitle {
+      font-size: 1rem;
+      color: white;
+    }
+
+    .card-body {
+      padding: 1rem; // Add padding to the card body
+    }
+
+    .card-text {
+      font-size: 14px; // Font size for the comment
+    }
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px; // Add some spacing between card containers
+  }
+}
+.star-rating img {
+  margin-left: 5px;
+}
+
+// .carousel-control-prev-icon{
+//   color: black;
+// }
+// .carousel-control-next-icon{
+//   color: black;
+// }
+
+// .carousel-indicators{
+//   display: none;
+// }
+
+// t &  c
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.centered-section {
+  text-align: center;
+  padding: 4%;
+}
+
+.beautiful-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.beautiful-button:hover {
+  background-color: #333;
+}
+
+/* Add more styles as needed for buttons, links, etc. */
+// seprator 
+.seprator{
+content: "";
+    width: 20px;
+    height: 4px;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: inline-block;
+}
+
+// entertenement
+.container {
+
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.seperator {
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: red;
+  margin: 0 10px;
+}
+
+.section-description {
+  font-size: 1.2em;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.ott-blocks-home {
+  margin-top: 20px;
+}
+
+.ott-descp {
+  font-size: 1.1em;
+}
+
+.ott-listings {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ott-listings li {
+  margin: 0 10px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,245 @@
+/* Default styles for larger screens */
+.spotligth {
+    overflow: hidden;
+    margin-bottom: 30px;
+    margin: 6%;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+.spotlight-right {
+    width: 50%;
+    float: right;
+    margin-left: 5%;
+}
+
+.spotlight-left {
+    margin-top: 5%;
+}
+
+.spotlight-left h1 {
+    margin-top: 10%;
+    font-size: 27px;
+    font-weight: 600;
+    text-transform: none;
+    color: red;
+    margin-left: 10%;
+}
+
+.spotlight-left p {
+    margin-left: 10%;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    .spotlight-right {
+        width: 100%;
+        float: none;
+        margin-left: 0;
+    }
+
+    .spotlight-left h1,
+    .spotlight-left p {
+        margin-left: 0;
+    }
+}
+
+/* Media query for screens smaller than 576px */
+@media (max-width: 576px) {
+    .spotlight-left h1 {
+        font-size: 20px;
+    }
+}
+
+// get new broad band 
+/* Resetting default button styles */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  /* Styling the fiber button */
+  .fiber-button {
+    background-color: #e84e4e; /* Light red color */
+    color: #fff; /* White text color */
+    border-radius: 7px;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+    margin-left: 15%;
+    margin-top: 5%;
+  }
+  
+  /* Hover effect for the button */
+  .fiber-button:hover {
+    background-color: #f9b877; /* Slightly darker red on hover */
+  }
+  
+  /* Media query for responsiveness */
+  @media screen and (max-width: 600px) {
+    .fiber-button {
+      width: 100%; /* Make the button full width on smaller screens */
+    }
+  }
+  
+
+  // wht revspeed
+.what-left{
+    width: 40%;
+}
+
+.what{
+    padding: 4%;
+    background-color: rgb(247, 182, 203);
+    margin: 5%;
+    
+    border-radius: 70px 0 0 0;
+   
+}
+
+
+.guidance{
+    background-color: rgb(237, 219, 221);
+}
+/* Your existing styles */
+
+.guidance {
+    margin: 5%;
+    padding: 5%;
+    text-align: center;
+}
+
+/* Styles for the updated heading */
+.guidance-heading {
+    font-size: 36px; /* Adjust the font size as needed */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 600px) {
+    .guidance-heading {
+        font-size: 24px; /* Adjust the font size for smaller screens */
+    }
+}
+
+
+
+//suport section 
+/* Your existing styles */
+
+section1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+}
+
+.guidance {
+    text-align: center;
+}
+
+
+
+.buttons-container {
+    margin-top: 20px;
+}
+
+/* Styles for the buttons */
+.support-button,
+.call-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #f69c9c; /* Light red color */
+    color: #fff; /* White text color */
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover effect for the buttons */
+.support-button:hover,
+.call-button:hover {
+    background-color: #b34141; /* Slightly darker red on hover */
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 600px) {
+    .guidance-heading {
+        font-size: 24px; /* Adjust the font size for smaller screens */
+    }
+
+    .support-button,
+    .call-button {
+        width: 100%; /* Make the buttons full width on smaller screens */
+        margin: 10px 0; /* Adjusted margin for smaller screens */
+    }
+}
+
+
+// technology
+/* Add some basic styles to the section containing the carousel */
+section {
+    margin: 40px;
+  }
+  
+  /* Style the carousel indicators */
+  .carousel-indicators {
+    margin-bottom: 2px;
+  }
+  
+  /* Style the carousel items */
+  .carousel-item {
+    text-align: center;
+  }
+  
+  /* Style the carousel image to be responsive */
+  .carousel-item img {
+    max-width: 20%;
+    height: auto;
+    margin-left: 40%;
+    border-radius: 5px; /* Optional: Add border-radius for rounded corners */
+  }
+  
+  /* Style the carousel captions */
+  .carousel-item h1,
+  .carousel-item p {
+    color: #333; /* Set text color */
+    width:60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Style the carousel controls */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%;
+  }
+  
+  /* Style the carousel control icons */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: #f15252; /* Set the control icon background color */
+    border-radius: 50%; /* Optional: Add border-radius for rounded icons */
+  }
+  
+  /* Style the visually hidden class for screen readers */
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+
+  

@@ -1,0 +1,94 @@
+<nav class="navbar navbar-expand-sm h6 bg-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img
+        src="https://cdn.pixabay.com/photo/2017/09/07/10/25/logo-2724481_1280.png"
+        alt="Avatar Logo"
+        style="width: 40px"
+        class="rounded-pill"
+      />
+    </a>
+    <span class="navbar-text" style="color: white">RevSpeed</span>
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="collapsibleNavbar"
+    >
+      <ul class="navbar-nav nav-pills justify-content-end">
+        <li class="nav-item">
+          <a
+            class="nav-link btn"
+            data-bs-toggle="pill"
+            routerLink="../front-page"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link btn"
+            data-bs-toggle="pill"
+            routerLink="../front-page/fibernet-broadband"
+            >FibernetBroadband</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link btn"
+            data-bs-toggle="pill"
+            routerLink="../front-page/business-broadband"
+            >Busibess BroadBand</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link btn"
+            data-bs-toggle="pill"
+            routerLink="./contact-us"
+            >Contact Us</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link btn" routerLink="./about-us" role="button"
+            >About us</a
+          >
+        </li>
+
+        <div *ngIf="!isLogedIn" class="login-regis">
+          <li class="nav-item">
+            <a class="nav-link btn" data-bs-toggle="pill" routerLink="../login"
+              >Login</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link btn"
+              data-bs-toggle="pill"
+              routerLink="../registeration"
+              >Register</a
+            >
+          </li>
+        </div>
+        <div *ngIf="isLogedIn" class="login-div">
+          <img
+            [matMenuTriggerFor]="menu"
+            aria-label="Example icon-button with a menu"
+            alt=""
+            src="../../../../../assets/images/home-page/profilr-svg.jpg"
+            style=""
+          />
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <span routerLink="/user/user-profile"> Profile</span>
+            </button>
+            <button mat-menu-item>
+              <span routerLink="/user">DashBoard</span>
+            </button>
+            <button mat-menu-item>
+              <span (click)="logOut()" routerLink="/login">Log Out</span>
+            </button>
+          </mat-menu>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
