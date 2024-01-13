@@ -1,47 +1,59 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
 
-//new styles
 .about1{
-    background-color: rgb(225, 200, 205);
+  background-color: rgb(225, 200, 205);
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgb(214, 199, 199);
+  margin: 10px;
+  padding: 50px;
+}
+.img1{
+  border-radius: 10px;
+  margin-top: 15px;
+}
+.proverb{
+  background-color: #00629b;
+  border-radius: 30px;
+  box-shadow: 2px 2px 2px orange;
+  margin-bottom:50px;
+  margin-top:50px;
+  padding:10px;
+  color: white;
+  font-weight: 500;
+}
+.col img {
+    max-width: auto;
+    height: auto;
     border-radius: 10px;
-    box-shadow: 2px 2px 10px rgb(214, 199, 199);
-    margin: 10px;
-    padding: 50px;
+    box-shadow: 10px 0 100px rgba(0, 0, 0, 0.1);
   }
-  .img1{
-    border-radius: 10px;
-    margin-top: 15px;
-  }
-  .proverb{
-    background-color: #00629b;
-    border-radius: 30px;
-    box-shadow: 2px 2px 2px orange;
-    margin: 25px;
-    margin-right: 7px;
-    padding:10px;
-    color: white;
-  }
-  .col img {
-      max-width: auto;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 10px 0 100px rgba(0, 0, 0, 0.1);
-    }
-  //   .col h1,
-  // .col p,
-  .col ul {
-    text-align: left;
-  }
-  h1{
-    border-bottom: 2px solid red;
-    display: inline-block; /* Ensures that the border only spans the width of the text */
-    padding-bottom: 5px; 
-    color: #5470d6;
-    font-size: 30px;
-  }
-  .b2b{
-    background-color: yellow;
-  }
-  .b2c{
-    background-color: red;
-    
-  }
+//   .col h1,
+// .col p,
+.col ul {
+  text-align: left;
+}
+h1{
+  border-bottom: 2px solid red;
+  display: inline-block; /* Ensures that the border only spans the width of the text */
+  padding-bottom: 5px; 
+  color: #5470d6;
+  font-size: 30px;
+}
+h5{
+  border-bottom: 2px solid red;
+  display: inline-block; /* Ensures that the border only spans the width of the text */
+  padding-bottom: 5px; 
+  color: #5470d6;
+  font-size: 15px;
+}
+.box1{
+  box-shadow: 2px 5px 5px rgb(173, 138, 138);
+  margin-top:50px;
+  
+}

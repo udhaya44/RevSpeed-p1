@@ -36,6 +36,8 @@ import { FormPopComponent } from './Components/form-pop/form-pop.component';
 import { AuthService } from './Components/Services/auth.service';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { BuyPlanComponent } from './Components/buy-plan/buy-plan.component';
+
 
 @NgModule({
   declarations: [
@@ -55,7 +57,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     RegistrationComponent,
     SuccessPopupComponent,
     FormPopComponent,
-
+    BuyPlanComponent,
   
   ],
   imports: [
