@@ -114,7 +114,14 @@ export class AuthService  {
   }
 
   // Email 
-  sendEmail(Email:any){
+  apiUrl="http://localhost:8081/email"
+  sendEmailForRegisteration(email:String):Observable<any>{
+    return this.http.post(`${this.apiUrl}/sendemail`, email);
 
+  }
+
+  sendPasswordResetEmail(email: string): Observable<any> {
+    // Assuming your backend API has an endpoint to send a password reset email
+    return this.http.post(`${this.apiUrl}/forgot-password`, email );
   }
 }

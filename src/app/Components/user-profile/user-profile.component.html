@@ -1,31 +1,47 @@
-
 <div class="center-content">
-<div class="row">
+  <div class="row">
     <div class="column">
       <div class="card">
-        <img src="../../../assets/images/home-page/profilr-svg.jpg">
-        <h1>Aakash Solanke</h1>
-        <p>BroadBand User</p>
-        <p>Some text</p>
+        <img src="../../../assets/images/home-page/profilr-svg.jpg" />
+        <h1>{{ userData.firstName }} {{ userData.lastName }}</h1>
       </div>
     </div>
-  
     <div class="column-1">
-      <div class="card-second ">
-        <h3>Full Name :-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span> Aakash Solanke</span>  </h3>
-        <hr/>
-        <h3>Email :- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span>aakashsolankegmail.com </span>    </h3>
-        <hr/>
-        <h3>Phone No. :-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span> 09823816</span>  </h3>
-        <hr/>
-        <h3>Address :-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <span> sunder nager nageswarwadhi</span>  </h3>
-        <hr/>
-        <h3>OnGoing Plan:-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>Gold Plan</span>    </h3> 
-        <hr/>
-        <button mat-stroked-button color="warn">Update Profile</button>
-        <!-- <button mat-stroked-button color="primary">History</button> -->
-
+      <div class="card-second">
+        <h3>
+          Full Name
+          :-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span> {{ userData.firstName }} {{ userData.lastName }} </span>
+        </h3>
+        <hr />
+        <h3>
+          Email :-
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span>{{ userData.email }} </span>
+        </h3>
+        <hr />
+        <h3>
+          Phone No.
+          :-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span> {{ userData.phoneNo }}</span>
+        </h3>
+        <hr />
+        <h3>
+          Address
+          :-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span>{{ userData.address }}</span>
+        </h3>
+        <hr />
+        <h3>
+          OnGoing
+          Plan:-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span></span>
+        </h3>
+        <hr />
+        <button mat-stroked-button color="warn" (click)="openDialog()">
+          Update Profile
+        </button>
       </div>
-    </div> 
-</div>
+    </div>
+  </div>
 </div>

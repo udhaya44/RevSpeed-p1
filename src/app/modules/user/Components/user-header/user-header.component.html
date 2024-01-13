@@ -1,65 +1,49 @@
-
-
-  <nav class="navbar navbar-expand-sm  h6 bg-dark sticky-top ">
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="">
-        <img src="https://cdn.pixabay.com/photo/2017/09/07/10/25/logo-2724481_1280.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
-      </a>
-      <span class="navbar-text" style="color:white">RevSpeed</span>
-  
-      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse justify-content-end  " id="collapsibleNavbar" >
-      <ul class="navbar-nav nav-pills justify-content-end  ">
-       
-      
-        <li class="nav-item">
-          <!-- <a (click)="logOut()" class="nav-link btn"data-bs-toggle="pill" routerLink="../login" >Logout</a> -->
-         
-        </li>
-
-        <!-- <div class="navbar-right">
-          <ul class="nav navbar-nav navbar-nav-bordered">
-              <li class="dropdown user active" id="user-drop">
-                <span class="caret"  >Aakash Solanke</span>
-                <img   alt="" src="https://app.revature.com/core/resources/download/interns/150088/image?t=1704962420993" style="">
-  
-                  <ul class="dropdown-menu cust-drpdown" role="menu">
-                    
-                      <li  class="ng-scope">
-                          <a routerLink="/user/user-profile" ng-click="toMyProfile()"><i class="fa fa-user"></i><span>User Profile</span></a>
-                      </li>
-                    
-                      <li class="ng-scope">
-                          <a href=""(click)="logOut()"><i class="fa fa-sign-out"></i> <span>Signout</span></a>
-                      </li>
-                    
-                  </ul>
-              </li>
-          </ul>
-        </div> -->
-
-
-        <img [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"   alt="" src="../../../../../assets/images/home-page/profilr-svg.jpg" style="">
-   
+<nav class="navbar navbar-expand-sm h6 bg-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">
+      <img
+        src="https://cdn.pixabay.com/photo/2017/09/07/10/25/logo-2724481_1280.png"
+        alt="Avatar Logo"
+        style="width: 40px"
+        class="rounded-pill"
+      />
+    </a>
+    <span class="navbar-text" style="color: white">RevSpeed</span>
+    <button
+      class="navbar-toggler bg-light"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsibleNavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="collapsibleNavbar"
+    >
+      <ul class="navbar-nav nav-pills justify-content-end">
+        <img
+          [matMenuTriggerFor]="menu"
+          aria-label="Example icon-button with a menu"
+          alt=""
+          src="../../../../../assets/images/home-page/profilr-svg.jpg"
+          style=""
+        />
         <mat-menu #menu="matMenu">
-      
-          <button mat-menu-item >
-        
-           <span routerLink="/user/user-profile" > Profile</span>
-        
+          <button mat-menu-item>
+            <span routerLink="/user/user-profile"> Profile</span>
           </button>
           <button mat-menu-item>
-
+            <span routerLink="/user">DashBoard</span>
+          </button>
+          <button mat-menu-item>
+            <span routerLink="/">Home</span>
+          </button>
+          <button mat-menu-item>
             <span (click)="logOut()">Log Out</span>
           </button>
-     
         </mat-menu>
- 
       </ul>
     </div>
-    
-    </div>
-  </nav>
+  </div>
+</nav>
