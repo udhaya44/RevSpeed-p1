@@ -20,11 +20,14 @@ import { TotalUsersComponent } from './Components/total-users/total-users.compon
 import { TotalSubscriptionsComponent } from './Components/total-subscriptions/total-subscriptions.component';
 import { MatSelectModule } from '@angular/material/select';
 
-
 @NgModule({
   declarations: [
     AdminDashboardComponent,
     AdminHeaderComponent,
+    TotalPlansComponent,
+    TotalSubscriptionsComponent,
+    TotalUsersComponent,
+    AddPlanAdminComponent
    
   ],
   imports: [
@@ -39,8 +42,9 @@ import { MatSelectModule } from '@angular/material/select';
     MatPaginatorModule,
     MatCardModule,
     MatTableModule,
-    MatSelectModule
-    HttpClientModule,MatButtonModule
+    MatSelectModule,
+    MatButtonModule,
+    MatPaginatorModule
   ]
 })
 export class AdminModule { }
