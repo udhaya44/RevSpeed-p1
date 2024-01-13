@@ -3,7 +3,7 @@
 
 <div class="form-popup">
     <div mat-dialog-actions>
-        <button class="close-button" mat-button (click)="closeForm()">Close</button>
+        <button class="close-button" mat-button mat-dialog-close>Close</button>
     </div>
     <br>
     <br>
@@ -17,9 +17,9 @@
         </div>
 
         <label for="dataLimit">Enter the Data Limit</label>
-        <input type="text" id="datalimit" name="datalimit" formControlName="datalimit"
+        <input type="text" id="dataLimit" name="dataLimit" formControlName="dataLimit"
             placeholder="plan datalimit">
-        <div class="textcolour" *ngIf= "formControls['datalimit'].touched && formControls['datalimit'].hasError('required')" >
+        <div class="textcolour" *ngIf= "formControls['dataLimit'].touched && formControls['dataLimit'].hasError('required')" >
             Data limit is required
         </div>
 

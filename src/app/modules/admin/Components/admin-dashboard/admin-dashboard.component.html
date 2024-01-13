@@ -2,21 +2,4 @@
 <app-admin-header></app-admin-header>
 <router-outlet></router-outlet>
 
-<div class="card-container">
-  <div class="card" (click)="loadComponent('plans')">
-    <span class="count">{{ plansCount }}</span> Total Plans
-  </div>
-  <div class="card" (click)="loadComponent('users')">
-    <span class="count">{{ usersCount }}</span> Total Users
-  </div>
-  <div class="card" (click)="loadComponent('subscriptions')">
-    <span class="count">{{ subscriptionsCount }}</span> Total Subscriptions
-  </div>
-</div>
-
-<div class="component-container">
-  <!-- Dynamic component placeholder -->
-  <ng-container #componentContainer></ng-container>
-</div>
-
 
