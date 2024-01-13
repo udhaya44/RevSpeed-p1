@@ -17,6 +17,7 @@ import { MatTableModule } from '@angular/material/table';
 import { TotalPlansComponent } from './Components/total-plans/total-plans.component';
 import { TotalUsersComponent } from './Components/total-users/total-users.component';
 import { TotalSubscriptionsComponent } from './Components/total-subscriptions/total-subscriptions.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { TotalSubscriptionsComponent } from './Components/total-subscriptions/to
     MatButtonModule,
     MatPaginatorModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule
   ]
 })
 export class AdminModule { }

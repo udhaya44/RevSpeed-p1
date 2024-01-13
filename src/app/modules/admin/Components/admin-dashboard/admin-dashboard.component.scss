@@ -1,40 +1,41 @@
-/* admin-dashboard.component.scss */
-
 :host {
-    display: block;
-    padding: 20px;
-  }
+  display: block;
+  padding: 20px;
+}
 
-  .card-container{
-    display: flex;
-    justify-content: space-around;
+.card-container {
+  display: flex;
+  justify-content: space-around;
+}
 
-  }
-  
-  .card {
-    cursor: pointer;
-    border: 1px solid #ccc;
-    padding: 5%;
-    margin: 10px;
-    border-radius: 5px;
-    text-align: center;
-    background-color: #00629b;
-    font-weight: bolder;
-    font-size: large;
-    color: white;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .card:hover {
-    background-color: #e0e0e0;
-    color: black;
-    border: 1px solid blue;
-  }
-  
-  .component-container {
-    margin-top: 20px;
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-  }
-  
+.card {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 5%;
+  margin: 10px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #00629b;
+  font-weight: bolder;
+  font-size: large;
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.card:hover {
+  background-color: #e0e0e0;
+  color: black;
+  border: 1px solid blue;
+}
+
+.count {
+  font-size: 1.5em; /* Adjust the font size for the count */
+  line-height: 2rem;
+}
+
+.component-container {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
