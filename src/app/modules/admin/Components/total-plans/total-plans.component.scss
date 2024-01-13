@@ -1,58 +1,40 @@
 .plan-conatiner {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 800px; /* Adjust as needed */
-  margin: 15px auto; /* Center the cards */
-  background-color: #caf2ea;
-  border-radius: 10px;
+    max-width: 400px;
+    margin: 15px;
+  }
   
-}
-.add-pla-button{
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.mat-card {
-  width: 48%; /* Adjust as needed, considering margins and paddings */
-  box-sizing: border-box; /* Ensure that borders and paddings are included in the width */
-  margin-bottom: 15px; /* Adjust as needed */
-}
-
-.card-body {
-  padding: 16px;
-}
-
-.card-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.card-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.card-property {
-  flex: 0 0 48%;
-  margin-bottom: 8px;
-}
-
-.card-value {
-  font-weight: bold;
-}
-
-.card-subtitle {
-  margin-bottom: 8px;
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.ott-buttons button {
-  margin-right: 8px;
-  margin-bottom: 8px;
-}
+  .card-body {
+    padding: 16px;
+  }
+  
+  .card-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-property {
+    flex: 0 0 48%;
+    margin-bottom: 8px;
+  }
+  
+  .card-value {
+    font-weight: bold;
+  }
+  
+  .card-subtitle {
+    margin-bottom: 8px;
+  }
+  
+  .ott-buttons button {
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+  
