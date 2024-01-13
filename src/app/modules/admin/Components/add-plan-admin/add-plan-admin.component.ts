@@ -29,7 +29,7 @@ export class AddPlanAdminComponent {
   ) {
     this.formData = new FormGroup({
       planName: new FormControl('', [Validators.required]),
-      datalimit: new FormControl('', [Validators.required]),
+      dataLimit: new FormControl('', [Validators.required]),
       bandWidth: new FormControl('', [Validators.required]),
       validity: new FormControl('', [Validators.required]),
       price: new FormControl('', [Validators.required]),

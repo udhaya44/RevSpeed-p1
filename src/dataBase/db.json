@@ -287,8 +287,6 @@
         "Zee5": true,
         "aha": false
       },
-      "id": 11
-    },
     {
       "planName": "REV pongal special",
       "dataLimit": "500gb",
@@ -524,3 +522,52 @@
   ]
   
 }
+
+      {
+        "fullName": "madhan",
+        "phone": "0987654321",
+        "email": "madhan@gmail.com",
+        "businessName": "madhan real estate",
+        "address": "zxcvbnm,lkjhgfdsa",
+        "zipCode": "99999",
+        "id": 5
+      },
+      {
+        "fullName": "hari",
+        "phone": "1234567895",
+        "email": "hari@gmail.com",
+        "businessName": "krish",
+        "address": "annanagar",
+        "zipCode": "60004",
+        "id": 6
+      },
+      {
+        "fullName": "hari",
+        "phone": "1234567890",
+        "email": "madhan@gmail.com",
+        "businessName": "madhan real estate",
+        "address": "zxcvbnm,lkjhgfdsa",
+        "zipCode": "99999",
+        "id": 7
+      },
+      {
+        "fullName": "krish",
+        "phone": "6789054322",
+        "email": "af@gmail.com",
+        "businessName": "asdf",
+        "address": "chennai",
+        "zipCode": "60004",
+        "id": 8
+      },
+      {
+        "fullName": "krish",
+        "phone": "7894561234",
+        "email": "k@gmail.com",
+        "businessName": "k",
+        "address": "chennai",
+        "zipCode": "12345",
+        "id": 9
+      }
+    ]
+  }
+
