@@ -1,5 +1,6 @@
 <!-- <p>admin-dashboard works!</p> -->
 <app-admin-header></app-admin-header>
+<router-outlet></router-outlet>
 
 <div class="card-container">
   <div class="card" (click)="loadComponent('plans')">
@@ -17,4 +18,5 @@
   <!-- Dynamic component placeholder -->
   <ng-container #componentContainer></ng-container>
 </div>
+
 

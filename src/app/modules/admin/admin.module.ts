@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminHeaderComponent } from './Components/admin-header/admin-header.component';
+
 import { AddPlanAdminComponent } from './Components/add-plan-admin/add-plan-admin.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatCardModule} from '@angular/material/card';
@@ -24,10 +25,6 @@ import { MatSelectModule } from '@angular/material/select';
   declarations: [
     AdminDashboardComponent,
     AdminHeaderComponent,
-    AddPlanAdminComponent,
-    TotalPlansComponent,
-    TotalUsersComponent,
-    TotalSubscriptionsComponent,
    
   ],
   imports: [
@@ -43,6 +40,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatCardModule,
     MatTableModule,
     MatSelectModule
+    HttpClientModule,MatButtonModule
   ]
 })
 export class AdminModule { }

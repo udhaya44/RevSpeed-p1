@@ -1,7 +1,6 @@
-<!-- <p>login works!</p> -->
+<app-header></app-header>
 <div class="body-colour">
   <img class="left" src="../assets/images/loginsvg.svg" />
-
   <div clas="right" class="container vh-100" style="width: 40%;">
     <div class="row justify-content-center h-100">
       <div class="card my-auto shadow">
@@ -78,22 +77,22 @@
               name=""
               [disabled]="!loginForm.valid"
             />
+
+            <div *ngIf="invalidCredentials" class="text-danger mt-2">
+              Invalid email or password. Please check your credentials and try again.
+            </div>
           </form>
         </div>
-        <div class="card-footer text-right">
+        <div class="reg-for">
+        <div >
           <small><a routerLink="../forgot-password">Forgot Password</a></small>
         </div>
-        <div class="card-footer text-right">
+        <div >
           <small><a routerLink="../registeration">Register</a></small>
         </div>
+      </div>
       </div>
     </div>
   </div>
 </div>
-<!-- <app-header></app-header>
-<div class="bootsrap-wrapper">
-    <div class="container mt text-center">
-        <h1 class="text-center">Welcome to RevSpeed</h1>
-        <button mat-raised-button color="accent" >login</button>
-    </div>
-</div> -->
+

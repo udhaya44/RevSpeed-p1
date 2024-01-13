@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../Services/auth.service';
+import { Router } from 'express';
 
 @Component({
   selector: 'app-header',
@@ -7,5 +9,12 @@ import { Component } from '@angular/core';
   
 })
 export class HeaderComponent {
+  
+ constructor(private auth:AuthService){}
 
+  isLogedIn=localStorage.getItem("token");
+
+  logOut(){
+    this.auth.logOut();
+  }
 }

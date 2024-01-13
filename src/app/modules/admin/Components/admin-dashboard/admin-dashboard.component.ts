@@ -1,3 +1,4 @@
+
 import { Component, ComponentFactoryResolver, AfterViewInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { Type } from '@angular/core';
 import { TotalPlansComponent } from '../total-plans/total-plans.component';
@@ -6,6 +7,8 @@ import { TotalSubscriptionsComponent } from '../total-subscriptions/total-subscr
 import { AdminService } from '../../admin.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { forkJoin } from 'rxjs';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -63,4 +66,8 @@ export class AdminDashboardComponent implements AfterViewInit  {
       this.container.createComponent(componentFactory);
     }
   }
+  styleUrl: './admin-dashboard.component.scss'
+})
+export class AdminDashboardComponent {
+
 }

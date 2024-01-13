@@ -5,12 +5,8 @@
   box-sizing: border-box;
   font-family: 'Poppins',sans-serif;
 }
-html{
-  background-color: #e7e6e6;;
-}
 body{
   height: 100vh;
-  background-color: #e7e6e6;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -156,9 +152,6 @@ form .user-details .input-box{
     margin-left: 5%;
     margin-top: 10%;
     margin-right: 5%;
-    img{
-      margin-left: 6%;
-    }
 }
 .textcolour{
     color: red;
