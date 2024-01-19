@@ -7,7 +7,6 @@ import { TotalSubscriptionsComponent } from '../total-subscriptions/total-subscr
 import { AdminService } from '../../admin.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { forkJoin } from 'rxjs';
-import { Component } from '@angular/core';
 
 
 @Component({
@@ -66,8 +65,4 @@ export class AdminDashboardComponent implements AfterViewInit  {
       this.container.createComponent(componentFactory);
     }
   }
-  styleUrl: './admin-dashboard.component.scss'
-})
-export class AdminDashboardComponent {
-
 }

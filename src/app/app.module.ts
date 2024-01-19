@@ -37,6 +37,7 @@ import { AuthService } from './Components/Services/auth.service';
 import { UserProfileComponent } from './Components/user-profile/user-profile.component';
 import { UpdateProfileComponent } from './Components/update-profile/update-profile.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatIconModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    MatPaginatorModule,
  
   ],
   providers: [
