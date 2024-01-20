@@ -21,7 +21,6 @@ import { TotalSubscriptionsComponent } from './Components/total-subscriptions/to
 import { MatSelectModule } from '@angular/material/select';
 import { MatSort } from '@angular/material/sort';
 
-
 @NgModule({
   declarations: [
     AdminDashboardComponent,
@@ -45,7 +44,8 @@ import { MatSort } from '@angular/material/sort';
     MatCardModule,
     MatTableModule,
     MatSelectModule,
-    MatPaginatorModule,
+    MatButtonModule,
+    MatPaginatorModule
   ]
 })
 export class AdminModule { }
