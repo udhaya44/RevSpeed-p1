@@ -60,6 +60,18 @@ export class TotalPlansComponent {
         this.obs = this.dataSource.connect();
       });
     }
+
+    // Method to handle delete action
+    deleteCard(card: any) {
+      // Implement your delete logic here
+      console.log('Deleting card:', card);
+    }
+
+    // Method to handle edit action
+    editCard(card: any) {
+      // Implement your edit logic here
+      console.log('Editing card:', card);
+    }
   
     ngOnDestroy() {
       if (this.dataSource) { 

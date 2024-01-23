@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +32,17 @@ export class AdminService {
   //get active subscribers
     getActiveSubscriptions(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}users?userStatus=active&userplanStatus=active`);
+  }
+
+  //get chart details 
+  getPieChartDetails(): Observable<any> {
+    const plans$ = this.getPlans();
+    const users$ = this.getAllUsers();
+
+    return forkJoin([plans$, users$]).pipe(
+      map(([plans, users]) => {
+        return { plans, users };
+      })
+    );
   }
 }
