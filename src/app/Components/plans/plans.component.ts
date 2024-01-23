@@ -4,6 +4,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { BuyPlanComponent } from '../buy-plan/buy-plan.component';
+import { AuthService } from '../Services/auth.service';
+import { MatCardModule } from '@angular/material/card';
 
 export interface Card {
   id:number;
@@ -40,7 +42,7 @@ export class PlansComponent {
     @ViewChild(MatSort) sort!: MatSort;
   
    
-    constructor(private _dialog: MatDialog,private _empService:EmployeeService,private cdr:ChangeDetectorRef,private changeDetectorRef: ChangeDetectorRef,public dialog: MatDialog) {}
+    constructor(private _dialog: MatDialog,private auth:AuthService,private cdr:ChangeDetectorRef,private changeDetectorRef: ChangeDetectorRef,public dialog: MatDialog) {}
     ngOnInit(): void {
       this.getEmployeeList();
   
@@ -55,7 +57,7 @@ export class PlansComponent {
   
     
     getEmployeeList(){
-       this._empService.getPlans().subscribe(data=>{
+       this.auth.getPlans().subscribe(data=>{
         this.employeeData=data;
         console.log(this.employeeData);
         this.dataSource = new MatTableDataSource(this.employeeData);

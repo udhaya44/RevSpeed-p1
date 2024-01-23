@@ -124,4 +124,5 @@ export class AuthService  {
     // Assuming your backend API has an endpoint to send a password reset email
     return this.http.post(`${this.apiUrl}/forgot-password`, email );
   }
+  getPlans(){return this.http.get("http://localhost:3000/plans")}
 }

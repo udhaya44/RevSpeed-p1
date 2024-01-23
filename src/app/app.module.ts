@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ViewChild } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -37,10 +37,14 @@ import { AuthService } from './Components/Services/auth.service';
 import { UserProfileComponent } from './Components/user-profile/user-profile.component';
 import { UpdateProfileComponent } from './Components/update-profile/update-profile.component';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSortModule } from '@angular/material/sort';
+import { pipe } from 'rxjs';
+import { MatCardModule } from '@angular/material/card';
+import { PlansComponent } from './Components/plans/plans.component';
 import { BuyPlanComponent } from './Components/buy-plan/buy-plan.component';
-
-
 
 @NgModule({
   declarations: [
@@ -60,10 +64,10 @@ import { BuyPlanComponent } from './Components/buy-plan/buy-plan.component';
     RegistrationComponent,
     SuccessPopupComponent,
     FormPopComponent,
-    BuyPlanComponent,
     UserProfileComponent,
     UpdateProfileComponent,
-
+    PlansComponent,
+    BuyPlanComponent  
   
   ],
   imports: [
@@ -82,11 +86,25 @@ import { BuyPlanComponent } from './Components/buy-plan/buy-plan.component';
     MatDialogModule,
     MatMenuModule,
     MatPaginatorModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    RouterModule,
+    MatTableModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatSortModule,
+    MatCardModule
+ 
+    
+
+ 
  
   ],
   providers: [
     DatePipe,
     AuthService,
+   
     
   
     provideClientHydration(),

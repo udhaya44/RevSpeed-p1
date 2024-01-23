@@ -20,6 +20,7 @@ export class BuyPlanComponent {
     this.dialogRef.close();
   }
 
+  
   // Add a method for buying the plan and validating customer existence
   buyPlan(planId: number): void {
     // Perform validation logic and add the plan to the customer in the JSON database
