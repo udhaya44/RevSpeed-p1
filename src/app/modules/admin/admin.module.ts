@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminHeaderComponent } from './Components/admin-header/admin-header.component';
+
 import { AddPlanAdminComponent } from './Components/add-plan-admin/add-plan-admin.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatCardModule} from '@angular/material/card';
@@ -17,16 +18,22 @@ import { MatTableModule } from '@angular/material/table';
 import { TotalPlansComponent } from './Components/total-plans/total-plans.component';
 import { TotalUsersComponent } from './Components/total-users/total-users.component';
 import { TotalSubscriptionsComponent } from './Components/total-subscriptions/total-subscriptions.component';
-
+import { MatSelectModule } from '@angular/material/select';
+import { MatSort } from '@angular/material/sort';
+import { AnalyticsPageComponent } from './Components/analytics-page/analytics-page.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { AdminHomepageComponent } from './Components/admin-homepage/admin-homepage.component';
 
 @NgModule({
   declarations: [
     AdminDashboardComponent,
     AdminHeaderComponent,
-    AddPlanAdminComponent,
     TotalPlansComponent,
-    TotalUsersComponent,
     TotalSubscriptionsComponent,
+    TotalUsersComponent,
+    AddPlanAdminComponent,
+    AnalyticsPageComponent,
+    AdminHomepageComponent,
    
   ],
   imports: [
@@ -40,7 +47,12 @@ import { TotalSubscriptionsComponent } from './Components/total-subscriptions/to
     MatButtonModule,
     MatPaginatorModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatPaginatorModule,
+    MatMenuModule,
+    MatIconModule,
   ]
 })
 export class AdminModule { }

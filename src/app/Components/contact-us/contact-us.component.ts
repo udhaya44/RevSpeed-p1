@@ -10,7 +10,7 @@ export class ContactUsComponent {
   constructor() {
     console.log('FAQs:', this.faqs);
   }
-  
+
   activeIndex: number | null = null;
 
   toggleAccordion(index:any): void {

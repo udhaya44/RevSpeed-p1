@@ -1,6 +1,5 @@
-
-<!-- Add button -->
-<button mat-raised-button (click)="openDialog()" >Add Plan </button> 
+  <!-- Add button -->
+  <button mat-raised-button (click)="openDialog()" class="add-plan-button">Add Plan </button> 
 
 <mat-card class="plan-conatiner" *ngFor="let card of obs | async">
   <mat-card-header>
@@ -10,20 +9,56 @@
   <mat-card-content>
     <div class="card-body">
       <div class="card-row">
-        <div class="card-title">{{ card.plan.planName }}</div>
         <div class="card-property">Data Limit: <span class="card-value">{{ card.plan.datalimit }}</span></div>
         <div class="card-property">Speed: <span class="card-value">{{ card.plan.bandWidth }}</span></div>
         <div class="card-property">Validity: <span class="card-value">{{ card.plan.validity }}</span></div>
         <div class="card-property">Price: <span class="card-value">{{ card.plan.price }}</span></div>
       </div>
+
+      <!-- Action buttons for each card -->
+      <div class="card-actions">
+        <button mat-icon-button color="warn" (click)="deleteCard(card)">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+        <button mat-icon-button color="primary" (click)="editCard(card)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+
       <div *ngIf="card.plan.otts" class="card-row">
         <h6 class="card-subtitle">OTTs:</h6>
         <div class="ott-buttons">
           <button *ngIf="card.plan.otts.AmazonPrime">Amazon Prime</button>
+          <!-- <ng-container *ngIf="card.plan.otts.AmazonPrime">
+            <button>
+              <img src="../../../../../assets/images/ottPlatform/prime-ott-plat.jfif" alt="Amazon Prime Logo" class="ott-logo">
+            </button>
+          </ng-container> -->
           <button *ngIf="card.plan.otts.Hotstar">Hotstar</button>
+          <!-- <ng-container *ngIf="card.plan.otts.Hotstar">
+            <button>
+              <img src="../../../../../assets/images/ottPlatform/prime-ott-plat.jfif" alt="Hotstar Logo" class="ott-logo">
+            </button>
+          </ng-container> -->
           <button *ngIf="card.plan.otts.Netflix">Netflix</button>
+          <!-- <ng-container *ngIf="card.plan.otts.Netflix">
+            <button>
+              <img src="path/to/netflix_logo.png" alt="Netflix Logo" class="ott-logo">
+            </button>
+          </ng-container> -->
           <button *ngIf="card.plan.otts.Zee5">Zee5</button>
+          <!-- <ng-container *ngIf="card.plan.otts.Zee5">
+            <button>
+              <img src="path/to/zee5_logo.png" alt="Zee5 Logo" class="ott-logo">
+            </button>
+          </ng-container> -->
           <button *ngIf="card.plan.otts.aha">aha</button>
+          <!-- <ng-container *ngIf="card.plan.otts.aha">
+            <button>
+              <img src="path/to/aha_logo.png" alt="aha Logo" class="ott-logo">
+            </button>
+          </ng-container> -->
         </div>
       </div>
     </div>

@@ -129,7 +129,7 @@
       "planName": "REV A - Max 500",
       "datalimit": "Unlimited",
       "bandWidth": "50 Mbps",
-      "validity": "1 Month",
+      "validity": "30",
       "price": "₹500",
       "otts": {
         "AmazonPrime": true,
@@ -144,7 +144,7 @@
       "planName": "REV Bronze",
       "datalimit": "Unlimited",
       "bandWidth": "50 Mbps",
-      "validity": "1 Month",
+      "validity": "90",
       "price": "₹549",
       "otts": {
         "AmazonPrime": true,
@@ -159,7 +159,7 @@
       "planName": "REV Basic",
       "datalimit": "500GB",
       "bandWidth": "40 Mbps",
-      "validity": "1 Month",
+      "validity": "360",
       "price": "₹549",
       "otts": {
         "AmazonPrime": false,
@@ -174,7 +174,7 @@
       "planName": "REV Starter",
       "datalimit": "Unlimited",
       "bandWidth": "50 Mbps",
-      "validity": "1 Month",
+      "validity": "90",
       "price": "₹549",
       "otts": {
         "AmazonPrime": true,
@@ -189,7 +189,7 @@
       "planName": "REV Starter",
       "datalimit": "Unlimited",
       "bandWidth": "40 Mbps",
-      "validity": "1 Month",
+      "validity": "360",
       "price": "₹549",
       "otts": {
         "AmazonPrime": false,
@@ -204,7 +204,7 @@
       "planName": "REV Welcome",
       "datalimit": "Unlimited",
       "bandWidth": "50 Mbps",
-      "validity": "1 Month",
+      "validity": "90",
       "price": "₹549",
       "otts": {
         "AmazonPrime": true,
@@ -219,7 +219,7 @@
       "planName": "REV Hosur Bronze",
       "datalimit": "1000GB",
       "bandWidth": "75 Mbps",
-      "validity": "1 Month",
+      "validity": "360",
       "price": "₹549",
       "otts": {
         "AmazonPrime": true,
@@ -234,7 +234,7 @@
       "planName": "REV Silver",
       "datalimit": "1500GB",
       "bandWidth": "60 Mbps",
-      "validity": "1 Month",
+      "validity": "30",
       "price": "₹549",
       "otts": {
         "AmazonPrime": false,
@@ -249,7 +249,7 @@
       "planName": "REV Bronze",
       "datalimit": "1000GB",
       "bandWidth": "75 Mbps",
-      "validity": "1 Month",
+      "validity": "30",
       "price": "₹549",
       "otts": {
         "AmazonPrime": true,
@@ -264,7 +264,7 @@
       "planName": "REV Swift",
       "datalimit": "1 TB",
       "bandWidth": "50 Mbps",
-      "validity": "1 Month",
+      "validity": "90",
       "price": "₹549",
       "otts": {
         "AmazonPrime": false,
@@ -275,6 +275,7 @@
       }
     },
     {
+      "id": 11,
       "planName": "REV Excellent",
       "dataLimit": "400gb",
       "bandWidth": "15mps",
@@ -286,8 +287,490 @@
         "Netflix": false,
         "Zee5": true,
         "aha": false
-      },
-      "id": 11
+      }
+    },
+    {
+      "id": 12,
+      "planName": "REV pongal special",
+      "dataLimit": "500gb",
+      "bandWidth": "200mps",
+      "validity": "90",
+      "price": "1400",
+      "otts": {
+        "AmazonPrime": true,
+        "Hotstar": true,
+        "Netflix": true,
+        "Zee5": true,
+        "aha": true
+      }
+    },
+    {
+      "id": 13,
+      "planName": "REV diwali special",
+      "datalimit": "500gb",
+      "bandWidth": "150mps",
+      "validity": "360",
+      "price": "2500",
+      "otts": {
+        "AmazonPrime": true,
+        "Hotstar": true,
+        "Netflix": true,
+        "Zee5": false,
+        "aha": false
+      }
+    },
+    {
+      "id": 14,
+      "planName": "New Plan 1",
+      "datalimit": "Unlimited",
+      "bandWidth": "100 Mbps",
+      "validity": "30",
+      "price": "₹699",
+      "otts": {
+        "AmazonPrime": true,
+        "Hotstar": false,
+        "Netflix": true,
+        "Zee5": false,
+        "aha": true
+      }
+    },
+    {
+      "id": 15,
+      "planName": "REV Diamond",
+      "datalimit": "2000GB",
+      "bandWidth": "120 Mbps",
+      "validity": "90",
+      "price": "₹899",
+      "otts": {
+        "AmazonPrime": true,
+        "Hotstar": true,
+        "Netflix": false,
+        "Zee5": true,
+        "aha": false
+      }
+    },
+    {
+      "id": 16,
+      "planName": "REV Gold",
+      "datalimit": "Unlimited",
+      "bandWidth": "150 Mbps",
+      "validity": "30",
+      "price": "₹749",
+      "otts": {
+        "AmazonPrime": false,
+        "Hotstar": true,
+        "Netflix": true,
+        "Zee5": false,
+        "aha": true
+      }
+    },
+    {
+      "id": 17,
+      "planName": "REV Platinum",
+      "datalimit": "Unlimited",
+      "bandWidth": "200 Mbps",
+      "validity": "90",
+      "price": "₹999",
+      "otts": {
+        "AmazonPrime": true,
+        "Hotstar": false,
+        "Netflix": true,
+        "Zee5": true,
+        "aha": true
+      }
+    },
+    {
+      "id": 18,
+      "planName": "REV Silver Plus",
+      "datalimit": "1200GB",
+      "bandWidth": "80 Mbps",
+      "validity": "360",
+      "price": "₹1299",
+      "otts": {
+        "AmazonPrime": true,
+        "Hotstar": true,
+        "Netflix": false,
+        "Zee5": false,
+        "aha": true
+      }
+    },
+    {
+      "id": 19,
+      "planName": "REV Turbo",
+      "datalimit": "Unlimited",
+      "bandWidth": "100 Mbps",
+      "validity": "30",
+      "price": "₹799",
+      "otts": {
+        "AmazonPrime": false,
+        "Hotstar": false,
+        "Netflix": true,
+        "Zee5": true,
+        "aha": true
+      }
+    },
+    {
+      "id": 20,
+      "planName": "REV Deluxe",
+      "datalimit": "Unlimited",
+      "bandWidth": "120 Mbps",
+      "validity": "90",
+      "price": "₹899",
+      "otts": {
+        "AmazonPrime": true,
+        "Hotstar": true,
+        "Netflix": false,
+        "Zee5": false,
+        "aha": false
+      }
+    },
+    {
+      "id": 21,
+      "planName": "REV Mega",
+      "datalimit": "2500GB",
+      "bandWidth": "150 Mbps",
+      "validity": "360",
+      "price": "₹1499",
+      "otts": {
+        "AmazonPrime": false,
+        "Hotstar": true,
+        "Netflix": true,
+        "Zee5": true,
+        "aha": true
+      }
+    },
+    {
+      "id": 22,
+      "planName": "REV Infinite",
+      "datalimit": "Unlimited",
+      "bandWidth": "200 Mbps",
+      "validity": "30",
+      "price": "₹899",
+      "otts": {
+        "AmazonPrime": true,
+        "Hotstar": false,
+        "Netflix": true,
+        "Zee5": false,
+        "aha": true
+      }
+    },
+    {
+      "id": 23,
+      "planName": "REV Elite",
+      "datalimit": "Unlimited",
+      "bandWidth": "100 Mbps",
+      "validity": "90",
+      "price": "₹1099",
+      "otts": {
+        "AmazonPrime": false,
+        "Hotstar": true,
+        "Netflix": true,
+        "Zee5": true,
+        "aha": false
+      }
+    }  
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "user1",
+      "phone": "123-456-7890",
+      "email": "user1@example.com",
+      "address": "123 Main St, Cityville",
+      "userStatus": "active",
+      "userplanStatus": "active",
+      "userplanid": 1
+    },
+    {
+      "id": 2,
+      "username": "user2",
+      "phone": "987-654-3210",
+      "email": "user2@example.com",
+      "address": "456 Oak St, Townsville",
+      "userStatus": "inactive",
+      "userplanStatus": "active",
+      "userplanid": 1
+    },
+    {
+      "id": 3,
+      "username": "user3",
+      "phone": "555-123-4567",
+      "email": "user3@example.com",
+      "address": "789 Elm St, Villagetown",
+      "userStatus": "active",
+      "userplanStatus": "inactive",
+      "userplanid": 3
+    },
+    {
+      "id": 4,
+      "username": "user4",
+      "phone": "111-222-3333",
+      "email": "user4@example.com",
+      "address": "321 Pine St, Hamletville",
+      "userStatus": "inactive",
+      "userplanStatus": "inactive",
+      "userplanid": null
+    },
+    {
+      "id": 5,
+      "username": "user5",
+      "phone": "999-888-7777",
+      "email": "user5@example.com",
+      "address": "555 Birch St, Countryside",
+      "userStatus": "active",
+      "userplanStatus": "active",
+      "userplanid": 5
+    },
+    {
+      "id": 6,
+      "username": "user6",
+      "phone": "777-666-5555",
+      "email": "user6@example.com",
+      "address": "999 Cedar St, Riverside",
+      "userStatus": "active",
+      "userplanStatus": "active",
+      "userplanid": 6
+    },
+    {
+      "id": 7,
+      "username": "user7",
+      "phone": "444-555-6666",
+      "email": "user7@example.com",
+      "address": "777 Maple St, Lakeside",
+      "userStatus": "inactive",
+      "userplanStatus": "inactive",
+      "userplanid": null
+    },
+    {
+      "id": 8,
+      "username": "user8",
+      "phone": "666-777-8888",
+      "email": "user8@example.com",
+      "address": "333 Walnut St, Mountainview",
+      "userStatus": "active",
+      "userplanStatus": "active",
+      "userplanid": 8
+    },
+    {
+      "id": 9,
+      "username": "user9",
+      "phone": "222-333-4444",
+      "email": "user9@example.com",
+      "address": "888 Oak St, Hilltop",
+      "userStatus": "inactive",
+      "userplanStatus": "inactive",
+      "userplanid": null
+    },
+    {
+      "id": 10,
+      "username": "user10",
+      "phone": "888-999-0000",
+      "email": "user10@example.com",
+      "address": "444 Pine St, Valley",
+      "userStatus": "active",
+      "userplanStatus": "active",
+      "userplanid": 10
+    },
+    {
+      "id": 11,
+      "username": "user11",
+      "phone": "123-456-7890",
+      "email": "user11@example.com",
+      "address": "123 Main St, Cityville",
+      "userStatus": "active",
+      "userplanStatus": "active",
+      "userplanid": 11
+    },
+    {
+      "id": 12,
+      "username": "user12",
+      "phone": "987-654-3210",
+      "email": "user12@example.com",
+      "address": "456 Oak St, Townsville",
+      "userStatus": "inactive",
+      "userplanStatus": "active",
+      "userplanid": 12
+    },
+    {
+      "id": 13,
+      "username": "user13",
+      "phone": "555-123-4567",
+      "email": "user13@example.com",
+      "address": "789 Elm St, Villagetown",
+      "userStatus": "active",
+      "userplanStatus": "inactive",
+      "userplanid": 13
+    },
+    {
+      "id": 14,
+      "username": "user14",
+      "phone": "111-222-3333",
+      "email": "user14@example.com",
+      "address": "321 Pine St, Hamletville",
+      "userStatus": "inactive",
+      "userplanStatus": "inactive",
+      "userplanid": null
+    },
+    {
+      "id": 15,
+      "username": "user15",
+      "phone": "999-888-7777",
+      "email": "user15@example.com",
+      "address": "555 Birch St, Countryside",
+      "userStatus": "active",
+      "userplanStatus": "active",
+      "userplanid": 11
+    },
+    {
+      "id": 16,
+      "username": "user16",
+      "phone": "777-666-5555",
+      "email": "user16@example.com",
+      "address": "999 Cedar St, Riverside",
+      "userStatus": "active",
+      "userplanStatus": "active",
+      "userplanid": 1
+    },
+    {
+      "id": 17,
+      "username": "user17",
+      "phone": "444-555-6666",
+      "email": "user17@example.com",
+      "address": "777 Maple St, Lakeside",
+      "userStatus": "inactive",
+      "userplanStatus": "inactive",
+      "userplanid": null
+    },
+    {
+      "id": 18,
+      "username": "user18",
+      "phone": "666-777-8888",
+      "email": "user18@example.com",
+      "address": "333 Walnut St, Mountainview",
+      "userStatus": "active",
+      "userplanStatus": "active",
+      "userplanid": 8
+    },
+    {
+      "id": 19,
+      "username": "user19",
+      "phone": "222-333-4444",
+      "email": "user19@example.com",
+      "address": "888 Oak St, Hilltop",
+      "userStatus": "inactive",
+      "userplanStatus": "inactive",
+      "userplanid": null
+    },
+    {
+      "id": 20,
+      "username": "user20",
+      "phone": "888-999-0000",
+      "email": "user20@example.com",
+      "address": "444 Pine St, Valley",
+      "userStatus": "active",
+      "userplanStatus": "active",
+      "userplanid": 12
+    },
+    {
+      "id": 21,
+      "username": "user21",
+      "phone": "111-222-3333",
+      "email": "user21@example.com",
+      "address": "321 Pine St, Hamletville",
+      "userStatus": "active",
+      "userplanStatus": "active",
+      "userplanid": 7
+    },
+    {
+      "id": 22,
+      "username": "user22",
+      "phone": "999-888-7777",
+      "email": "user22@example.com",
+      "address": "555 Birch St, Countryside",
+      "userStatus": "inactive",
+      "userplanStatus": "active",
+      "userplanid": 14
+    },
+    {
+      "id": 23,
+      "username": "user23",
+      "phone": "777-666-5555",
+      "email": "user23@example.com",
+      "address": "999 Cedar St, Riverside",
+      "userStatus": "active",
+      "userplanStatus": "active",
+      "userplanid": 18
+    },
+    {
+      "id": 24,
+      "username": "user24",
+      "phone": "444-555-6666",
+      "email": "user24@example.com",
+      "address": "777 Maple St, Lakeside",
+      "userStatus": "inactive",
+      "userplanStatus": "inactive",
+      "userplanid": 12
+    },
+    {
+      "id": 25,
+      "username": "user25",
+      "phone": "666-777-8888",
+      "email": "user25@example.com",
+      "address": "333 Walnut St, Mountainview",
+      "userStatus": "active",
+      "userplanStatus": "active",
+      "userplanid": 12
+    },
+    {
+      "id": 26,
+      "username": "user26",
+      "phone": "222-333-4444",
+      "email": "user26@example.com",
+      "address": "888 Oak St, Hilltop",
+      "userStatus": "inactive",
+      "userplanStatus": "inactive",
+      "userplanid": 23
+    },
+    {
+      "id": 27,
+      "username": "user27",
+      "phone": "888-999-0000",
+      "email": "user27@example.com",
+      "address": "444 Pine St, Valley",
+      "userStatus": "active",
+      "userplanStatus": "active",
+      "userplanid": 9
+    },
+    {
+      "id": 28,
+      "username": "user28",
+      "phone": "111-222-3333",
+      "email": "user28@example.com",
+      "address": "321 Pine St, Hamletville",
+      "userStatus": "inactive",
+      "userplanStatus": "inactive",
+      "userplanid": 15
+    },
+    {
+      "id": 29,
+      "username": "user29",
+      "phone": "999-888-7777",
+      "email": "user29@example.com",
+      "address": "555 Birch St, Countryside",
+      "userStatus": "active",
+      "userplanStatus": "active",
+      "userplanid": 20
+    },
+    {
+      "id": 30,
+      "username": "user30",
+      "phone": "777-666-5555",
+      "email": "user30@example.com",
+      "address": "999 Cedar St, Riverside",
+      "userStatus": "active",
+      "userplanStatus": "active",
+      "userplanid": 12
     }
   ]
+  
 }

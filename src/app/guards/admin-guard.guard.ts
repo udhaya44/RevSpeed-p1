@@ -14,7 +14,7 @@ export const adminGuardGuard: CanActivateFn = (route, state) => {
   //     return true; // Admin is allowed access
   //   } else {
   //     router.navigate(['/login']);
-  //     return false; // Admin is not allowed access/
+  //     return false; // Admin is not allowed access
   //   }
-  return true
+  return true;
 };

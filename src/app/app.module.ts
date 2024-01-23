@@ -28,15 +28,18 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { RouterModule } from '@angular/router';
 import { authGuard } from './guards/auth.guard';
-import { DatePipe, JsonPipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { adminGuardGuard } from './guards/admin-guard.guard';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SuccessPopupComponent } from './Components/success-popup/success-popup.component';
 import { FormPopComponent } from './Components/form-pop/form-pop.component';
 import { AuthService } from './Components/Services/auth.service';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { UserProfileComponent } from './Components/user-profile/user-profile.component';
+import { UpdateProfileComponent } from './Components/update-profile/update-profile.component';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BuyPlanComponent } from './Components/buy-plan/buy-plan.component';
+
 
 
 @NgModule({
@@ -58,6 +61,9 @@ import { BuyPlanComponent } from './Components/buy-plan/buy-plan.component';
     SuccessPopupComponent,
     FormPopComponent,
     BuyPlanComponent,
+    UserProfileComponent,
+    UpdateProfileComponent,
+
   
   ],
   imports: [
@@ -74,8 +80,7 @@ import { BuyPlanComponent } from './Components/buy-plan/buy-plan.component';
     MatIconModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatCheckboxModule,
-    JsonPipe,
+    MatMenuModule,
     MatPaginatorModule,
  
   ],
