@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../Services/auth.service';
+import { log } from 'util';
 
 @Component({
   selector: 'app-home-page',
@@ -7,6 +8,8 @@ import { AuthService } from '../Services/auth.service';
   styleUrl: './home-page.component.scss'
 })
 export class HomePageComponent {
+
+  selectedLocType: string = 'home'; 
 
   reviews: any[];
   activeReviewIndex: number = 0;
@@ -22,6 +25,11 @@ export class HomePageComponent {
   isExpanded2 = true;
 
 
+  updateLocationType(locType: string) {
+    this.selectedLocType = locType;
+    console.log(locType);
+    
+  }
   toggleCard() {
     // this.isExpanded = !this.isExpanded;
     // this.isExpanded1 = false;

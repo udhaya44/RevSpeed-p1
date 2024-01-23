@@ -15,6 +15,7 @@ import { RegistrationComponent } from './Components/registration/registration.co
 import { adminGuardGuard } from './guards/admin-guard.guard';
 import { userGuardGuard } from './guards/user-guard.guard';
 import { UserProfileComponent } from './Components/user-profile/user-profile.component';
+import { UpdatepasswordComponent } from './Components/updatepassword/updatepassword.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'registeration', component: RegistrationComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: '', redirectTo: '/front-page', pathMatch: 'full' },
+  { path: 'update-password' ,component:UpdatepasswordComponent},
   // {path:'user-profile', component:UserProfileComponent},
   {
     path: 'admin',

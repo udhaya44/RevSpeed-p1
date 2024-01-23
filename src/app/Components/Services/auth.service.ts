@@ -120,8 +120,19 @@ export class AuthService  {
 
   }
 
-  sendPasswordResetEmail(email: string): Observable<any> {
-    // Assuming your backend API has an endpoint to send a password reset email
-    return this.http.post(`${this.apiUrl}/forgot-password`, email );
+  sendotp(email: string): Observable<any> {
+    console.log("ggggggggggggggg",email);
+    
+    return this.http.post(`http://localhost:8081/user/send-otp/${email}`,'');
   }
+
+  // is email present
+  isEmailPresent(mail:any){
+    return this.http.get(`http://localhost:8081/user/isEmailPresent/${mail}`);
+  }
+
+  updatePassword(email:any,newpassword:any){
+    this.http.post("http://localhost:8081/email/updatePassword",email,newpassword)
+  }
+
 }

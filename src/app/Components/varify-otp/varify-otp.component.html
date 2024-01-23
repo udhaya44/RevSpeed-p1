@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>OTP Varification</h1>
+<div mat-dialog-content>
+  Enter Your OTP here
+    <input type="number" name="otp" placeholder="Enter otp" [(ngModel)]="otp"> 
+    {{otp}}
+</div>
+<div mat-dialog-actions>
+  <!-- <button mat-button mat-dialog-close>No</button> -->
+  <button mat-button mat-dialog-close cdkFocusInitial (click)="getOtp()">Verify OTP</button>
+</div>
+

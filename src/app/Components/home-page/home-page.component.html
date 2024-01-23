@@ -40,8 +40,41 @@
   </div>
 </section>
 
+<!-- business and broadbanc palns -->
+
+<section class="availability red-bg section-padding">
+  <div class="container availability-container">
+    <div class="block block-one">
+      <h1 class="text-white">Get a new RevSpeed broadband & Businees connection</h1>
+      <span class="seperator seperator-white seperator-start"></span>
+    </div>
+    <div class="block block-two">
+      <div class="custom-form-radio">
+        <label>
+          <input type="radio" name="radio-group" class="radio-input loc-type" value="home" 
+                 [checked]="selectedLocType === 'home'" (click)="updateLocationType('home')">
+          <span class="custom-radio"></span> BroadBrand
+        </label>
+        <label>
+          <input type="radio" name="radio-group" class="radio-input loc-type" value="business" 
+                 [checked]="selectedLocType === 'business'" (click)="updateLocationType('business')">
+          <span class="custom-radio"></span> Business
+        </label>
+      </div>
+    </div>
+    <div class="block block-three">
+      <div class="btnWrap">
+        <a class="black-btn w-100 chkA" id="popup-form-trigger">Check Availability</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- cards -->
-<section>
+
+
+<section *ngIf="selectedLocType === 'home'">
   <div class="section-title">
     <h1>BroadBand Plans</h1>
     
@@ -238,6 +271,204 @@
 </div>
 </section>
 
+<!-- for Business Plans -->
+
+<section *ngIf="selectedLocType === 'business'">
+  <div class="section-title">
+    <h1>Business Plans</h1>
+    
+  </div>
+
+<div class="crad-diaplay">
+  
+  <div class="card" [class.expanded]="!isExpanded" (click)="toggleCard()">
+    <div class="card-content">
+      <div style="overflow: hidden;" class="card-header">
+        <h1 style="color: #ed3034">20 GB/S</h1>
+        <img
+          class="card-router-svg"
+          src="../assets/images/speed-thunder-svg.svg"
+        />
+        <h4>free</h4>
+        <!-- <div class = "vertical"></div> -->
+        <img
+          class="card-router-svg"
+          src="../assets/images/free-router-svg.svg"
+        />
+        <h4>free</h4>
+        <!-- <div class = "vertical"></div> -->
+        <img
+          class="card-router-svg"
+          src="../assets/images/free-installation-svg.svg"
+        />
+        <h4>free</h4>
+      </div>
+      <!-- <h2 style="color: black;font-size: large;">{{ cardDescription }}</h2> -->
+
+      <div >
+        <div class="discription-for-card-contaenet">
+          <div class="left">
+            <h5>1200 GB Broadband Data</h5>
+            <h2 style="color: black; font-size: large">
+              {{ cardDescription }}
+            </h2>
+            <h3>$1250/month*</h3>
+          </div>
+
+          <!-- <div class="ott right">
+            <h5>Ott App Inclued</h5>
+            <div class="ott-div">
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/disney_plus_ott.webp"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/netflix-ott.png"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/zee-5-ott.png"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/jio-cinema-ott.png"
+              />
+            </div>
+          </div> -->
+          
+        </div>
+      </div>
+    </div>
+    <button mat-fab extended color="warn" class="buy-now-button">Buy Now</button>
+  </div>
+
+  <div class="card" [class.expanded]="!isExpanded1" (click)="toggleCard1()">
+    <div class="card-content">
+      <div style="overflow: hidden;" class="card-header">
+        <h1 style="color: #ed3034">20 GBPS</h1>
+        <img
+          class="card-router-svg"
+          src="../assets/images/speed-thunder-svg.svg"
+        />
+        <h4>free</h4>
+        <!-- <div class = "vertical"></div> -->
+        <img
+          class="card-router-svg"
+          src="../assets/images/free-router-svg.svg"
+        />
+        <h4>free</h4>
+        <!-- <div class = "vertical"></div> -->
+        <img
+          class="card-router-svg"
+          src="../assets/images/free-installation-svg.svg"
+        />
+        <h4>free</h4>
+      </div>
+      <!-- <h2 style="color: black;font-size: large;">{{ cardDescription }}</h2> -->
+
+      <div >
+        <div class="discription-for-card-contaenet">
+          <div class="left">
+            <h5>600 GB Broadband Data</h5>
+            <h2 style="color: black; font-size: large">
+              {{ cardDescription }}
+            </h2>
+            <h3>$750/month*</h3>
+          </div>
+
+          <!-- <div class="ott right">
+            <h5>Ott App Inclued</h5>
+            <div class="ott-div">
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/disney_plus_ott.webp"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/netflix-ott.png"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/zee-5-ott.png"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/jio-cinema-ott.png"
+              />
+            </div>
+          </div> -->
+          
+        </div>
+      </div>
+    </div>
+    <button mat-fab extended color="warn" class="buy-now-button">Buy Now</button>
+  </div>
+
+  <div class="card" [class.expanded]="!isExpanded2" (click)="toggleCard2()">
+    <div class="card-content">
+      <div style="overflow: hidden;" class="card-header">
+        <h1 style="color: #ed3034"> 100 GBPS</h1>
+        <img
+          class="card-router-svg"
+          src="../assets/images/speed-thunder-svg.svg"
+        />
+        <h4>free </h4>
+        <h4>installation</h4> 
+        <!-- <div class = "vertical"></div> -->
+        <img
+          class="card-router-svg"
+          src="../assets/images/free-router-svg.svg"
+        />
+        <h4>free wifi</h4>
+        <!-- <div class = "vertical"></div> -->
+        <img
+          class="card-router-svg"
+          src="../assets/images/free-installation-svg.svg"
+        />
+        <h4>free router</h4>
+      </div>
+      <!-- <h2 style="color: black;font-size: large;">{{ cardDescription }}</h2> -->
+
+      <div >
+        <div class="discription-for-card-contaenet">
+          <div class="left">
+            <h5>800 GB Broadband Data</h5>
+            <h2 style="color: black; font-size: large">
+              {{ cardDescription }}
+            </h2>
+            <h3>$950/month*</h3>
+          </div>
+
+          <!-- <div class="ott right">
+            <h5>Ott App Inclued</h5>
+            <div class="ott-div">
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/disney_plus_ott.webp"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/netflix-ott.png"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/zee-5-ott.png"
+              />
+              <img
+                class="card-router-svg"
+                src="../assets/images/ottPlatform/jio-cinema-ott.png"
+              />
+            </div>
+          </div> -->
+          
+        </div>
+      </div>
+    </div>
+    <button mat-fab extended color="warn" class="buy-now-button">Buy Now</button>
+  </div>
+</div>
+</section>
 
 <!-- t & c -->
 <section class="centered-section">

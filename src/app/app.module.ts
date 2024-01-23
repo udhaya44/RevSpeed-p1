@@ -18,7 +18,7 @@ import { SpeedtestComponent } from './Components/speedtest/speedtest.component';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
@@ -37,6 +37,8 @@ import { AuthService } from './Components/Services/auth.service';
 import { UserProfileComponent } from './Components/user-profile/user-profile.component';
 import { UpdateProfileComponent } from './Components/update-profile/update-profile.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { VarifyOtpComponent } from './Components/varify-otp/varify-otp.component';
+import { UpdatepasswordComponent } from './Components/updatepassword/updatepassword.component';
 
 
 @NgModule({
@@ -59,6 +61,8 @@ import { MatMenuModule } from '@angular/material/menu';
     FormPopComponent,
     UserProfileComponent,
     UpdateProfileComponent,
+    VarifyOtpComponent,
+    UpdatepasswordComponent,
 
   
   ],
@@ -76,7 +80,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatIconModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    FormsModule
  
   ],
   providers: [
