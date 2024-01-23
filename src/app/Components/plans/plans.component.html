@@ -1,0 +1,109 @@
+
+<h1>ADD PLANS</h1>
+<div class="col-sm">
+<mat-form-field class="filter">
+  <mat-label>Search</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex.Plan name,etc" #input>
+</mat-form-field> 
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="planName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> planName </th>
+      <td mat-cell *matCellDef="let row"> {{row.planName}}% </td>
+    </ng-container>
+
+   
+    <ng-container matColumnDef="datalimit">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> datalimit </th>
+      <td mat-cell *matCellDef="let row"> {{row.datalimit}} </td>
+    </ng-container>
+
+ 
+    <ng-container matColumnDef="bandWidth">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Speed </th>
+      <td mat-cell *matCellDef="let row"> {{row.bandWidth}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="validity">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Validity </th>
+      <td mat-cell *matCellDef="let row"> {{row.validity}} </td>
+    </ng-container>
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Price  </th>
+      <td mat-cell *matCellDef="let row"> {{row.price}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="otts">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>OTTS</th>
+      <td mat-cell *matCellDef="let row">
+        <div *ngIf="row.otts">
+          <div *ngFor="let ottsKey of getTrueOttKeys(row.otts)">
+            {{ ottsKey }}
+          </div>
+        </div>
+    </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action" >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>action</th>
+      <td mat-cell *matCellDef="let row"> 
+    
+        <button mat-raised-button (click)="openDialog('0ms', '0ms')" color="primary">Buy Now</button>
+     </td>
+    </ng-container>
+   
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="5">No data matching the filter "{{input.value}}"</td>
+    </tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" showFirstLastButtons></mat-paginator>
+</div>
+</div>
+
+<!-- grid-example.component.html -->
+
+<h1>LATEST RELEASE</h1>
+<div class="grid-container ">
+  <div class="grid-item">
+    <h1>ENTERTAINMENT PACK</h1>
+    <img src="../../../assets/images/plans/plan1" alt="Image 1">
+  </div>
+  <div class="grid-item">
+    <h1>ZEE 5 PACK</h1>
+    <img src="../../../assets/images/plans/plan2" alt="Image 2">
+  </div>
+  <div class="grid-item">
+    <h1>HUNGAMA PACK</h1>
+    <img src="../../../assets/images/plans/plan3" alt="Image 3">
+  </div>
+  <div class="grid-item">
+    <h1>AHA PACK</h1>
+    <img src="../../../assets/images/plans/plan4" alt="Image 4">
+  </div>
+  <div class="grid-item">
+    <h1>NETFLIX PACK</h1>
+    <img src="../../../assets/images/plans/plan5" alt="Image 5">
+  </div>
+  <div class="grid-item">
+    <h1>HOTSTAR PACK</h1>
+    <img src="../../../assets/images/plans/plan6" alt="Image 6">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  
