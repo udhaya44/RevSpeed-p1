@@ -1,0 +1,75 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .headline {
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  .barchart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .barchart-card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 80%;
+    text-align: center;
+
+  }
+  
+  .user-plan-graph-headline {
+    color: #333;
+  }
+  
+  #barchart {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .piechart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .piechart-card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 400px;
+    text-align: center;
+  }
+  
+  .plan-catagory-graph-headline {
+    color: #333;
+  }
+  
+  #piechart {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
