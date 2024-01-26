@@ -1,88 +1,99 @@
+// total-plans.component.ts
+
 import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { AdminService } from '../../admin.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddPlanAdminComponent } from '../add-plan-admin/add-plan-admin.component';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
-import { Observable } from 'rxjs';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+import { Observable } from 'rxjs';
 
-interface Card {
-  title: string;
-  subtitle: string;
-  text: string;
-  plan: Plan;
+interface Plan {
+  planId: string;
+  planName: string;
+  datalimit: string;
+  bandWidth: string;
+  validity: string;
+  price: string;
+  otts?: {
+    AmazonPrime: boolean;
+    Hotstar: boolean;
+    Netflix: boolean;
+    Zee5: boolean;
+    aha: boolean;
+  };
+  planCategory: string;
 }
-
-  interface Plan {
-    planName: string;
-    datalimit: string;
-    bandWidth: string;
-    validity: string;
-    price: string;
-    otts?: {
-      AmazonPrime: boolean;
-      Hotstar: boolean;
-      Netflix: boolean;
-      Zee5: boolean;
-      aha: boolean;
-    };
-  }
 
 @Component({
   selector: 'app-total-plans',
   templateUrl: './total-plans.component.html',
-  styleUrl: './total-plans.component.scss'
+  styleUrls: ['./total-plans.component.scss']
 })
 export class TotalPlansComponent {
 
-    @ViewChild(MatPaginator) paginator!: MatPaginator;
-    obs!: Observable<any>;
-    dataSource: MatTableDataSource<Card>;
-  
-    constructor(
-      private changeDetectorRef: ChangeDetectorRef,
-      private adminService: AdminService, // Inject your AdminService
-      public dialog: MatDialog  // Inject MatDialog
-    ) {
-      this.dataSource = new MatTableDataSource<Card>();
-    }
-  
-    ngOnInit() {
-      this.adminService.getPlans().subscribe((plans: Plan[]) => {
-        const cards: Card[] = plans.map(plan => ({
-          title: plan.planName,
-          subtitle: 'Plan Details',
-          text: `Data Limit: ${plan.datalimit}, Speed: ${plan.bandWidth}, Validity: ${plan.validity}, Price: ${plan.price}`,
-          plan: plan
-        }));
-        this.dataSource.data = cards;
-        this.dataSource.paginator = this.paginator;
-        this.obs = this.dataSource.connect();
-      });
-    }
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  obs!: Observable<any>;
+  dataSource: MatTableDataSource<Plan>;
+  displayedColumns: string[] = ['planId', 'planName', 'datalimit', 'bandWidth', 'validity', 'price', 'actions'];
 
-    // Method to handle delete action
-    deleteCard(card: any) {
-      // Implement your delete logic here
-      console.log('Deleting card:', card);
-    }
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private adminService: AdminService,
+    public dialog: MatDialog
+  ) {
+    this.dataSource = new MatTableDataSource<Plan>();
+  }
 
-    // Method to handle edit action
-    editCard(card: any) {
-      // Implement your edit logic here
-      console.log('Editing card:', card);
-    }
-  
-    ngOnDestroy() {
-      if (this.dataSource) { 
-        this.dataSource.disconnect(); 
-      }
-    }
+  initializeComponent() {
+    this.fetchPlans();
+  }
 
-    openDialog() {
-      console.log("inside open dialogue")
-      this.dialog.open(AddPlanAdminComponent, {
-        width: '40rem',
-      });
+  ngOnInit() {
+    this.initializeComponent();
+  }
+
+  fetchPlans() {
+    this.adminService.getPlans().subscribe((plans: Plan[]) => {
+      console.log("all plans", plans);
+      this.updateDataSource(plans);
+    });
+  }
+
+  deletePlan(plan: Plan) {
+    console.log('Deleting plan:', plan);
+    // Implement your delete logic here
+  }
+
+  editPlan(plan: Plan) {
+    console.log('Editing plan:', plan);
+    // Implement your edit logic here
+  }
+
+  ngOnDestroy() {
+    if (this.dataSource) {
+      this.dataSource.disconnect();
     }
+  }
+
+  private updateDataSource(data: Plan[]) {
+    this.dataSource.data = data;
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+    this.obs = this.dataSource.connect();
+  }
+
+  openDialog() {
+    console.log("inside open dialogue");
+    this.dialog.open(AddPlanAdminComponent, {
+      width: '40rem',
+    });
+  }
+
+  applyFilter(event: KeyboardEvent) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }

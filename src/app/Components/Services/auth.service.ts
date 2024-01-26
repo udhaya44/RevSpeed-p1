@@ -79,7 +79,7 @@ export class AuthService  {
     })
   }
 
-  private createAuhtorizationHeader() {
+  public createAuhtorizationHeader() {
     const jwtToken = localStorage.getItem('token');
     if (jwtToken) {
       console.log("JWT token found in session storage", jwtToken);
