@@ -1,0 +1,44 @@
+.side-nav-container {
+    padding: 20px;
+}
+
+.nav-items-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #113c60;
+    color: #fff;
+}
+
+.nav-items a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    padding: 15px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #0b6bb9;
+    }
+
+    fa-icon {
+        margin-right: 10px;
+        font-size: 18px;
+    }
+
+    span {
+        display: flex;
+        margin-left: 5px;
+    }
+}
+@media (max-width: 1300px) {
+    .nav-items {
+        flex-direction: column;
+
+        a {
+            span {
+                display: none; /* Hide spans for smaller screens */
+            }
+        }
+    }
+}

@@ -45,6 +45,7 @@ import { pipe } from 'rxjs';
 import { MatCardModule } from '@angular/material/card';
 import { PlansComponent } from './Components/plans/plans.component';
 import { BuyPlanComponent } from './Components/buy-plan/buy-plan.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,8 @@ import { BuyPlanComponent } from './Components/buy-plan/buy-plan.component';
     MatInputModule,
     MatNativeDateModule,
     MatSortModule,
-    MatCardModule
+    MatCardModule,
+    FontAwesomeModule
  
     
 

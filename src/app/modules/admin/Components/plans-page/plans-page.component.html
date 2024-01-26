@@ -1,10 +1,20 @@
-<button mat-raised-button (click)="openDialog()" class="add-plan-button">Add Plan </button>
-<!-- search option -->
-<mat-icon>search</mat-icon>
-<mat-form-field>
-  <mat-label>Search</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Enter your search term">
-</mat-form-field>
+<div class="card-container">
+    <div class="card business" (click)="selectPlan('business')">Business Plans</div>
+    <div class="card broadband" (click)="selectPlan('broadband')">Broadband Plans</div>
+</div>
+
+<div class="header-container">
+  <div class="add-container">
+    <button mat-raised-button (click)="openDialog()" class="add-plan-button">Add Plan</button>
+  </div>
+  
+  <div class="search-container">
+    <mat-form-field>
+      <mat-label>Search</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Enter your search term">
+    </mat-form-field>
+  </div>
+</div>
 
 <!-- table data  -->
 <table mat-table [dataSource]="dataSource" matSort>
@@ -56,3 +66,8 @@
 </table>
 
 <mat-paginator [pageSizeOptions]="[10, 25,50, 100]"></mat-paginator>
+
+  <mat-table [dataSource]="dataSource">
+    <!-- Define your MatTable columns and rows here -->
+  </mat-table>
+  

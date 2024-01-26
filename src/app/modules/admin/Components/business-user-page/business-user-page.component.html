@@ -1,4 +1,6 @@
-
+<div class="headline">
+    <h1>Business Users</h1>
+</div>
 <mat-form-field>
     <input matInput [formControl]="filterControl" (keyup)="applyFindFilter()" placeholder="Type to search">
 </mat-form-field>
@@ -33,7 +35,7 @@
     <ng-container matColumnDef="userStatus">
       <mat-header-cell *matHeaderCellDef mat-sort-header>User Status</mat-header-cell>
       <mat-cell *matCellDef="let user">
-        <button mat-raised-button [ngClass]="{'mat-primary': user.userActive === true, 'mat-warn': user.userActive === false }">
+        <button mat-raised-button [ngClass]="{'mat-primary': user.userActive === true, 'mat-warn': user.userActive === false}">
           {{ user.userActive === true ? 'Active' : 'Inactive' }}
         </button>
       </mat-cell>
