@@ -1,0 +1,49 @@
+<!-- form-popup.component.html -->
+<h1 mat-dialog-title class="popup-title">Complete the form below to Add a Business plan</h1>
+
+<div class="form-popup">
+    <div mat-dialog-actions>
+        <button class="close-button" mat-button (click)="closeForm()">Close</button>
+    </div>
+    <br>
+    <br>
+    <form [formGroup]="formData" (ngSubmit)="submitForm()" class="popup-form">
+
+        <label for="planName">Enter Plan Full Name</label>
+        <input type="text" id="planName" name="planName" formControlName="planName"
+            placeholder="plan name">
+        <div class="textcolour" *ngIf= "formControls['planName'].touched && formControls['planName'].hasError('required')">
+            Plan Full Name is required
+        </div>
+
+        <label for="dataLimit">Enter the Data Limit</label>
+        <input type="text" id="datalimit" name="datalimit" formControlName="datalimit"
+            placeholder="plan datalimit">
+        <div class="textcolour" *ngIf= "formControls['datalimit'].touched && formControls['datalimit'].hasError('required')" >
+            Data limit is required
+        </div>
+
+        <label for="bandWidth">Enter the bandwidth</label>
+        <input type="text" id="bandWidth" name="bandWidth" formControlName="bandWidth"
+            placeholder="Enter plan bandWidth">
+        <div class="textcolour" *ngIf= "formControls['bandWidth'].touched && formControls['bandWidth'].hasError('required')">
+            bandWidth is required
+        </div>
+
+        <label for="validity">Enter the Valdity of your plan</label>
+        <input type="text" id="validity" name="validity" formControlName="validity"
+            placeholder="Enter plan validity">
+        <div class="textcolour" *ngIf= "formControls['validity'].touched && formControls['validity'].hasError('required')">
+            plan validity is required
+        </div>
+
+        <label for="price">Enter the price of your plan</label>
+        <input type="text" id="price" name="price" formControlName="price"
+            placeholder="plan price">
+        <div class="textcolour" *ngIf= "formControls['price'].touched && formControls['price'].hasError('required')">
+            price is required
+        </div>           
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+</div>
+

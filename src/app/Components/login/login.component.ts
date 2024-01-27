@@ -101,7 +101,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("userRole",this.userDetails.role)
       if(this.userDetails.role==="ADMIN"){
         this.isAdmin();
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/admin/admin-homepage/dashboard']);
       }else{
        
       this.isUser();

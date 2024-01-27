@@ -1,6 +1,4 @@
-// total-users.component.ts
-
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -8,11 +6,12 @@ import { AdminService } from '../../admin.service';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-total-users',
-  templateUrl: './total-users.component.html',
-  styleUrls: ['./total-users.component.scss']
+  selector: 'app-business-user-page',
+  templateUrl: './business-user-page.component.html',
+  styleUrl: './business-user-page.component.scss'
 })
-export class TotalUsersComponent implements OnInit {
+export class BusinessUserPageComponent {
+
   filterControl = new FormControl();
   displayedColumns: string[] = ['id', 'username', 'phone', 'email', 'userStatus', 'userplanStatus'];
   dataSource: MatTableDataSource<any>;
@@ -33,7 +32,9 @@ export class TotalUsersComponent implements OnInit {
   
   loadUserData() {
     this.adminService.getAllUsers().subscribe((data) => {
-      this.dataSource = new MatTableDataSource(data);
+      const businessUsers = data.filter(user => user.businessUser === true);
+      this.dataSource = new MatTableDataSource(businessUsers);
+      console.log(this.dataSource);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });

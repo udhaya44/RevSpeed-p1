@@ -1,2 +1,14 @@
-<app-admin-header></app-admin-header>
-<router-outlet></router-outlet>
+<div class="home-container">
+    <div class="header">
+    <app-admin-header></app-admin-header>
+    </div>
+    <div class="main-container">
+        <div class="side-nav">
+            <app-side-nav></app-side-nav>
+        </div>
+        <div class="main">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+

@@ -19,10 +19,17 @@ import { TotalPlansComponent } from './Components/total-plans/total-plans.compon
 import { TotalUsersComponent } from './Components/total-users/total-users.component';
 import { TotalSubscriptionsComponent } from './Components/total-subscriptions/total-subscriptions.component';
 import { MatSelectModule } from '@angular/material/select';
-import { MatSort } from '@angular/material/sort';
+import { MatSortModule } from '@angular/material/sort';
 import { AnalyticsPageComponent } from './Components/analytics-page/analytics-page.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { AdminHomepageComponent } from './Components/admin-homepage/admin-homepage.component';
+import { MatInputModule } from '@angular/material/input';
+import { SideNavComponent } from './Components/side-nav/side-nav.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PlansPageComponent } from './Components/plans-page/plans-page.component';
+import { BusinessUserPageComponent } from './Components/business-user-page/business-user-page.component';
+import { BroadbandUserPageComponent } from './Components/broadband-user-page/broadband-user-page.component';
+import { AddBusinessPlanComponent } from './Components/add-business-plan/add-business-plan.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +41,11 @@ import { AdminHomepageComponent } from './Components/admin-homepage/admin-homepa
     AddPlanAdminComponent,
     AnalyticsPageComponent,
     AdminHomepageComponent,
+    SideNavComponent,
+    PlansPageComponent,
+    BusinessUserPageComponent,
+    BroadbandUserPageComponent,
+    AddBusinessPlanComponent,
    
   ],
   imports: [
@@ -53,6 +65,9 @@ import { AdminHomepageComponent } from './Components/admin-homepage/admin-homepa
     MatPaginatorModule,
     MatMenuModule,
     MatIconModule,
+    MatSortModule,
+    MatInputModule,
+    FontAwesomeModule,
   ]
 })
 export class AdminModule { }

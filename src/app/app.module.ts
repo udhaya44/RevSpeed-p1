@@ -50,6 +50,7 @@ import { PlansComponent } from './Components/plans/plans.component';
 import { BuyPlanComponent } from './Components/buy-plan/buy-plan.component';
 import { DeletedialogComponent } from './Components/deletedialog/deletedialog.component';
 import { ResetdialogComponent } from './Components/resetdialog/resetdialog.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -105,7 +106,8 @@ import { ResetdialogComponent } from './Components/resetdialog/resetdialog.compo
     MatInputModule,
     MatNativeDateModule,
     MatSortModule,
-    MatCardModule
+    MatCardModule,
+    FontAwesomeModule
  
     
 
