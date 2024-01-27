@@ -135,4 +135,10 @@ export class AuthService  {
     this.http.post("http://localhost:8081/email/updatePassword",email,newpassword)
   }
 
+  getPlans(){return this.http.get("http://localhost:3000/plans")}
+
+
+  updateUserProfile(id:any,User :any){
+    return this.http.put(`http://localhost:8081/user/updateUserDetails/${id}`,User);
+  }
 }

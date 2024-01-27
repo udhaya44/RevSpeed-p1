@@ -19,6 +19,10 @@ import { TotalPlansComponent } from './Components/total-plans/total-plans.compon
 import { TotalUsersComponent } from './Components/total-users/total-users.component';
 import { TotalSubscriptionsComponent } from './Components/total-subscriptions/total-subscriptions.component';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSort } from '@angular/material/sort';
+import { AnalyticsPageComponent } from './Components/analytics-page/analytics-page.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { AdminHomepageComponent } from './Components/admin-homepage/admin-homepage.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,9 @@ import { MatSelectModule } from '@angular/material/select';
     TotalPlansComponent,
     TotalSubscriptionsComponent,
     TotalUsersComponent,
-    AddPlanAdminComponent
+    AddPlanAdminComponent,
+    AnalyticsPageComponent,
+    AdminHomepageComponent,
    
   ],
   imports: [
@@ -44,7 +50,9 @@ import { MatSelectModule } from '@angular/material/select';
     MatTableModule,
     MatSelectModule,
     MatButtonModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatMenuModule,
+    MatIconModule,
   ]
 })
 export class AdminModule { }

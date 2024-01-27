@@ -1,0 +1,27 @@
+h1{
+    text-align: center;
+    color:rgb(55, 76, 232);
+    font-weight: bold;
+}
+/* grid-example.component.scss */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-gap: 16px; /* Adjust the gap as needed */
+  }
+  
+  .grid-item {
+    position: relative;
+    overflow: hidden;
+    // background-color: #3498db;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .grid-item img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center center;
+  }
+   

@@ -1,17 +1,47 @@
-<p>admin-header works!</p>
-<p>
-    <mat-toolbar color="primary">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>My App</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button routerLink="../login" mat-button>logout</button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-      </button>
-    </mat-toolbar>
-  </p>
+<nav class="navbar navbar-expand-sm h6 bg-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">
+      <img
+        src="https://cdn.pixabay.com/photo/2017/09/07/10/25/logo-2724481_1280.png"
+        alt="Avatar Logo"
+        style="width: 40px"
+        class="rounded-pill"
+      />
+    </a>
+    <span class="navbar-text" style="color: white">RevSpeed</span>
+    <button
+      class="navbar-toggler bg-light"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsibleNavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="collapsibleNavbar"
+    >
+      <ul class="navbar-nav nav-pills justify-content-end">
+        <img
+          [matMenuTriggerFor]="menu"
+          aria-label="Example icon-button with a menu"
+          alt=""
+          src="../../../../../assets/images/home-page/profilr-svg.jpg"
+          style=""
+        />
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <span routerLink="./">Dashboard</span>
+          </button>
+          <button mat-menu-item>
+            <span routerLink="analytics">Analytics</span>
+          </button>
+          <button mat-menu-item>
+            <span (click)="logOut()">Log Out</span>
+          </button>
+        </mat-menu>
+      </ul>
+    </div>
+  </div>
+</nav>
+

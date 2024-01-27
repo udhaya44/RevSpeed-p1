@@ -16,6 +16,7 @@ import { adminGuardGuard } from './guards/admin-guard.guard';
 import { userGuardGuard } from './guards/user-guard.guard';
 import { UserProfileComponent } from './Components/user-profile/user-profile.component';
 import { UpdatepasswordComponent } from './Components/updatepassword/updatepassword.component';
+import { PlansComponent } from './Components/plans/plans.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ const routes: Routes = [
       { path: 'contact-us', component: ContactUsComponent },
       { path: 'fibernet-broadband', component: FibernetBroadbandComponent },
       { path: 'business-broadband', component: BusinessBroadbandComponent },
+      {path: 'plans',component:PlansComponent},
     ],
   },
   { path: 'login', component: LoginComponent },
