@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from '../../admin.service';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { SuccessPopupComponent } from '../../../../Components/success-popup/success-popup.component';
 
 @Component({
@@ -16,7 +16,8 @@ export class AddBusinessPlanComponent {
     private adminservice: AdminService,
     private dialogRef: MatDialogRef<AddBusinessPlanComponent>,
     private dialog: MatDialog,
-    private formbuilder: FormBuilder
+    private formbuilder: FormBuilder,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.formData = this.formbuilder.group({
       planName: ['', [Validators.required]],
@@ -25,6 +26,17 @@ export class AddBusinessPlanComponent {
       validity: ['', [Validators.required]],
       price: ['', [Validators.required]],
     });
+
+    if (data && data.plan) {
+      // If editing, populate the form with plan details
+      this.formData.patchValue({
+        planName: data.plan.planName,
+        datalimit: data.plan.dataLimit,
+        bandWidth: data.plan.speed,
+        validity: data.plan.validity,
+        price: data.plan.price,
+      });
+    }
   }
 
   get formControls() {
@@ -33,16 +45,31 @@ export class AddBusinessPlanComponent {
 
   submitForm() {
     if (this.formData.valid) {
-      this.adminservice.submitForm(this.formData.value).subscribe(
-        (response: any) => {
-          console.log('Form data submitted successfully:', response);
-          this.showSuccessPopup();
-          this.closeForm();
-        },
-        (error: any) => {
-          console.error('Error submitting form data:', error);
-        }
-      );
+      if (this.data && this.data.plan) {
+        // Editing existing plan
+        this.adminservice.updateBusinessPlan(this.data.plan.id, this.formData.value).subscribe(
+          (response: any) => {
+            console.log('Form data updated successfully:', response);
+            this.showSuccessPopup();
+            this.closeForm();
+          },
+          (error: any) => {
+            console.error('Error updating form data:', error);
+          }
+        );
+      } else {
+        // Adding new plan
+        this.adminservice.submitbusinessForm(this.formData.value).subscribe(
+          (response: any) => {
+            console.log('Form data submitted successfully:', response);
+            this.showSuccessPopup();
+            this.closeForm();
+          },
+          (error: any) => {
+            console.error('Error submitting form data:', error);
+          }
+        );
+      }
     } else {
       console.error("Form is invalid");
     }

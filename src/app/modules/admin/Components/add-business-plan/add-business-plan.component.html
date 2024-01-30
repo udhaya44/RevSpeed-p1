@@ -31,7 +31,7 @@
         </div>
 
         <label for="validity">Enter the Valdity of your plan</label>
-        <input type="text" id="validity" name="validity" formControlName="validity"
+        <input type="number" id="validity" name="validity" formControlName="validity"
             placeholder="Enter plan validity">
         <div class="textcolour" *ngIf= "formControls['validity'].touched && formControls['validity'].hasError('required')">
             plan validity is required

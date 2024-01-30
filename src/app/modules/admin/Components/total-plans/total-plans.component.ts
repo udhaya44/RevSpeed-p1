@@ -10,20 +10,20 @@ import { MatSort } from '@angular/material/sort';
 import { Observable } from 'rxjs';
 
 interface Plan {
-  planId: string;
+  id?: number;
+  data_limit: string;
   planName: string;
-  datalimit: string;
-  bandWidth: string;
-  validity: string;
-  price: string;
-  otts?: {
-    AmazonPrime: boolean;
-    Hotstar: boolean;
-    Netflix: boolean;
-    Zee5: boolean;
-    aha: boolean;
+  plan_type: string;
+  price: number | string;
+  speed: string;
+  validity: number;
+  service?: {
+    id: number;
+    serviceName: string;
   };
-  planCategory: string;
+  ott?: {
+    id?: number,
+    ottName?: string }[];
 }
 
 @Component({
@@ -37,8 +37,7 @@ export class TotalPlansComponent {
   @ViewChild(MatSort) sort!: MatSort;
   obs!: Observable<any>;
   dataSource: MatTableDataSource<Plan>;
-  displayedColumns: string[] = ['planId', 'planName', 'datalimit', 'bandWidth', 'validity', 'price', 'actions'];
-
+  displayedColumns: string[] = ['planName', 'data_limit', 'speed', 'validity', 'price'];
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     private adminService: AdminService,
@@ -56,21 +55,39 @@ export class TotalPlansComponent {
   }
 
   fetchPlans() {
-    this.adminService.getPlans().subscribe((plans: Plan[]) => {
-      console.log("all plans", plans);
-      this.updateDataSource(plans);
-    });
+    this.adminService.getAllPlans().subscribe(
+      (data: { plans?: Plan[], businessPlans?: Plan[] }) => {
+        console.log("all plans", data);
+  
+        // Separate business plans and broadband plans
+        let businessPlans: Plan[] = [];
+        let broadbandPlans: Plan[] = [];
+  
+        // Add business plans
+        if (data.businessPlans) {
+          businessPlans = data.businessPlans;
+        }
+  
+        // Add broadband plans
+        if (data.plans) {
+          broadbandPlans = data.plans;
+        }
+        // Merge business plans and broadband plans
+        const allPlans: Plan[] = businessPlans.concat(broadbandPlans);
+  
+        console.log("all plans after merging", allPlans);
+  
+        // Assuming you want to display all plans by default
+        this.updateDataSource(allPlans);
+      },
+      (error) => {
+        console.error('Error fetching plans:', error);
+        // Handle error, show a notification, or any other appropriate action
+      }
+    );
   }
-
-  deletePlan(plan: Plan) {
-    console.log('Deleting plan:', plan);
-    // Implement your delete logic here
-  }
-
-  editPlan(plan: Plan) {
-    console.log('Editing plan:', plan);
-    // Implement your edit logic here
-  }
+  
+  
 
   ngOnDestroy() {
     if (this.dataSource) {
