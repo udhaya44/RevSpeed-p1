@@ -44,7 +44,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
- ;
     padding: 2%;
   }
   
@@ -295,4 +294,50 @@ body {
     line-height: 1.875;
     color: #ed3034;
   }
+}
+
+
+// card new 
+/* Container for the user plan card */
+.user-plan-cardnew {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd; /* Border color */
+  border-radius: 10px;
+  background-color: #fff; /* Background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift effect */
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for the card */
+.user-plan-cardnew:hover {
+  transform: translateY(-5px); /* Move the card up slightly on hover */
+}
+
+/* Heading style */
+.user-plan-cardnew h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333; /* Text color */
+}
+
+/* Button style */
+.user-plan-cardnew button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4285f4; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the button */
+.user-plan-cardnew button:hover {
+  background-color: #3e78c1; /* Button background color on hover */
 }

@@ -51,6 +51,7 @@ import { BuyPlanComponent } from './Components/buy-plan/buy-plan.component';
 import { DeletedialogComponent } from './Components/deletedialog/deletedialog.component';
 import { ResetdialogComponent } from './Components/resetdialog/resetdialog.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BuyBusinessplanComponent } from './Components/buy-businessplan/buy-businessplan.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     PlansComponent,
     BuyPlanComponent,
     DeletedialogComponent,
-    ResetdialogComponent  
+    ResetdialogComponent,
+    BuyBusinessplanComponent  
   
   ],
   imports: [

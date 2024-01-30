@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../Services/auth.service';
 import { log } from 'console';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-updatepassword',
@@ -10,7 +12,7 @@ import { log } from 'console';
 })
 export class UpdatepasswordComponent implements OnInit {
   myForm:any;
-  constructor(private auth:AuthService){
+  constructor(private auth:AuthService,private router: Router){
     this.myForm=new FormGroup({
       newpassword:new FormControl('',Validators.required),
       confirmnewpassword:new FormControl('',Validators.required)
@@ -32,11 +34,12 @@ export class UpdatepasswordComponent implements OnInit {
       console.log(this.formControls.newpassword,this.formControls.confirmnewpassword);
       
       if(this.formControls.newpassword === this.formControls.confirmnewpassword){
+      
         this.auth.updatePassword(this.fpemail,this.formControls.newpassword)
         console.log(this.fpemail,this.formControls.newpassword);
         
         console.log("password update sucessfully");
-      
+        // this.router.navigate(["/login"])
         
       }else{
         console.log("password does not match");
