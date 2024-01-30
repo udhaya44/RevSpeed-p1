@@ -155,6 +155,10 @@ export class AuthService  {
 
   }
 
+  getAllBusinessPlans(){
+    return this.http.get(`http://localhost:8081/businessplans/getAllBusinessPlan`);
+  }
+
 deleteUserById(id:any){
   return this.http.delete(`http://localhost:8081/user/deleteUser/${id}`);
 }

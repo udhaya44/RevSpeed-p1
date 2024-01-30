@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { BuyPlanComponent } from '../buy-plan/buy-plan.component';
 import { AuthService } from '../Services/auth.service';
 import { MatCardModule } from '@angular/material/card';
+import { BuyBusinessplanComponent } from '../buy-businessplan/buy-businessplan.component';
 
 export interface Card {
   id:number;
@@ -33,8 +34,9 @@ export class PlansComponent {
   input: any;
 
   plansData:any;
+  businessplandata:any;
   
-  displayedColumns: string[] = ['id', 'planName', 'datalimit', 'bandWidth', 'validity', 'price','ott','action'];
+  displayedColumns: string[] = ['id', 'planName','planType', 'datalimit', 'bandWidth', 'validity', 'price','ott','action'];
   
     dataSource!: MatTableDataSource<any>;
   
@@ -45,6 +47,7 @@ export class PlansComponent {
     constructor(private _dialog: MatDialog,private auth:AuthService,private cdr:ChangeDetectorRef,private changeDetectorRef: ChangeDetectorRef,public dialog: MatDialog) {}
     ngOnInit(): void {
       this.getAllBroadbandplans();
+      this.getAllBusinessPlans();
   
       this.cdr.detectChanges();
     }
@@ -66,20 +69,53 @@ export class PlansComponent {
        
        })
     }
+
+    getAllBusinessPlans(){
+      this.auth.getAllBusinessPlans().subscribe(data=>{
+       this.businessplandata=data;
+       console.log(data,"business plans");
+ 
+       
+      })
+    }
   
-   
+    broadbandplanClicked: boolean | undefined;
+    busoinessplanClicked: boolean | undefined;
+    broadbanddata= true;
+    businessdata=false;
+    getBroadBandPlans(){
+      this.broadbanddata=true;
+      this.businessdata=false;
+
+    }
+
+    getBusinessPlans(){
+      this.broadbanddata=false;
+      this.businessdata=true;
+
+    }
   
-    openDialog(enterAnimationDuration: string, exitAnimationDuration: string,id:any): void {
+    openDialog(enterAnimationDuration: string,id:any): void {
       sessionStorage.setItem("broadbandPlandid",id);
 
       this.dialog.open(BuyPlanComponent, {
         width: '250px',
         enterAnimationDuration,
-        exitAnimationDuration,
+     
       });
     }
     
   
+    openDialog1(enterAnimationDuration: string,id:any,planType:string){
+      sessionStorage.setItem("broadbandPlandid",id);
+
+      this.dialog.open(BuyBusinessplanComponent, {
+        width: '250px',
+        enterAnimationDuration,
+     
+      });
+
+    }
     
     
     ngAfterViewInit() {
