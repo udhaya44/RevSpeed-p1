@@ -3,20 +3,43 @@ import { Injectable } from '@angular/core';
 import { Observable, forkJoin, map } from 'rxjs';
 import { AuthService } from '../../Components/Services/auth.service';
 interface Plan {
-  id: number;
+  id?: number;
+  data_limit: string;
   planName: string;
-  datalimit: string;
-  bandWidth: string;
-  validity: string;
+  plan_type: string;
+  price: number;
+  speed: string;
+  validity: number;
+  service_id: number;
+  ott?: { ottName: string }[];
+}
+
+export interface BusinessPlanPayload {
+  id?:number;
+  planName: string;
+  planType: string;
   price: string;
-  otts?: {
-    AmazonPrime: boolean;
-    Hotstar: boolean;
-    Netflix: boolean;
-    Zee5: boolean;
-    aha: boolean;
+  speed: string;
+  validity: number;
+  dataLimit:string;
+  service: {
+    id: number; // Provide the correct ID of the Service you want to associate
+    serviceName: string;
   };
-  planCategory: string;
+}
+export interface BroadbandPlanPayload {
+  id?: number;
+  planName: string;
+  planType: string;
+  price: number;
+  speed: string;
+  dataLimit: string;
+  validity: number;
+  service: {
+    id: number;
+    serviceName: string;
+  };
+  ott?: { ottName: string }[]; // Add ott property to the interface
 }
 
 @Injectable({
@@ -31,23 +54,13 @@ export class AdminService {
 
   //get-broadband-plans
   getPlans(): Observable<any[]> {
-      // Obtain the token from where you stored it (local storage, service, etc.)
-  const token = this.authService.getToken();
-  // Include the token in the request headers
-  const headers = { Authorization: `Bearer ${token}` };
-  const options = { headers };
-  console.log("plans header",headers);
-    return this.http.get<any[]>(`${this.apiUrl}/plans`, options);
+    return this.http.get<any[]>(`http://localhost:8081/broadbandplans/GetAllBroadBandPlanswithott`, { headers: this.authService.createAuhtorizationHeader() || {}});
   }
   
    //get-business-plans
   getBusinessPlans(): Observable<any[]> {
-    const token = this.authService.getToken();
-    // Include the token in the request headers
-    const headers = { Authorization: `Bearer ${token}` };
-    const options = { headers };
-    console.log("business plans header",headers);
-    return this.http.get<any[]>(`${this.apiUrl}/businessplans`, options);
+    return this.http.get<any[]>(`http://localhost:8081/businessplans/getbusinessplans`, { headers: this.authService.createAuhtorizationHeader() || {}});
+
   }
 
   getAllPlans(): Observable<{ plans: Plan[], businessPlans: Plan[] }> {
@@ -70,14 +83,92 @@ export class AdminService {
     });
   }
 
+  deletePlan(planId: number): Observable<any> {
+    return this.http.delete<any>(`http://localhost:8081/businessplans/deletePlan/${planId}`, { headers: this.authService.createAuhtorizationHeader() || {} });
+  }
+
+  deleleBroadbandplan(planId:number):Observable<any>{
+    return this.http.delete<any>(`http://localhost:8081/broadbandplans/deletePlan/${planId}`, { headers: this.authService.createAuhtorizationHeader() || {} });
+  }
+  
   //add-form submit for plans
-  submitForm(formData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}plans`, formData);
+  submitbroadbandForm(formData: any): Observable<any> {
+    const requestPayload: BroadbandPlanPayload = {
+      planName: formData.planName,
+      planType: this.getPlanType(formData.validity),
+      price: parseFloat(formData.price), // Assuming price is a number
+      speed: formData.bandWidth,
+      dataLimit: formData.datalimit,
+      validity: formData.validity,
+      service: {
+        id: 1, // Provide the correct ID of the Service you want to associate
+        serviceName: 'broadband'
+      },
+      ott: this.extractSelectedOTTs(formData.otts) // Extract selected OTTs
+    };
+    console.log(requestPayload);
+    return this.http.post('http://localhost:8081/broadbandplans/add', requestPayload);
+  }
+
+  extractSelectedOTTs(otts: { [key: string]: boolean }): { ottName: string }[] {
+    return Object.entries(otts)
+      .filter(([ottName, isSelected]) => isSelected)
+      .map(([ottName]) => ({ ottName }));
+  }
+
+  //add business plan 
+  submitbusinessForm(formData: any): Observable<any> {
+    const requestPayload: BusinessPlanPayload = {
+      planName: formData.planName,
+      planType: this.getPlanType(formData.validity), // Assuming getPlanType returns a string
+      price: formData.price,
+      speed: formData.bandWidth,
+      validity: formData.validity,
+      dataLimit:formData.datalimit,
+      service: {
+        id: 2, // Provide the correct ID of the Service you want to associate
+        serviceName: 'Business'
+      }
+    };
+
+    console.log(requestPayload);
+
+    return this.http.post('http://localhost:8081/businessplans/addBusinessplan', requestPayload);
+  }
+
+  private getPlanType(validity: number): string {
+    if (validity <= 30) {
+      return 'MONTHLY';
+    } else if (validity <= 90) {
+      return 'QUARTERLY';
+    } else {
+      return 'YEARLY';
+    }
+  }
+
+  // Update an existing business plan
+  updateBusinessPlan(planId: number, formData: any): Observable<any> {
+    const requestPayload: BusinessPlanPayload = {
+      id: planId,
+      planName: formData.planName,
+      planType: this.getPlanType(formData.validity),
+      price: formData.price,
+      speed: formData.bandWidth,
+      validity: formData.validity,
+      dataLimit: formData.datalimit,
+      service: {
+        id: 2, // Provide the correct ID of the Service you want to associate
+        serviceName: 'Business'
+      }
+    };
+
+    return this.http.put(`http://localhost:8081/businessplans/updatePlan/${planId}`, requestPayload
+    );
   }
 
   //get active subscribers
     getActiveSubscriptions(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}users?userStatus=active&userplanStatus=active`);
+    return this.http.get<any[]>(`http://localhost:8081/admin/getactivesub`, { headers: this.authService.createAuhtorizationHeader() || {} });
   }
 
   //get chart details 

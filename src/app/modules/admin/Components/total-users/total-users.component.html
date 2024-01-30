@@ -39,7 +39,7 @@
       </mat-cell>
     </ng-container>
 
-    <!-- PlanStatus Column -->
+    <!-- PlanStatus Column
     <ng-container matColumnDef="userplanStatus">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Plan Status</mat-header-cell>
       <mat-cell *matCellDef="let user">
@@ -47,7 +47,7 @@
           {{ user.userStatus === 'inactive' ? 'inactive' : user.userplanStatus }}
         </button>
       </mat-cell>
-    </ng-container>
+    </ng-container> -->
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

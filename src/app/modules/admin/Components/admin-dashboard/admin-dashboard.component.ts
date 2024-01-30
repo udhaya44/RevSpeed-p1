@@ -29,14 +29,17 @@ export class AdminDashboardComponent implements AfterViewInit  {
 
   ngAfterViewInit() {
     forkJoin([
-      this.adminService.getPlans(),
+      this.adminService.getAllPlans(),
       this.adminService.getAllUsers(),
       this.adminService.getActiveSubscriptions()
     ]).subscribe(
       ([plans, users, subscriptions]) => {
-        this.plansCount = plans.length;
+        this.plansCount = plans.businessPlans.length + plans.plans.length;
+        console.log('1---------',this.plansCount);
         this.usersCount = users.length;
+        console.log('2---------------',this.usersCount);
         this.subscriptionsCount = subscriptions.length;
+        console.log('3--------------',this.subscriptionsCount);
         this.loadComponent("plans");
       },
       error => {

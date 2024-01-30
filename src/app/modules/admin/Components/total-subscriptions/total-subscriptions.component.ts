@@ -35,6 +35,7 @@ export class TotalSubscriptionsComponent implements OnInit {
         this.dataSource = new MatTableDataSource(subscriptions);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
+        console.log("datasource for totalsubscribtion", this.dataSource);
       },
       error => {
         console.error('Error loading subscription data:', error);

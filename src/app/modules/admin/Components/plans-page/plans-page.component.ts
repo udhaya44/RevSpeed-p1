@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { AdminService } from '../../admin.service';
 import { AddPlanAdminComponent } from '../add-plan-admin/add-plan-admin.component';
@@ -9,21 +9,16 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddBusinessPlanComponent } from '../add-business-plan/add-business-plan.component';
 
 interface Plan {
-  planId: string;
+  id: number;
+  data_limit: string;
   planName: string;
-  datalimit: string;
-  bandWidth: string;
+  plan_type: string;
+  price: number;
+  speed: string;
   validity: string;
-  price: string;
-  otts?: {
-    AmazonPrime: boolean;
-    Hotstar: boolean;
-    Netflix: boolean;
-    Zee5: boolean;
-    aha: boolean;
-  };
-  planCategory: string;
+  service_id: number;
 }
+
 
 @Component({
   selector: 'app-plans-page',
@@ -35,10 +30,10 @@ export class PlansPageComponent {
   @ViewChild(MatSort) sort!: MatSort;
   obs!: Observable<any>;
   dataSource: MatTableDataSource<Plan>;
-  displayedColumns: string[] = ['planId', 'planName', 'datalimit', 'bandWidth', 'validity', 'price', 'actions'];
+  displayedColumns: string[] = ['id', 'planName', 'data_limit', 'speed', 'validity', 'price', 'actions'];
   planTypeToggle:string = 'broadband';
   constructor(private adminservice: AdminService,
-    public dialog: MatDialog) {
+    public dialog: MatDialog, private cdr: ChangeDetectorRef) {
     this.dataSource = new MatTableDataSource<Plan>();
   }
 
@@ -63,14 +58,56 @@ export class PlansPageComponent {
   }
 
 
+
   deletePlan(plan: Plan) {
-    console.log('Deleting plan:', plan);
-    // Implement your delete logic here
+    const confirmDelete = confirm(`Are you sure you want to delete the plan "${plan.planName}"?`);
+
+    if (confirmDelete) {
+      let deleteService: Observable<any> | undefined;
+
+      if (this.planTypeToggle === 'business') {
+        deleteService = this.adminservice.deletePlan(plan.id);
+      } else if (this.planTypeToggle === 'broadband') {
+        // Assuming you have a delete method in your broadband service, replace 'deleteBroadbandPlan' with the actual method name
+        deleteService = this.adminservice.deleleBroadbandplan(plan.id);
+      }
+
+      if (deleteService) {
+        deleteService.subscribe(
+          () => {
+            console.log('Plan deleted successfully!');
+            // Remove the deleted plan from the dataSource
+            this.dataSource.data = this.dataSource.data.filter(item => item.id !== plan.id);
+            this.cdr.detectChanges();
+          },
+          (error) => {
+            console.error('Error deleting plan:', error);
+            // Handle error, show a notification, or any other appropriate action
+          }
+        );
+      } else {
+        console.error('Invalid planTypeToggle value.');
+        // Handle the case where planTypeToggle is neither 'business' nor 'broadband'
+      }
+    }
   }
+
+  
 
   editPlan(plan: Plan) {
     console.log('Editing plan:', plan);
-    // Implement your edit logic here
+    if (this.planTypeToggle === 'business') {
+      this.dialog.open(AddBusinessPlanComponent, {
+        width: '40rem',
+        data: { plan } // Pass the plan details to the dialog
+      });
+    } else {
+      this.dialog.open(AddPlanAdminComponent, {
+        width: '40rem',
+        height: '80vh',
+        data: { plan }
+      });
+    }
   }
 
   selectPlan(planType: string): void {
@@ -78,11 +115,13 @@ export class PlansPageComponent {
       this.planTypeToggle = planType;
       this.adminservice.getBusinessPlans().subscribe((plans: any[]) => {
         this.dataSource = new MatTableDataSource(plans);
+        console.log(this.dataSource);
       });
     } else {
       this.planTypeToggle = 'broadband';
       this.adminservice.getPlans().subscribe((plans: any[]) => {
         this.dataSource = new MatTableDataSource(plans);
+        console.log(this.dataSource);
       });
     }
   }
