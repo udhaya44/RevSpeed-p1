@@ -18,7 +18,7 @@ import { SpeedtestComponent } from './Components/speedtest/speedtest.component';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
@@ -37,6 +37,9 @@ import { AuthService } from './Components/Services/auth.service';
 import { UserProfileComponent } from './Components/user-profile/user-profile.component';
 import { UpdateProfileComponent } from './Components/update-profile/update-profile.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { VarifyOtpComponent } from './Components/varify-otp/varify-otp.component';
+import { UpdatepasswordComponent } from './Components/updatepassword/updatepassword.component';
+
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -45,6 +48,8 @@ import { pipe } from 'rxjs';
 import { MatCardModule } from '@angular/material/card';
 import { PlansComponent } from './Components/plans/plans.component';
 import { BuyPlanComponent } from './Components/buy-plan/buy-plan.component';
+import { DeletedialogComponent } from './Components/deletedialog/deletedialog.component';
+import { ResetdialogComponent } from './Components/resetdialog/resetdialog.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
@@ -67,8 +72,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormPopComponent,
     UserProfileComponent,
     UpdateProfileComponent,
+    VarifyOtpComponent,
+    UpdatepasswordComponent,
+
     PlansComponent,
-    BuyPlanComponent  
+    BuyPlanComponent,
+    DeletedialogComponent,
+    ResetdialogComponent  
   
   ],
   imports: [
@@ -86,6 +96,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatSnackBarModule,
     MatDialogModule,
     MatMenuModule,
+    FormsModule,
     MatPaginatorModule,
     MatToolbarModule,
     MatFormFieldModule,

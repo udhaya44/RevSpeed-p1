@@ -120,9 +120,55 @@ export class AuthService  {
 
   }
 
-  sendPasswordResetEmail(email: string): Observable<any> {
-    // Assuming your backend API has an endpoint to send a password reset email
-    return this.http.post(`${this.apiUrl}/forgot-password`, email );
+  sendotp(email: string): Observable<any> {
+    console.log("ggggggggggggggg",email);
+    
+    return this.http.post(`http://localhost:8081/user/send-otp/${email}`,'');
   }
+
+  // is email present
+  isEmailPresent(mail:any){
+    return this.http.get(`http://localhost:8081/user/isEmailPresent/${mail}`);
+  }
+
+  updatePassword(email:any,newpassword:any){
+    this.http.post("http://localhost:8081/email/updatePassword",email,newpassword)
+  }
+
   getPlans(){return this.http.get("http://localhost:3000/plans")}
+
+
+  updateUserProfile(id:any,User :any){
+    return this.http.put(`http://localhost:8081/user/updateUserDetails/${id}`,User);
+  }
+
+  getUserAllPlansDetaiils(id:any){
+    this.http.get(`http://localhost:8081/userservicelink/getUserServicesDetails/${id}`);
+  }
+
+  getAllBroadbandplans(){
+    return this.http.get(`http://localhost:8081/broadbandplans/getAllplans`);
+  }
+
+  purchesBroadbandPlan(data:any){
+    return this.http.post(`http://localhost:8081/userservicelink/linkuserservice`,data);
+
+  }
+
+deleteUserById(id:any){
+  return this.http.delete(`http://localhost:8081/user/deleteUser/${id}`);
+}
+
+// updatePasswordAfterLogin(id:String,password:String){
+//   console.log("indide passwordafter login ",id,password)
+//   return this.http.put(`http://localhost:8081/user/updatePasswordAfterLogin/${id}`, password);
+// }
+
+updatePasswordAfterLogin(id: string, password: string): Observable<string> {
+  const url = `http://localhost:8081/user/updatePasswordAfterLogin/${id}/${password}`;
+
+
+  return this.http.put<string>(url,'');
+}
+
 }

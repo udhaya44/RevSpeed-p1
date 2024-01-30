@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 export class Email{
-  toMail:string[]=[];
+  toMail:any;
   subject:string | undefined;
   message:string | undefined;
   
@@ -125,7 +125,7 @@ export class RegistrationComponent {
     this.auth.registerNewUser(this.myGroup.value).subscribe((response) => {
       this.UserData = response;
 
-      this.UserData.toMail=[this.UserData.email];
+      this.UserData.toMail=this.UserData.email;
       this.UserData.subject="Registration successful - Welcome to Revspeed"; 
       this.UserData.message=`Hi ${this.UserData.firstName},  We are delighted to inform you that your registration on RevSpeed was successful! Welcome to our community.`
       console.log('this is user data', this.UserData);

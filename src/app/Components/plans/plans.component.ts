@@ -32,9 +32,9 @@ export class PlansComponent {
 
   input: any;
 
-  employeeData:any;
+  plansData:any;
   
-  displayedColumns: string[] = ['id', 'planName', 'datalimit', 'bandWidth', 'validity', 'price','otts','action'];
+  displayedColumns: string[] = ['id', 'planName', 'datalimit', 'bandWidth', 'validity', 'price','ott','action'];
   
     dataSource!: MatTableDataSource<any>;
   
@@ -44,7 +44,7 @@ export class PlansComponent {
    
     constructor(private _dialog: MatDialog,private auth:AuthService,private cdr:ChangeDetectorRef,private changeDetectorRef: ChangeDetectorRef,public dialog: MatDialog) {}
     ngOnInit(): void {
-      this.getEmployeeList();
+      this.getAllBroadbandplans();
   
       this.cdr.detectChanges();
     }
@@ -56,11 +56,11 @@ export class PlansComponent {
     }
   
     
-    getEmployeeList(){
-       this.auth.getPlans().subscribe(data=>{
-        this.employeeData=data;
-        console.log(this.employeeData);
-        this.dataSource = new MatTableDataSource(this.employeeData);
+    getAllBroadbandplans(){
+       this.auth.getAllBroadbandplans().subscribe(data=>{
+        this.plansData=data;
+        console.log(this.plansData);
+        this.dataSource = new MatTableDataSource(this.plansData);
           this.dataSource.paginator = this.paginator;
           this.changeDetectorRef.detectChanges();
        
@@ -69,7 +69,9 @@ export class PlansComponent {
   
    
   
-    openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    openDialog(enterAnimationDuration: string, exitAnimationDuration: string,id:any): void {
+      sessionStorage.setItem("broadbandPlandid",id);
+
       this.dialog.open(BuyPlanComponent, {
         width: '250px',
         enterAnimationDuration,

@@ -97,6 +97,7 @@ export class LoginComponent implements OnInit {
       this.emitEvent.next(this.userDetails);
       
 
+      localStorage.setItem("userId",this.userDetails.userId)
       
       localStorage.setItem("userRole",this.userDetails.role)
       if(this.userDetails.role==="ADMIN"){

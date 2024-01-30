@@ -1,4 +1,4 @@
-<div class="formdivclass">
+ <div class="formdivclass">
     <div class="form">
       <div class="container">
         <div class="content">
@@ -11,6 +11,8 @@
                   type="text"
                   placeholder="Enter your name"
                   formControlName="firstName"
+                  *ngIf="existingData"
+                  [value]="existingData?.firstName"
                 />
                 <div
                   class="textcolour"
@@ -59,32 +61,6 @@
                 </div>
               </div>
   
-              <div class="input-box">
-                <span class="details">Email</span>
-                <input
-                  type="text"
-                  placeholder="Enter your email"
-                  formControlName="email"
-                />
-                <div
-                  class="textcolour"
-                  *ngIf="
-                    formControls['email'].touched &&
-                    formControls['email'].hasError('required')
-                  "
-                >
-                  Email is required
-                </div>
-                <div
-                  class="textcolour"
-                  *ngIf="
-                    formControls['email'].touched &&
-                    formControls['email'].hasError('email')
-                  "
-                >
-                  Invalid email format
-                </div>
-              </div>
   
               <div class="input-box">
                 <span class="details">Phone Number</span>
@@ -140,14 +116,15 @@
               </div>
             </div>
               <div  >
-                <!-- <button mat-raised-button>update</button> -->
-              <!-- <input mat-raised-button color type="submit"  [disabled]="!myGroup.valid" /> -->
             </div>
+            <input type="submit" class="submit-button" />
           </form>
-          <div mat-dialog-actions>
-            <button mat-button  mat-dialog-close color="primary" [disabled]="!myGroup.valid" >Update</button>
+          <div >  
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div> 
+
+
+  
