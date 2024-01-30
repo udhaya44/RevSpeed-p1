@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { AuthService } from '../Services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-buy-plan',
@@ -7,13 +9,36 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrl: './buy-plan.component.scss'
 })
 export class BuyPlanComponent {
- 
+
+  broadbandplanId=sessionStorage.getItem("broadbandPlandid");
+  loginuserId=localStorage.getItem("userId");
   // You may need to add necessary properties and methods here
 
-  constructor(public dialogRef: MatDialogRef<BuyPlanComponent>) { }
+  constructor(public router:Router, public auth:AuthService, public dialogRef: MatDialogRef<BuyPlanComponent>) { }
 
+
+  broadbandplandlinkdata = {
+    broadbandPlans: {
+      id: this.broadbandplanId
+    },
+    businessPlans: null,
+    user: {
+      userId: this.loginuserId
+    },
+    subscriptionStartDate: this.getCurrentDate(),
+    broadbandActive: true
+  };
+
+  getCurrentDate(): string {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = ('0' + (today.getMonth() + 1)).slice(-2);  // Add leading zero if needed
+    const day = ('0' + today.getDate()).slice(-2);  // Add leading zero if needed
+    return `${year}-${month}-${day}`;
+  }
   ngOnInit(): void {
-    // Initialize any properties or perform any setup logic
+    console.log("todays date",this.getCurrentDate());
+    
   }
 
   closeDialog(): void {
@@ -21,35 +46,26 @@ export class BuyPlanComponent {
   }
 
   
-  // Add a method for buying the plan and validating customer existence
-  buyPlan(planId: number): void {
-    // Perform validation logic and add the plan to the customer in the JSON database
-    // You may need to call a service method here to handle the API request
+ 
+  buyPlan(): void {
+    localStorage.getItem("token");
+    if(localStorage.getItem("token")){
+      this.auth.purchesBroadbandPlan(this.broadbandplandlinkdata).subscribe((data)=>{
+        console.log(data);   
+      })
+    }
+    else{
+      this.router.navigate(["/login"])
 
-    // Example validation: Check if the customer is already present
-    const customerExists = this.checkIfCustomerExists();
-
-    if (customerExists) {
-      // Customer already exists, handle accordingly (e.g., show an error message)
-      console.log('Customer already exists.');
-    } else {
-      // Customer doesn't exist, proceed to add the plan to the customer
-      console.log('Adding plan to the customer.');
-
-      // Here, you can call your service method to add the plan to the customer in the database
-      // You may need to pass the planId and perform necessary API requests
     }
 
-    // Close the dialog after performing the necessary actions
+    
+   
+
+
     this.closeDialog();
   }
 
-  // Example validation method, you should replace this with your actual validation logic
-  private checkIfCustomerExists(): boolean {
-    // Replace this with your actual logic to check if the customer exists
-    // You might want to check a customer database or API endpoint
-    // For simplicity, we return true in this example
-    return true;
-  }
+
 
 }

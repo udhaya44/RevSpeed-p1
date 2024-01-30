@@ -25,3 +25,124 @@ h1{
     object-position: center center;
   }
    
+
+
+  body {
+    margin: 0;
+    background: rgb(149, 145, 145);
+    text-align: center;
+    font-family: sans-serif;
+    color: #fefefe;
+  }
+  .top{
+    height: 55vh;
+    width: 100%;
+    margin-top:-60px;
+    margin-bottom: 60px;
+  
+  }
+  .container {
+    position: relative;
+    width: 320px;
+    margin: 100px auto 0 auto;
+    perspective: 1000px;
+  }
+  
+  .carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; 
+    animation: rotate360 60s infinite forwards linear;
+  }
+  .carousel__face { 
+    position: absolute;
+    width: 300px;
+    height: 187px;
+    top: 20px;
+    left: 10px;
+    right: 10px;
+    background-size: cover;
+    // box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5);
+    display: flex;
+  }
+  
+  span {
+    margin: auto;
+    font-size: 2rem;
+  }
+  
+  
+  .carousel__face:nth-child(1) {
+    background-image: url("../../../assets/images/plans/car1.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    transform: rotateY(  0deg) translateZ(430px); }
+  .carousel__face:nth-child(2) { 
+    background-image: url("../../../assets/images/plans/car2.webp");
+      transform: rotateY( 40deg) translateZ(430px); }
+  .carousel__face:nth-child(3) {
+    background-image: url("../../../assets/images/plans/car4.avif");
+    transform: rotateY( 80deg) translateZ(430px); }
+  .carousel__face:nth-child(4) {
+    background-image: url("../../../assets/images/plans/car5.jpg");
+    transform: rotateY(120deg) translateZ(430px); }
+  .carousel__face:nth-child(5) { 
+    background-image: url("../../../assets/images/plans/car6.jpg");
+   transform: rotateY(160deg) translateZ(430px); }
+  .carousel__face:nth-child(6) { 
+    background-image: url("../../../assets/images/plans/car1.png");
+   transform: rotateY(200deg) translateZ(430px); }
+  .carousel__face:nth-child(7) { 
+    background-image: url("../../../assets/images/plans/car3.jpg");
+   transform: rotateY(240deg) translateZ(430px); }
+  .carousel__face:nth-child(8) {
+    background-image: url("../../../assets/images/plans/car4.avif");
+    transform: rotateY(280deg) translateZ(430px); }
+  .carousel__face:nth-child(9) {
+    background-image: url("../../../assets/images/plans/car5.jpg");
+    transform: rotateY(320deg) translateZ(430px); }
+  
+  
+  
+  @keyframes rotate360 {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(-360deg);
+    }
+  }
+  .heading{
+      text-align: center;
+      color:rgb(55, 76, 232);
+      font-weight: bold;
+      border-bottom: 3px solid red;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  /* grid-example.component.scss */
+  .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+      grid-gap: 16px; /* Adjust the gap as needed */
+      margin: 20px;
+    }
+    
+    .grid-item {
+      position: relative;
+      overflow: hidden;
+      // background-color: #3498db;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .grid-item img {
+      width: 100%;
+      height: 50vh;
+      object-fit: cover;
+      object-position: center center;
+      border-radius: 50px;
+    }
+    
+    .grid-item img:hover{
+      transform: translateY(-20px);
+    }

@@ -1,84 +1,167 @@
-// * {
-//     box-sizing: border-box;
-//   }
-  
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-  
-    overflow: hidden;
-  }
-  
-  /* Float four columns side by side */
-  .column {
-    float: left;
-    width: 25%;
-    padding: 0 10px;
-    
-  }
-  .column-1{
-    float: left;
-    width: 35%;
-    padding: 0 10px;
-    margin-top: 4%;
-
-  }
-  
-  /* Remove extra left and right margins, due to padding */
-  .row {
-display: flex;
-justify-content: center;
-height: 90vh;
-padding-top: 9%;
+h1 {
+  text-align: center;
+  background: #CFE7fA;
+  background: linear-gradient(to right, #CFE7fA 0%, #6393C1 41%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;  
+  font-size: 2rem;
+  border-bottom: 5px solid rgb(10, 155, 212);
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 15px;
+  margin-top: 3%;
 }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
+.main {
+  display: flex;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-evenly;
+  margin-top: 1%;
+  .left {
+    padding: 4%;
+    width: 49%;
+    .card {
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16),
+        0px 3px 6px rgba(0, 0, 0, 0.23);
+      padding: 5% 0;
+      border-radius: 5px;
+      .img {
+        img {
+          width: 74px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          border-radius: 50%;
+          padding: 7px !important;
+          border-top: 8px solid #1d79af !important;
+          border-right: 8px solid #106a6d !important;
+        }
+      }
+      .bio {
+        margin-top: -3% !important;
+        padding: 4% 5%;
+        h2 {
+          text-align: center;
+          color: darkblue;
+          border-bottom: 2px solid darkblue;
+          padding-bottom: 16px;
+          margin-bottom: 10px;
+        }
+        h3 {
+          color: darkblue;
+        }
+        span {
+          font-weight: 200 !important;
+        }
+        .center {
+          display: flex;
+          justify-content: space-around;
+          .name,
+          .countryage {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+        }
+        .numemail {
+          display: flex;
+          // flex-direction: column;
+          // text-align: center;
+          justify-content: space-around;
+        }
+      }
+      .btns {
+        display: flex;
+        justify-content: space-evenly;
+        button {
+          border: none;
+          border-radius: 5px;
+          padding: 15px;
+          color: white;
+          font-weight: 400;
+          font-size: 0.9rem;
+          &:hover {
+            cursor: pointer !important;
+          }
+        }
+        .update {
+          background-color: blue;
+          &:hover {
+            background-color: rgb(47, 47, 246);
+          }
+        }
+        .reset {
+          background-color: green;
+          &:hover {
+            background-color: rgb(10, 181, 10);
+          }
+        }
+        .button {
+          width: 25px;
+          text-decoration: none;
+          font-family: "Inter";
+          display: inline-block;
+          padding: 0.7rem 1rem;
+          border-radius: 0.375rem;
+          font-weight: 500;
+          text-align: center;
+          transition-duration: 0.3s;
+          transition-property: all;
+          transition-timing-function: ease;
+        }
+        .button.ghost {
+          color: red;
+        }
+
+        .button.ghost:hover {
+          cursor: pointer;
+          background: red;
+          color: #fff;
+        }
+      }
+    }
   }
-  
-  /* Responsive columns */
-  @media screen and (max-width: 600px) {
-    .column {
+}
+.right {
+  padding: 4%;
+  width: 49%;
+  img {
+    width: 30vw;
+  }
+}
+
+/* For extremely small screen devices (595px and below) */
+@media only screen and (max-width: 595px) {
+  .main {
+    .left {
       width: 100%;
-      display: block;
-      margin-bottom: 20px;
+    }
+    .right {
+      display: none;
     }
   }
-  
-  /* Style the counter cards */
-  .card {
-    margin:5%;
-    box-shadow: 0 20px 22px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
-    text-align: center;
-    background-color: #f1f1f1;
-    img{
-        width: 100%;
-    }
-  }
-  h3{
-    font-size: large;
-    font-weight: 500;
-    span{
-        font-weight: 200;
-    }
-  }
-  h1{
-    font-size: large;
-    font-weight: bold;
-  }
+}
 
-  .card-second {
+/* Small screen devices (595px and above) */
+@media only screen and (min-width: 595px) {
+  .right {
+    display: none;
+  }
+}
 
-    box-shadow: 0 20px 22px 0 rgba(0, 0, 0, 0.2);
-    padding: 30px;
-    text-align: start;
-    background-color: #f1f1f1;
-    // margin-top: 4%;
+/* Medium screen devices (768px and above) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Big screen devices (889px and above) */
+@media only screen and (min-width: 889px) {
+}
+
+/* Extra big screen devices (1200px and above) */
+@media only screen and (min-width: 1000px) {
+  .right {
+    display: block;
   }
-  .center-{
-    display: flex;
-    justify-content: center;
-  }
+}

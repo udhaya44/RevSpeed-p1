@@ -141,4 +141,34 @@ export class AuthService  {
   updateUserProfile(id:any,User :any){
     return this.http.put(`http://localhost:8081/user/updateUserDetails/${id}`,User);
   }
+
+  getUserAllPlansDetaiils(id:any){
+    this.http.get(`http://localhost:8081/userservicelink/getUserServicesDetails/${id}`);
+  }
+
+  getAllBroadbandplans(){
+    return this.http.get(`http://localhost:8081/broadbandplans/getAllplans`);
+  }
+
+  purchesBroadbandPlan(data:any){
+    return this.http.post(`http://localhost:8081/userservicelink/linkuserservice`,data);
+
+  }
+
+deleteUserById(id:any){
+  return this.http.delete(`http://localhost:8081/user/deleteUser/${id}`);
+}
+
+// updatePasswordAfterLogin(id:String,password:String){
+//   console.log("indide passwordafter login ",id,password)
+//   return this.http.put(`http://localhost:8081/user/updatePasswordAfterLogin/${id}`, password);
+// }
+
+updatePasswordAfterLogin(id: string, password: string): Observable<string> {
+  const url = `http://localhost:8081/user/updatePasswordAfterLogin/${id}/${password}`;
+
+
+  return this.http.put<string>(url,'');
+}
+
 }

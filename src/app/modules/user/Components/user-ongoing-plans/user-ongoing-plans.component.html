@@ -1,28 +1,36 @@
 <div class="card-right">
   <img src="../../../../../assets/images/users/user-plan-img.jpg" />
-  <div class="user-plan-card">
-    <div class="card-header">
-      <h2>User Name</h2>
-    </div>
-    <div class="contend">
-      <div class="plan-details">
-        <h2>ID: 123456</h2>
-        <h2>Start Date: 2024-01-10</h2>
-        <h2>End Date: 2024-02-10</h2>
-      </div>
-      <div class="plan-details">
-        <h2>Amount</h2>
-      </div>
-    </div>
-    <div class="active-button">Active</div>
-    <div class="upgrade-message transparent-message">
-      <p>Update your plans now for exciting new features!</p>
-      <button class="transparent-button" routerLink="../../front-page/plans">Upgrad Plans</button>
-    </div>
-    <hr />
-
-    <div class="payment-status green">Plan Amount Paid</div>
+  <div class="user-plan-card" *ngIf="! planispresent"> 
+    <h1>You dont have any plans </h1>
+    <button routerLink="../../front-page/plans" >Buy plans </button>
   </div>
+  <div *ngIf="planispresent">
+    <div class="user-plan-card">
+      <div class="card-header">
+        <h2>{{oneUser.user?.firstName}} {{oneUser.user?.lastName}}</h2>
+      </div>
+      <div class="contend">
+        <div class="plan-details">
+          <h2>ID: {{oneUser.user?.userId}}</h2>
+         
+          <h2>Start Date: {{oneUser?.subscriptionStartDate}} </h2>
+          <h2>End Date: {{oneUser?.subscriptionEndDate}}</h2>
+        </div>
+        <div class="plan-details">
+          <h2>Amount :  {{oneUser.broadbandPlans?.price}}</h2>
+        </div>
+      </div>
+      <div class="active-button">Active</div>
+      <div class="upgrade-message transparent-message">
+        <p>Update your plans now for exciting new features!</p>
+        <button class="transparent-button" routerLink="../../front-page/plans">Upgrad Plans</button>
+      </div>
+      <hr />
+  
+      <div class="payment-status green">Plan Amount Paid</div>
+    </div>
+  </div>
+ 
 </div>
 
 <!-- earn and refer -->

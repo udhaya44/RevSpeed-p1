@@ -1,1 +1,16 @@
-<p>resetdialog works!</p>
+<div class="reset-password-container">
+    <h2>Reset Password</h2>
+    <form (submit)="resetPassword()">
+      <div class="form-group">
+        <label for="newPassword">New Password</label>
+        <input type="password" id="newPassword" name="newPassword" [(ngModel)]="newPassword" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" required>
+      </div>
+  
+      <button type="submit">Reset Password</button>
+    </form>
+  </div>
