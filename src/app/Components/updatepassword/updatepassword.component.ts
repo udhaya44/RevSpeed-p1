@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../Services/auth.service';
 import { log } from 'console';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class UpdatepasswordComponent implements OnInit {
   myForm:any;
-  constructor(private auth:AuthService,private router: Router){
+  constructor( private snackBar: MatSnackBar,private auth:AuthService,private router: Router){
     this.myForm=new FormGroup({
       newpassword:new FormControl('',Validators.required),
       confirmnewpassword:new FormControl('',Validators.required)
@@ -39,6 +40,7 @@ export class UpdatepasswordComponent implements OnInit {
         console.log(this.fpemail,this.formControls.newpassword);
         
         console.log("password update sucessfully");
+        this.openSnackBar();
         // this.router.navigate(["/login"])
         
       }else{
@@ -46,6 +48,13 @@ export class UpdatepasswordComponent implements OnInit {
           
       }
   
-    
   }
+
+  openSnackBar() {
+    this.snackBar.open('User profile Updatede ', 'close', {
+      duration: 3000,
+    });
+  }
+
+ 
 }

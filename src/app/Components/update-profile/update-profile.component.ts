@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AuthService } from '../Services/auth.service';
 import { ResetdialogComponent } from '../resetdialog/resetdialog.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-update-profile',
@@ -12,7 +13,7 @@ import { ResetdialogComponent } from '../resetdialog/resetdialog.component';
 export class UpdateProfileComponent {
   existingData: any;
 
-  constructor(private auth:AuthService,private dialogRef: MatDialogRef<ResetdialogComponent>){}
+  constructor(  private snackBar: MatSnackBar,private auth:AuthService,private dialogRef: MatDialogRef<ResetdialogComponent>){}
 
   myGroup = new FormGroup({
    
@@ -53,10 +54,12 @@ export class UpdateProfileComponent {
   onSubmit() {
     console.log(this.userId,"user id ");
     
-    // this.auth.updateUserProfile(this.userId,this.myGroup.value).subscribe((data)=>{
-    //   console.log(data);
+    this.auth.updateUserProfile(this.userId,this.myGroup.value).subscribe((data)=>{
+      console.log(data);
+      this.openSnackBar();
+
       
-    // })
+    })
     console.log(this.myGroup.value);
     
     // Add your update profile logic here
@@ -65,6 +68,11 @@ export class UpdateProfileComponent {
 
 }
 
+openSnackBar() {
+  this.snackBar.open('User profile Updatede ', 'close', {
+    duration: 3000,
+  });
+}
 
 
 
