@@ -42,14 +42,14 @@
     </ng-container>
 
     <!-- PlanStatus Column -->
-    <ng-container matColumnDef="userplanStatus">
+    <!-- <ng-container matColumnDef="userplanStatus">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Plan Status</mat-header-cell>
       <mat-cell *matCellDef="let user">
         <button mat-raised-button [ngClass]="{'mat-primary': user.userplanStatus === 'active' && user.userStatus !== 'inactive', 'mat-warn': user.userplanStatus === 'inactive' || user.userStatus === 'inactive'}">
           {{ user.userStatus === 'inactive' ? 'inactive' : user.userplanStatus }}
         </button>
       </mat-cell>
-    </ng-container>
+    </ng-container> -->
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

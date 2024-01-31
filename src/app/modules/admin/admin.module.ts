@@ -30,6 +30,7 @@ import { PlansPageComponent } from './Components/plans-page/plans-page.component
 import { BusinessUserPageComponent } from './Components/business-user-page/business-user-page.component';
 import { BroadbandUserPageComponent } from './Components/broadband-user-page/broadband-user-page.component';
 import { AddBusinessPlanComponent } from './Components/add-business-plan/add-business-plan.component';
+import { AddBusinessUserComponent } from './Components/add-business-user/add-business-user.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AddBusinessPlanComponent } from './Components/add-business-plan/add-bus
     BusinessUserPageComponent,
     BroadbandUserPageComponent,
     AddBusinessPlanComponent,
+    AddBusinessUserComponent,
    
   ],
   imports: [

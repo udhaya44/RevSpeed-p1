@@ -13,7 +13,7 @@ import { FormControl } from '@angular/forms';
 export class BroadbandUserPageComponent {
 
   filterControl = new FormControl();
-  displayedColumns: string[] = ['id', 'username', 'phone', 'email', 'userStatus', 'userplanStatus'];
+  displayedColumns: string[] = ['id', 'username', 'phone', 'email', 'userStatus'];
   dataSource: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
