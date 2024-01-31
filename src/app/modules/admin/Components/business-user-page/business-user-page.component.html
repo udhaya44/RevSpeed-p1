@@ -5,6 +5,10 @@
     <input matInput [formControl]="filterControl" (keyup)="applyFindFilter()" placeholder="Type to search">
 </mat-form-field>
 
+<div class="add-container">
+  <button mat-raised-button (click)="openDialog()" class="add-plan-button">Add User</button>
+</div>
+
 <mat-table [dataSource]="dataSource" matSort matSortActive="username" matSortDirection="asc">
 
     <!-- UserID Column -->
@@ -42,13 +46,22 @@
     </ng-container>
 
     <!-- PlanStatus Column -->
-    <ng-container matColumnDef="userplanStatus">
+    <!-- <ng-container matColumnDef="userplanStatus">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Plan Status</mat-header-cell>
       <mat-cell *matCellDef="let user">
         <button mat-raised-button [ngClass]="{'mat-primary': user.userplanStatus === 'active' && user.userStatus !== 'inactive', 'mat-warn': user.userplanStatus === 'inactive' || user.userStatus === 'inactive'}">
           {{ user.userStatus === 'inactive' ? 'inactive' : user.userplanStatus }}
         </button>
       </mat-cell>
+    </ng-container> -->
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let user" class="card-actions">
+        <button mat-icon-button color="primary" (click)="editPlan(user)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

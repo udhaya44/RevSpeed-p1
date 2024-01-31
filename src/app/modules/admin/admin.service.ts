@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, forkJoin, map } from 'rxjs';
+import { Observable, Subject, forkJoin, map } from 'rxjs';
 import { AuthService } from '../../Components/Services/auth.service';
 interface Plan {
   id?: number;
@@ -48,6 +48,7 @@ export interface BroadbandPlanPayload {
 export class AdminService {
 
   private apiUrl = 'http://localhost:8081/admin';
+  private userUpdateSubject = new Subject<string>();
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
@@ -183,4 +184,21 @@ export class AdminService {
     );
   }
  
+  addBusinessUser(formData: any){
+    console.log(formData);
+    return this.http.post('http://localhost:8081/admin/createBusinessUser', formData,{ headers: this.authService.createAuhtorizationHeader() || {} } );
+  }
+
+  updateBusinessUser(userId: number, formData: any){
+    console.log(formData);
+    return this.http.post(`http://localhost:8081/admin/updateBusinessUser/${userId}`, formData, { headers: this.authService.createAuhtorizationHeader() || {} });
+  }
+
+  notifyUserUpdate(status: string) {
+    this.userUpdateSubject.next(status);
+  }
+
+  // getUserUpdateObservable(): Observable<string> {
+  //   return this.userUpdateSubject.asObservable();
+  // }
 }
