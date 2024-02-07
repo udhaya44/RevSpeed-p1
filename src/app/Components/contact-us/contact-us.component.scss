@@ -268,26 +268,3 @@ h2 {
 .active h3 {
   font-weight: 700;
 }
-.faq-content {
-  width: 100%;
-  padding: 50px;
-
-  h2 {
-    padding-top: 80px;
-    padding-bottom: 30px;
-    font-weight: 800;
-    font-size: calc(2.7777777777777777vw + 18.666666666666668px);
-    text-align: center;
-  }
-
-  ::ng-deep .mat-expansion-indicator::after {
-    color: #0a0a0a;
-  }
-
-  mat-accordion {
-    mat-panel-title {
-      color: #0b0e12;
-      font-size: 1.125rem;
-    }
-  }
-}

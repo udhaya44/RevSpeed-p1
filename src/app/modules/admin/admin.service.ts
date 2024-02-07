@@ -71,6 +71,10 @@ export class AdminService {
     return forkJoin({ plans: plans$, businessPlans: businessPlans$ });
   }
 
+  //get plan by id
+  getPlanById(planId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}plans/${planId}`);
+  }
 
   getAllUsers():Observable<any[]> {
     const token = this.authService.getToken();
@@ -178,10 +182,6 @@ export class AdminService {
         return { plans, users };
       })
     );
-  }
-
-  getUserServiceLinkTableDetails(): Observable<any> {
-    return this.http.get<any[]>(`http://localhost:8081/admin/getUserServiceLikeTable`, { headers: this.authService.createAuhtorizationHeader() || {} });
   }
  
   addBusinessUser(formData: any){

@@ -15,7 +15,7 @@ export class BuyPlanComponent {
   loginuserId=localStorage.getItem("userId");
   // You may need to add necessary properties and methods here
 
-  constructor( private snackBar: MatSnackBar,public router:Router, public auth:AuthService, public dialogRef: MatDialogRef<BuyPlanComponent>) { }
+  constructor(public router:Router, public auth:AuthService, public dialogRef: MatDialogRef<BuyPlanComponent>,private snackBar: MatSnackBar) { }
 
 
   broadbandplandlinkdata = {
@@ -52,14 +52,18 @@ export class BuyPlanComponent {
     localStorage.getItem("token");
     if(localStorage.getItem("token")){
       this.auth.purchesBroadbandPlan(this.broadbandplandlinkdata).subscribe((data)=>{
-        console.log(data);   
+        console.log(data);
         this.openSnackBar();
+
       })
     }
     else{
       this.router.navigate(["/login"])
+      this.openSnackBarNotLogin();
 
     }
+
+    
 
     
    
@@ -74,6 +78,15 @@ export class BuyPlanComponent {
     });
   }
 
+  openSnackBarNotLogin() {
+    this.snackBar.open('Your are not login', 'Please Login', {
+      duration: 3000,
+    });
+  }
 
 
 }
+function openSnackBar() {
+  throw new Error('Function not implemented.');
+}
+

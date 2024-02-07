@@ -10,6 +10,7 @@ import { log } from 'util';
 export class HomePageComponent {
 
   selectedLocType: string = 'home'; 
+  selectedTabIndex: number = 0;
 
   reviews: any[];
   activeReviewIndex: number = 0;

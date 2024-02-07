@@ -40,7 +40,7 @@ export class UpdatepasswordComponent implements OnInit {
         console.log(this.fpemail,this.formControls.newpassword);
         
         console.log("password update sucessfully");
-        this.openSnackBar();
+        // this.openSnackBar();
         // this.router.navigate(["/login"])
         
       }else{

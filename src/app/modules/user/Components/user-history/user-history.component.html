@@ -1,0 +1,55 @@
+<div class="history-container">
+    <div class="headerContainer">
+        <h1 class="header">Subscription Tracking</h1>
+    </div>
+    <mat-stepper orientation="vertical">
+      <ng-container *ngFor="let h of hist; let i = index">
+        <mat-step>
+          <ng-template matStepLabel>{{ 'Step ' + (i + 1) }}</ng-template>
+          <ng-template matStepContent>
+            <div class="mainContent">
+                <div>
+                  <mat-card-title class="a">{{ h.subscriptionStartDate }}</mat-card-title><br />
+                  <mat-card-subtitle class="b">Subscribed Date</mat-card-subtitle><br /><br />
+                </div>
+    
+                <div>
+                  <mat-card-title class="a">{{ h.subscriptionEndDate }}</mat-card-title><br />
+                  <mat-card-subtitle class="b">Expiry Date</mat-card-subtitle><br /><br />
+                </div>
+
+                
+                     <div>
+                      <mat-card-title class="a">{{ h.planshow.service.serviceName}}</mat-card-title><br />
+                      <mat-card-subtitle class="b">Service Type</mat-card-subtitle><br /><br />
+                    </div>
+        
+                    <div>
+                      <mat-card-title class="a">{{h.planshow.planName }}</mat-card-title><br />
+                      <mat-card-subtitle class="b">Plan Name</mat-card-subtitle><br /><br />
+                    </div>
+
+                    <div>
+                        <mat-card-title class="a">{{h.planshow.validity }}</mat-card-title><br />
+                        <mat-card-subtitle class="b">Validity</mat-card-subtitle><br /><br />
+                    </div>
+
+                    <div>
+                        <mat-card-title class="a">{{h.planshow.dataLimit }}</mat-card-title><br />
+                        <mat-card-subtitle class="b">Data Limit</mat-card-subtitle><br /><br />
+                      </div>
+
+                      <div>
+                        <mat-card-title class="a">{{h.planshow.price }}</mat-card-title><br />
+                        <mat-card-subtitle class="b">Price</mat-card-subtitle><br /><br />
+                      </div> 
+    
+              </div>
+            <button mat-button matStepperPrevious *ngIf="i !== 0">Back</button>
+            <button mat-button matStepperNext *ngIf="i !== hist.length - 1">Next</button>
+          </ng-template>
+        </mat-step>
+      </ng-container>
+    </mat-stepper>
+  </div> 
+
