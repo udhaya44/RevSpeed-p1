@@ -48,7 +48,7 @@ jobs:
       - name: Build Docker Image
         run: |
          PROJECT_ID=$(echo "$PROJECT_ID" | tr -d '\n')
-         docker build --tag "gcr.io/$PROJECT_ID/$IMAGE:$TAG" .
+         docker build --tag "gcr.io/$PROJECT_ID/$IMAGE:0.0.1" .
 
       - name: Push Docker Image to GCR
         run: |
