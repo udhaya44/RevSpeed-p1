@@ -52,6 +52,7 @@ import { DeletedialogComponent } from './Components/deletedialog/deletedialog.co
 import { ResetdialogComponent } from './Components/resetdialog/resetdialog.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BuyBusinessplanComponent } from './Components/buy-businessplan/buy-businessplan.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -109,7 +110,8 @@ import { BuyBusinessplanComponent } from './Components/buy-businessplan/buy-busi
     MatNativeDateModule,
     MatSortModule,
     MatCardModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatExpansionModule
  
     
 

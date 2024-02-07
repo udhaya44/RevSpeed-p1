@@ -43,5 +43,5 @@ export class ContactUsComponent {
       answer:'Yes, you can move your internet service to Brightspeed from another provider. Keep in mind that switching services may result in early termination fees from your previous provider. If you’d like to talk it through with a support agent, call 1-855-889-0307 '
     }
   ];
-
+  panelOpenState = false;
 }
