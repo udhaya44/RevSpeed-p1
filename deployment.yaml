@@ -1,34 +1,40 @@
-apiVersion: apps/v1 # Kubernetes API version
-kind: Deployment  # Kubernetes resource kind we are creating
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: revspeed-angular-gke
+  labels:
+    app: revspeed-angular-gke
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: angular
-  replicas: 1 # Number of replicas that will be created for this deployment
+        app: revspeed-angular-gke
   template:
     metadata:
       labels:
-        app: angular
+        app: revspeed-angular-gke
     spec:
       containers:
-      - name: angular
-        image: revspeed-angular-gke-image:0.0.1 # Image that will be used to containers in the cluster
-        ports:
-        - containerPort: 80 # The port that the container is running on in the cluster
+        - name: revspeed-angular-gke
+          image: gcr.io/decisive-talon-412706/revspeed-angular-gke-image:0.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 4200
+      imagePullSecrets:
+        - name: my-image-pull-secret
 ---
-
-kind: Service  # Kubernetes API version
-apiVersion: v1 # Kubernetes resource kind we are creating
+apiVersion: v1
+kind: Service
 metadata:
-  name: angular-service
+  labels:
+    app: revspeed-angular-gke
+  name: revspeed-angular-gke
 spec:
-  selector:
-    app: angular
   ports:
-  - protocol: TCP
-    port: 80   # The port that the service is running on in the cluster
-    targetPort: 80   # The port exposed by the service
-    nodePort: 31000
-  type: NodePort     # type of the service.
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+      nodePort: 31000
+  selector:
+    app: revspeed-angular-gke
+  type: NodePort
