@@ -1,86 +1,71 @@
 <div>
-  <div>
+    <div>
     <div class="rs-headline">REVSPEED SUPPORT</div>
-    <h1 class="rs-headline-h1">
-      Contact RevSpeed
-      <br />
-      Customer Service
-    </h1>
-  </div>
-  <p class="rs-headline-p">
-    Require assistance in placing an order for RevSpeed services or handling
-    your account?<br />
-    Reach out to one of our specialists today.
-  </p>
+    <h1 class="rs-headline-h1">Contact RevSpeed
+        <br>
+        Customer Service</h1>
+    </div>
+    <p class="rs-headline-p">Require assistance in placing an order for RevSpeed services or handling your account?<br>
+        Reach out to one of our specialists today.
+    </p>
 </div>
 <div class="main-container">
-  <div class="contact-container">
-    <div class="contact-box">
-      <h3>Call Support</h3>
-      <p>
-        Speak to an expert who can help troubleshoot any service issues you may
-        have.
-      </p>
-      <a href="tel:8339490036">833.949.0036</a>
+    <div class="contact-container">
+        <div class="contact-box">
+            <h3>Call Support</h3>
+            <p>Speak to an expert who can help troubleshoot any service issues you may have.</p>
+            <a href="tel:8339490036">833.949.0036</a>
+        </div>
+    
+        <div class="contact-box">
+            <h3>Order New Service</h3>
+            <p>Get help ordering RevSpeed services.</p>
+            <a href="tel:8558609068">855.860.9068</a>
+        </div>
     </div>
-
-    <div class="contact-box">
-      <h3>Order New Service</h3>
-      <p>Get help ordering RevSpeed services.</p>
-      <a href="tel:8558609068">855.860.9068</a>
-    </div>
-  </div>
 </div>
 <div class="revspeed-container">
-  <h2>The RevSpeed Customer Experience</h2>
-  <div class="revspeed-grid">
-    <div class="revspeed-box">
-      <h4>Expert Assistance</h4>
-      <p>
-        Rely on our knowledgeable support team to assist with any RevSpeed
-        service issues.
-      </p>
+    <h2>The RevSpeed Customer Experience</h2>
+    <div class="revspeed-grid">
+        <div class="revspeed-box">
+            <h4>Expert Assistance</h4>
+            <p>Rely on our knowledgeable support team to assist with any RevSpeed service issues.</p>
+        </div>
+        <div class="revspeed-box">
+            <h4>Dependable Connectivity</h4>
+            <p>Enjoy a consistent and reliable WiFi experience, with faster speeds in the upcoming RevSpeed fiber future.</p>
+        </div>
+        <div class="revspeed-box">
+            <h4>Straightforward Processes</h4>
+            <p>Experience an easy and straightforward buying process, clear billing, and no unexpected cancellation fees.</p>
+        </div>
+        <div class="revspeed-box">
+            <h4>Affordability</h4>
+            <p>Experience budget-friendly RevSpeed services without compromising on quality. We offer competitive pricing and flexible plans to suit your financial needs.</p>
+        </div>
     </div>
-    <div class="revspeed-box">
-      <h4>Dependable Connectivity</h4>
-      <p>
-        Enjoy a consistent and reliable WiFi experience, with faster speeds in
-        the upcoming RevSpeed fiber future.
-      </p>
-    </div>
-    <div class="revspeed-box">
-      <h4>Straightforward Processes</h4>
-      <p>
-        Experience an easy and straightforward buying process, clear billing,
-        and no unexpected cancellation fees.
-      </p>
-    </div>
-    <div class="revspeed-box">
-      <h4>Affordability</h4>
-      <p>
-        Experience budget-friendly RevSpeed services without compromising on
-        quality. We offer competitive pricing and flexible plans to suit your
-        financial needs.
-      </p>
+</div>
+
+
+<!-- FAQs section starts-->
+<div class="faq-headline">
+<h2 class="faq-headline-h2">Frequently Asked Questions</h2>
+</div>
+
+
+<section class="faq-container">
+<div class="wrapper">
+<div class="questions__accordions">
+  <div class="question-answer__accordion" *ngFor="let faq of faqs; let i = index">
+    <div class="question" (click)="toggleAccordion(i)" [class.active]="i === activeIndex">
+
+      <h3 class="title__question">{{ faq.question }}</h3>
+      <img src="../../../assets/images/business-broadband/icon-arrow-down.svg">
+    </div>        
+    <div class="answer" [ngClass]="{'active': i === activeIndex}">
+      {{ faq.answer }}
     </div>
   </div>
 </div>
-
-<!-- FAQs section starts-->
-<div class="faq-content">
-  <h2 class="faq-headline-h2">Frequently Asked Questions</h2>
-  <mat-accordion>
-    <mat-expansion-panel
-      *ngFor="let faq of faqs"
-      (opened)="panelOpenState = true"
-      (closed)="panelOpenState = false"
-    >
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          {{ faq.question }}
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <p>{{ faq.answer }}</p>
-    </mat-expansion-panel>
-  </mat-accordion>
 </div>
+</section>

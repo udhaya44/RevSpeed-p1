@@ -47,11 +47,10 @@ export class LoginComponent implements OnInit {
 
           console.log( "is authenticated",this.auth.isAuthenticatedUser());
           if (this.auth.isAuthenticatedUser()) {
-            this.invalidCredentials = false; // Reset invalidCredentials if login is successful
+            // this.invalidCredentials = false; // Reset invalidCredentials if login is successful
             this.getUserDetails();
           } else {
-            // Show error message for invalid credentials
-            this.invalidCredentials = true;
+            // this.invalidCredentials = true;
           }
           
           // this.router.navigate(['/user']);

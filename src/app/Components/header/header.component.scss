@@ -8,15 +8,23 @@
   .nav{
     height: 10vh;
     padding: 15px;
+    
+  }
+
+  .navbar{
+    background-color: #cccccc;
+    
   }
 
   .btn:hover{
-    background-color:rgb(238, 238, 238);
-    color:rgb(50, 15, 15);
+    border-bottom: 2px solid #006fff;
+    color:#006fff ;
+    border-radius: 0;
     transition: 0.1s ease-in-out;
   }
   .nav-link{
-    color:white;
+    color:rgb(22, 21, 21);
+    margin-right: 30px
   }
   .nav1{
 

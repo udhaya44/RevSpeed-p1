@@ -7,6 +7,7 @@ import { Observable, catchError, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService  {
+  [x: string]: any;
 
   constructor(private http:HttpClient,private rout:Router) { }
 
@@ -143,7 +144,7 @@ export class AuthService  {
   }
 
   getUserAllPlansDetaiils(id:any){
-    this.http.get(`http://localhost:8081/userservicelink/getUserServicesDetails/${id}`);
+    return this.http.get(`http://localhost:8081/userservicelink/getUserServicesDetails/${id}`);
   }
 
   getAllBroadbandplans(){

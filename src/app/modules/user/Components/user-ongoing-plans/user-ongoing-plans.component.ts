@@ -12,13 +12,10 @@ export class UserOngoingPlansComponent implements OnInit {
   oneUser:any;
   constructor(private dashService:DashboardService){}
   id= localStorage.getItem("userId");
-  todayDate: Date | undefined;
   ngOnInit(): void {
     this.dashService.getUserAllPlansDetails(this.id).subscribe(data=>{
       this.UserPlansData=data;
-      console.log(this.UserPlansData[0].subscriptionStartDate);
-      this.todayDate = new Date();
-      if(this.UserPlansData[0].subscriptionStartDate === this.todayDate )
+      console.log(this.UserPlansData[0]);
        this.oneUser=this.UserPlansData[0];
        if(this.UserPlansData[0]){
          this.planispresent=true;
