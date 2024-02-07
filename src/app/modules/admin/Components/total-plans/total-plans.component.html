@@ -1,34 +1,46 @@
 
-<!-- Add button -->
-<button mat-raised-button (click)="openDialog()" >Add Plan </button> 
+  <div class="search-container">
+    <mat-form-field>
+      <mat-label>Search</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Enter your search term">
+    </mat-form-field>
+  </div>
 
-<mat-card class="plan-conatiner" *ngFor="let card of obs | async">
-  <mat-card-header>
-    <mat-card-title>{{ card.title }}</mat-card-title>
-    <mat-card-subtitle>{{ card.subtitle }}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <div class="card-body">
-      <div class="card-row">
-        <div class="card-title">{{ card.plan.planName }}</div>
-        <div class="card-property">Data Limit: <span class="card-value">{{ card.plan.datalimit }}</span></div>
-        <div class="card-property">Speed: <span class="card-value">{{ card.plan.bandWidth }}</span></div>
-        <div class="card-property">Validity: <span class="card-value">{{ card.plan.validity }}</span></div>
-        <div class="card-property">Price: <span class="card-value">{{ card.plan.price }}</span></div>
-      </div>
-      <div *ngIf="card.plan.otts" class="card-row">
-        <h6 class="card-subtitle">OTTs:</h6>
-        <div class="ott-buttons">
-          <button *ngIf="card.plan.otts.AmazonPrime">Amazon Prime</button>
-          <button *ngIf="card.plan.otts.Hotstar">Hotstar</button>
-          <button *ngIf="card.plan.otts.Netflix">Netflix</button>
-          <button *ngIf="card.plan.otts.Zee5">Zee5</button>
-          <button *ngIf="card.plan.otts.aha">aha</button>
-        </div>
-      </div>
-    </div>
-  </mat-card-content>
-</mat-card>
-<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator> 
+<!-- table data -->
+<table mat-table [dataSource]="dataSource" matSort>
 
+  <!-- <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Plan ID</th>
+    <td mat-cell *matCellDef="let plan">{{ plan.id }}</td>
+  </ng-container> -->
 
+  <ng-container matColumnDef="planName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Plan Name</th>
+    <td mat-cell *matCellDef="let plan">{{ plan.planName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="data_limit">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Data Limit</th>
+    <td mat-cell *matCellDef="let plan">{{ plan.dataLimit || plan.data_limit }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="speed">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Speed</th>
+    <td mat-cell *matCellDef="let plan">{{ plan.speed }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="validity">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Validity</th>
+    <td mat-cell *matCellDef="let plan">{{ plan.validity }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+    <td mat-cell *matCellDef="let plan">{{ plan.price }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>

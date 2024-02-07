@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { SuccessPopupComponent } from '../../../../Components/success-popup/success-popup.component';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from '../../admin.service';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-plan-admin',
@@ -25,16 +25,29 @@ export class AddPlanAdminComponent {
     private adminservice: AdminService,
     private dialogRef: MatDialogRef<AddPlanAdminComponent>,
     private dialog: MatDialog,
-    private formbuilder:FormBuilder
+    private formbuilder:FormBuilder,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.formData = new FormGroup({
       planName: new FormControl('', [Validators.required]),
-      dataLimit: new FormControl('', [Validators.required]),
+      datalimit: new FormControl('', [Validators.required]),
       bandWidth: new FormControl('', [Validators.required]),
       validity: new FormControl('', [Validators.required]),
       price: new FormControl('', [Validators.required]),
       otts: this.otts,
     });
+
+    if (data && data.plan) {
+      // If editing, populate the form with plan details
+      this.formData.patchValue({
+        planName: data.plan.planName,
+        datalimit: data.plan.dataLimit,
+        bandWidth: data.plan.speed,
+        validity: data.plan.validity,
+        price: data.plan.price,
+        otts: data.plan.otts,
+      });
+    }
   }
   
   otts = this.formbuilder.group({
@@ -50,8 +63,9 @@ export class AddPlanAdminComponent {
   }
 
   submitForm() {
+    console.log(this.formData);
     if (this.formData.valid) {
-      this.adminservice.submitForm(this.formData.value).subscribe(
+      this.adminservice.submitbroadbandForm(this.formData.value).subscribe(
         (response: any) => {
           console.log('Form data submitted successfully:', response);
           console.log(response);

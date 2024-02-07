@@ -14,6 +14,9 @@ import { authGuard } from './guards/auth.guard';
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { adminGuardGuard } from './guards/admin-guard.guard';
 import { userGuardGuard } from './guards/user-guard.guard';
+import { UserProfileComponent } from './Components/user-profile/user-profile.component';
+import { UpdatepasswordComponent } from './Components/updatepassword/updatepassword.component';
+import { PlansComponent } from './Components/plans/plans.component';
 
 const routes: Routes = [
   {
@@ -27,15 +30,18 @@ const routes: Routes = [
       { path: 'contact-us', component: ContactUsComponent },
       { path: 'fibernet-broadband', component: FibernetBroadbandComponent },
       { path: 'business-broadband', component: BusinessBroadbandComponent },
+      {path: 'plans',component:PlansComponent},
     ],
   },
   { path: 'login', component: LoginComponent },
   { path: 'registeration', component: RegistrationComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: '', redirectTo: '/front-page', pathMatch: 'full' },
+  { path: 'update-password' ,component:UpdatepasswordComponent},
+  // {path:'user-profile', component:UserProfileComponent},
   {
     path: 'admin',
-    // canActivate: [adminGuardGuard],
+    canActivate: [adminGuardGuard],
     // data: { expectedRole: 'admin' },
     loadChildren: () =>
       import('./modules/admin/admin.module').then((m) => m.AdminModule),

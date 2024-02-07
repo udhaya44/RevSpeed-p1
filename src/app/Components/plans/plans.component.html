@@ -1,0 +1,233 @@
+<h1 class="contain_of_button">All plans</h1>
+
+<div class="contain_of_button">
+  <button (click)="getBroadBandPlans() " [class.clicked]="broadbandplanClicked">Broadband Plans</button>
+  <button (click)="getBusinessPlans()" [class.clicked]="busoinessplanClicked">Business plans</button>
+
+</div>
+ 
+
+<div class="col-sm">
+<mat-form-field class="filter">
+  <mat-label>Search</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex.Plan name,etc" #input>
+</mat-form-field> 
+
+<div *ngIf="broadbanddata">
+  <h1>BroadBand Plans</h1>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="planName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> planName </th>
+        <td mat-cell *matCellDef="let row"> {{row.planName}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="planType">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> planType </th>
+        <td mat-cell *matCellDef="let row"> {{row.planType}} </td>
+      </ng-container>
+  
+     
+      <ng-container matColumnDef="datalimit">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> datalimit </th>
+        <td mat-cell *matCellDef="let row"> {{row.dataLimit}} </td>
+      </ng-container>
+  
+   
+      <ng-container matColumnDef="bandWidth">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Speed </th>
+        <td mat-cell *matCellDef="let row"> {{row.speed}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="validity">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Validity </th>
+        <td mat-cell *matCellDef="let row"> {{row.validity}} </td>
+      </ng-container>
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Price  </th>
+        <td mat-cell *matCellDef="let row"> {{row.price}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="ott">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>OTTS</th>
+        <td mat-cell *matCellDef="let row">
+          <ng-container *ngIf="row.ott && row.ott.length > 0">
+            <div *ngFor="let ott of row.ott">
+              {{ ott.ottName }}
+            </div>
+          </ng-container>
+          <div *ngIf="!row.ott || row.ott.length === 0">No OTT</div>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="action" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>action</th>
+        <td mat-cell *matCellDef="let row"> 
+      
+          <button mat-raised-button (click)="openDialog('0ms',row.id)" color="primary">Buy Now</button>
+       </td>
+      </ng-container>
+     
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="5">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" showFirstLastButtons></mat-paginator>
+  </div>
+
+</div>
+
+<div *ngIf="businessdata">
+  <h1>Business Plans</h1>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="businessplandata" matSort>
+  
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="planName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> planName </th>
+        <td mat-cell *matCellDef="let row"> {{row.planName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="planType">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> planType </th>
+        <td mat-cell *matCellDef="let row"> {{ row.planType | lowercase }} </td>
+      </ng-container>
+  
+  
+     
+      <ng-container matColumnDef="datalimit">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> datalimit </th>
+        <td mat-cell *matCellDef="let row"> {{row.dataLimit}} </td>
+      </ng-container>
+  
+   
+      <ng-container matColumnDef="bandWidth">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Speed </th>
+        <td mat-cell *matCellDef="let row"> {{row.speed}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="validity">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Validity </th>
+        <td mat-cell *matCellDef="let row"> {{row.validity}} </td>
+      </ng-container>
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Price  </th>
+        <td mat-cell *matCellDef="let row"> {{row.price}} </td>
+      </ng-container>
+  
+      <div *ngIf="businessdata">
+        <ng-container matColumnDef="ott">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>OTTS</th>
+          <td mat-cell *matCellDef="let row">
+            <ng-container *ngIf="row.ott && row.ott.length > 0">
+              <div *ngFor="let ott of row.ott">
+                <!-- {{ ott.ottName }} -->
+                <h6>no ott</h6>
+              </div>
+            </ng-container>
+            <div *ngIf="!row.ott || row.ott.length === 0">No OTT</div>
+          </td>
+        </ng-container>
+      </div>
+      
+  
+      <ng-container matColumnDef="action" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>action</th>
+        <td mat-cell *matCellDef="let row"> 
+      
+          <button mat-raised-button (click)="openDialog1('0ms',row.id,row.planType)" color="primary">Buy Now</button>
+       </td>
+      </ng-container>
+     
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="5">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" showFirstLastButtons></mat-paginator>
+  </div>
+</div>
+
+
+
+
+</div>
+
+
+
+<!-- top rotating carousel starts -->
+
+<div class="rotate">
+  <h1 class="contain_of_button">Features</h1>
+  <div class="top">
+    <div class="container">
+      <div class="carousel">
+        <div class="carousel__face">
+          <div><span></span></div>
+        </div>
+        <div class="carousel__face"><span></span></div>
+        <div class="carousel__face"><span></span></div>
+        <div class="carousel__face"><span></span></div>
+        <div class="carousel__face"><span></span></div>
+        <div class="carousel__face"><span></span></div>
+        <div class="carousel__face"><span></span></div>
+        <div class="carousel__face"><span></span></div>
+        <div class="carousel__face"><span></span></div>
+      </div>
+    </div>
+    </div>
+</div>
+
+  <!-- top rotating carousel ends -->
+
+<!-- grid-example.component.html -->
+
+<h1>LATEST RELEASE</h1>
+<div class="grid-container ">
+  <div class="grid-item">
+    <h1>ENTERTAINMENT PACK</h1>
+    <img src="../../../assets/images/plans/plan1" alt="Image 1">
+  </div>
+  <div class="grid-item">
+    <h1>ZEE 5 PACK</h1>
+    <img src="../../../assets/images/plans/plan2" alt="Image 2">
+  </div>
+  <div class="grid-item">
+    <h1>HUNGAMA PACK</h1>
+    <img src="../../../assets/images/plans/plan3" alt="Image 3">
+  </div>
+  <div class="grid-item">
+    <h1>AHA PACK</h1>
+    <img src="../../../assets/images/plans/plan4" alt="Image 4">
+  </div>
+  <div class="grid-item">
+    <h1>NETFLIX PACK</h1>
+    <img src="../../../assets/images/plans/plan5" alt="Image 5">
+  </div>
+  <div class="grid-item">
+    <h1>HOTSTAR PACK</h1>
+    <img src="../../../assets/images/plans/plan6" alt="Image 6">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  

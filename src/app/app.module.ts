@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ViewChild } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,24 +18,44 @@ import { SpeedtestComponent } from './Components/speedtest/speedtest.component';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { RouterModule } from '@angular/router';
 import { authGuard } from './guards/auth.guard';
-import { DatePipe, JsonPipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { adminGuardGuard } from './guards/admin-guard.guard';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SuccessPopupComponent } from './Components/success-popup/success-popup.component';
 import { FormPopComponent } from './Components/form-pop/form-pop.component';
 import { AuthService } from './Components/Services/auth.service';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { UserProfileComponent } from './Components/user-profile/user-profile.component';
+import { UpdateProfileComponent } from './Components/update-profile/update-profile.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { VarifyOtpComponent } from './Components/varify-otp/varify-otp.component';
+import { UpdatepasswordComponent } from './Components/updatepassword/updatepassword.component';
+
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSortModule } from '@angular/material/sort';
+import { pipe } from 'rxjs';
+import { MatCardModule } from '@angular/material/card';
+import { PlansComponent } from './Components/plans/plans.component';
+import { BuyPlanComponent } from './Components/buy-plan/buy-plan.component';
+import { DeletedialogComponent } from './Components/deletedialog/deletedialog.component';
+import { ResetdialogComponent } from './Components/resetdialog/resetdialog.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BuyBusinessplanComponent } from './Components/buy-businessplan/buy-businessplan.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { MatStepperModule } from '@angular/material/stepper';
+
+
 
 @NgModule({
   declarations: [
@@ -55,7 +75,17 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     RegistrationComponent,
     SuccessPopupComponent,
     FormPopComponent,
+    UserProfileComponent,
+    UpdateProfileComponent,
+    VarifyOtpComponent,
+    UpdatepasswordComponent,
 
+    PlansComponent,
+    BuyPlanComponent,
+    DeletedialogComponent,
+    ResetdialogComponent,
+    BuyBusinessplanComponent,
+    
   
   ],
   imports: [
@@ -72,14 +102,34 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatIconModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatCheckboxModule,
-    JsonPipe,
+    MatMenuModule,
+    FormsModule,
     MatPaginatorModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    RouterModule,
+    MatTableModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatSortModule,
+    MatCardModule,
+    FontAwesomeModule,
+    MatTabsModule,
+    MatStepperModule,
+    
+
+
+ 
+    
+
+ 
  
   ],
   providers: [
     DatePipe,
     AuthService,
+   
     
   
     provideClientHydration(),

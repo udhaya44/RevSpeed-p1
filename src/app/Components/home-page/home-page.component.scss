@@ -1,4 +1,15 @@
-
+.header{
+  font-size: 24px;
+  margin-top: 3%;
+  text-align: center;
+  // font-size: 35px;
+  font-weight: 200;
+  border-bottom: 3px solid #006fff;
+  width: 25%;
+  padding-bottom: 11px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .section-title{
   display: flex;
   justify-content: center;
@@ -17,7 +28,7 @@
 .card {
     display: block;
     flex-direction: row;
-    border: 2px solid #ed3034;
+    border: 2px solid #006fff;
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
@@ -57,9 +68,19 @@
   
   .crad-diaplay{
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    justify-content:space-between;
+    flex-wrap: nowrap;
     
+  }
+  .plan-tab-container{
+    
+  }
+  .card-diaplay{
+    // width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    flex-wrap: nowrap;
   }
     .card-router-svg{
     height: 40px;
@@ -67,11 +88,11 @@
     // object-fit: contain;
   }
   .ott-div{
-    max-width: 3000;
+    max-width: 3000px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: end;
+    justify-content: flex-end;
     img{
       border-radius: 10%;
 
@@ -98,11 +119,11 @@
   }
 
   .left{
-    width: 30%;
+    width: 25%;
   }
 
   .right{
-    width: 60%;
+    width: 65%;
   }
 }
 
@@ -112,8 +133,9 @@
 
 .buy-now-button {
   position: absolute;
-  left: 200px; /* Adjust the distance from the left border */
+  left: 220px; /* Adjust the distance from the left border */
   bottom: 20px; /* Adjust the distance from the bottom */
+  background-color: #006fff !important;
 }
 
 @media screen and (max-width: 600px) {
@@ -138,6 +160,7 @@
   h2{
     color: red;
   }
+  margin-top: 15%;
 }
 
 .section-title {
@@ -236,17 +259,22 @@ body {
   height: 100vh;
 }
 
-.centered-section {
+.centered-section{
+  font-size: 30px;
+  font-weight: 400;
   text-align: center;
   padding: 4%;
+  .btn{
+    text-align: center;
+  }
 }
 
 .beautiful-button {
   display: inline-block;
   padding: 10px 20px;
   font-size: 1em;
-  color: #fff;
-  background-color: #000;
+  color: #f6fff7;
+  background-color: #006fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -254,7 +282,9 @@ body {
 }
 
 .beautiful-button:hover {
-  background-color: #333;
+  background-color:#f6fff7 ;
+  color: #006fff;
+  border: 2px solid #006fff ;
 }
 
 /* Add more styles as needed for buttons, links, etc. */
@@ -297,8 +327,8 @@ content: "";
 }
 
 .section-description {
-  font-size: 1.2em;
-  color: gray;
+  font-size: 1.9rem;
+  color: rgb(36, 29, 29);
   margin-bottom: 20px;
 }
 
@@ -307,7 +337,8 @@ content: "";
 }
 
 .ott-descp {
-  font-size: 1.1em;
+  font-size: 1.9rem;
+  color:rgb(36, 29, 29)
 }
 
 .ott-listings {
@@ -327,3 +358,74 @@ content: "";
   justify-content: center;
   align-items: center;
 }
+
+
+/// business and brodband palns 
+/// 
+.availability {
+  /* Add any specific styling for the section here */
+}
+
+.availability-container {
+  /* Add styling for the container here */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.block {
+  /* Add styling for the common block styles here */
+  margin-bottom: 20px;
+}
+
+.block-one {
+  /* Add specific styling for block-one here */
+}
+
+.text-white {
+  color: #ffffff; /* White text color */
+}
+
+.seperator {
+  /* Add styling for the separator here */
+}
+
+.red-bg {
+  background-color: #F78CA2; /* Red background color */
+}
+
+.block-two {
+  /* Add specific styling for block-two here */
+}
+
+.custom-form-radio {
+  /* Add styling for the radio buttons here */
+  display: flex;
+  justify-content: center;
+  margin: -1%;
+}
+
+.radio-input {
+  /* Add styling for the radio inputs here */
+  margin-right: 10px; /* Adjust spacing between radio buttons if needed */
+}
+
+.custom-radio {
+  /* Add styling for the custom radio design here */
+}
+
+.block-three {
+  /* Add specific styling for block-three here */
+}
+
+.btnWrap {
+  /* Add styling for the button wrapper here */
+}
+
+.black-btn {
+  /* Add styling for the black button here */
+  background-color: #000000; /* Black background color */
+  color: #ffffff; /* White text color */
+}
+
+/* Add any additional styles as needed */

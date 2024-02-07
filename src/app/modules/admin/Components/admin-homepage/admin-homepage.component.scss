@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ensure the container takes the full viewport height */
+    width: 100%;
+  }
+  
+  .header {
+    flex: 0 0 auto; /* Prevent the header from growing */
+  }
+  
+  .main-container {
+    display: flex;
+    flex: 1; /* Allow the main container to grow and take the remaining space */
+    width: 100%;
+      
+        
+    .side-nav {
+      width: 250px;
+      min-width: 230px;
+      min-height: calc(100vh - 70px);
+      background-color: #113c60;
+      color: #fff;
+      box-shadow: 5px 5px 5px #939393;
+      transition: width 0.3s ease; /* Add transition for smooth animation */
+
+      @media only screen and (max-width: 1300px) {
+          width: 100px;
+          min-width: 100px;
+      }
+
+      @media only screen and (max-width: 768px) {
+          width: 0; /* Collapse the side-nav for screens smaller than 768px */
+          min-width: 0;
+      }
+    }
+  
+    .main {
+      flex: 1; /* Allow the main content to grow and take the remaining space */
+      padding: 30px;
+    }
+  }

@@ -11,13 +11,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserOngoingPlansComponent } from './Components/user-ongoing-plans/user-ongoing-plans.component';
-
+import {MatMenuModule} from '@angular/material/menu';
+import { UserHistoryComponent } from './Components/user-history/user-history.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatStepperModule} from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
     UserDashboardComponent,
     UserHeaderComponent,
-    UserOngoingPlansComponent
+    UserOngoingPlansComponent,
+    UserHistoryComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +30,10 @@ import { UserOngoingPlansComponent } from './Components/user-ongoing-plans/user-
     MatIconModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule,MatButtonModule
+    HttpClientModule,MatButtonModule,
+    MatMenuModule,
+    MatCardModule,
+    MatStepperModule
   ]
 })
 export class UserModule { }

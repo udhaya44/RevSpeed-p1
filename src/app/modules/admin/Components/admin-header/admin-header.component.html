@@ -1,17 +1,21 @@
-<p>admin-header works!</p>
-<p>
-    <mat-toolbar color="primary">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>My App</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button routerLink="../login" mat-button>logout</button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-      </button>
-    </mat-toolbar>
-  </p>
+<div class="header">
+  <div class="logo">logo</div>
+  <div class="user">
+    <div class="user-name">Admin</div>
+    <div class="user-image" [matMenuTriggerFor]="menu">
+      <!-- User Image -->
+      <!-- <img
+        aria-label="Example icon-button with a menu"
+        alt="user-image"
+        src="" 
+      />-->
+      UR
+      <!-- Dropdown Menu -->
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="logOut()">
+          <span>Log Out</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+</div>

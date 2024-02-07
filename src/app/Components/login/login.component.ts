@@ -1,4 +1,4 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, EventEmitter, Injectable, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../Services/auth.service';
 import { Router } from '@angular/router';
@@ -12,6 +12,7 @@ import { authGuard } from '../../guards/auth.guard';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit {
+  invalidCredentials = false;
   constructor(private auth: AuthService, private router: Router) {}
   ngOnInit(): void {
     throw new Error('Method not implemented.');
@@ -45,12 +46,18 @@ export class LoginComponent implements OnInit {
           this.getUserDetails();
 
           console.log( "is authenticated",this.auth.isAuthenticatedUser());
-       
+          if (this.auth.isAuthenticatedUser()) {
+            // this.invalidCredentials = false; // Reset invalidCredentials if login is successful
+            this.getUserDetails();
+          } else {
+            // this.invalidCredentials = true;
+          }
           
           // this.router.navigate(['/user']);
         },
         (error) => {
           console.log(error);
+          this.invalidCredentials = true;
         }
       );
     } else {
@@ -80,16 +87,21 @@ export class LoginComponent implements OnInit {
     return this.userDetails && this.userDetails.role === 'user';
   }
 
+  @Output() 
+  emitEvent = new EventEmitter();
   userDetails:any;
   getUserDetails(){
     this.auth.getUserDetails().subscribe((response)=>{
       this.userDetails=response;
+      this.emitEvent.next(this.userDetails);
+      
 
+      localStorage.setItem("userId",this.userDetails.userId)
       
       localStorage.setItem("userRole",this.userDetails.role)
       if(this.userDetails.role==="ADMIN"){
         this.isAdmin();
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/admin/admin-homepage/dashboard']);
       }else{
        
       this.isUser();

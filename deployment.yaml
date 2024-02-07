@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: revspeed-angular-gke
+  labels:
+    app: revspeed-angular-gke
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        app: revspeed-angular-gke
+  template:
+    metadata:
+      labels:
+        app: revspeed-angular-gke
+    spec:
+      containers:
+        - name: revspeed-angular-gke
+          image: gcr.io/decisive-talon-412706/revspeed-angular-gke-image:0.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 4200
+      imagePullSecrets:
+        - name: my-image-pull-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: revspeed-angular-gke
+  name: revspeed-angular-gke
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+      nodePort: 31000
+  selector:
+    app: revspeed-angular-gke
+  type: NodePort

@@ -7,6 +7,7 @@ import { Observable, catchError, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService  {
+  [x: string]: any;
 
   constructor(private http:HttpClient,private rout:Router) { }
 
@@ -79,7 +80,7 @@ export class AuthService  {
     })
   }
 
-  private createAuhtorizationHeader() {
+  public createAuhtorizationHeader() {
     const jwtToken = localStorage.getItem('token');
     if (jwtToken) {
       console.log("JWT token found in session storage", jwtToken);
@@ -114,7 +115,65 @@ export class AuthService  {
   }
 
   // Email 
-  sendEmail(Email:any){
+  apiUrl="http://localhost:8081/email"
+  sendEmailForRegisteration(email:String):Observable<any>{
+    return this.http.post(`${this.apiUrl}/sendemail`, email);
 
   }
+
+  sendotp(email: string): Observable<any> {
+    console.log("ggggggggggggggg",email);
+    
+    return this.http.post(`http://localhost:8081/user/send-otp/${email}`,'');
+  }
+
+  // is email present
+  isEmailPresent(mail:any){
+    return this.http.get(`http://localhost:8081/user/isEmailPresent/${mail}`);
+  }
+
+  updatePassword(email:any,newpassword:any){
+    this.http.post("http://localhost:8081/email/updatePassword",email,newpassword)
+  }
+
+  getPlans(){return this.http.get("http://localhost:3000/plans")}
+
+
+  updateUserProfile(id:any,User :any){
+    return this.http.put(`http://localhost:8081/user/updateUserDetails/${id}`,User);
+  }
+
+  getUserAllPlansDetaiils(id:any){
+    return this.http.get(`http://localhost:8081/userservicelink/getUserServicesDetails/${id}`);
+  }
+
+  getAllBroadbandplans(){
+    return this.http.get(`http://localhost:8081/broadbandplans/getAllplans`);
+  }
+
+  purchesBroadbandPlan(data:any){
+    return this.http.post(`http://localhost:8081/userservicelink/linkuserservice`,data);
+
+  }
+
+  getAllBusinessPlans(){
+    return this.http.get(`http://localhost:8081/businessplans/getAllBusinessPlan`);
+  }
+
+deleteUserById(id:any){
+  return this.http.delete(`http://localhost:8081/user/deleteUser/${id}`);
+}
+
+// updatePasswordAfterLogin(id:String,password:String){
+//   console.log("indide passwordafter login ",id,password)
+//   return this.http.put(`http://localhost:8081/user/updatePasswordAfterLogin/${id}`, password);
+// }
+
+updatePasswordAfterLogin(id: string, password: string): Observable<string> {
+  const url = `http://localhost:8081/user/updatePasswordAfterLogin/${id}/${password}`;
+
+
+  return this.http.put<string>(url,'');
+}
+
 }

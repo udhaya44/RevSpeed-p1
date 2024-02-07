@@ -1,65 +1,97 @@
-<!-- <p>header works!</p> -->
-<!-- <p>
-    <mat-toolbar color="primary">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>My App</span>
-      <span class="example-spacer"></span>
-      <button routerLink="../front-page/fibernet-broadband" mat-button>FibernetBroadband</button>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button routerLink="../login" mat-button>login</button>
-      <button routerLink="../registeration" mat-button>Sing Up</button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-      </button>
-    </mat-toolbar>
-  </p> -->
-  <nav class="navbar navbar-expand-sm  h6 bg-dark sticky-top ">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="https://cdn.pixabay.com/photo/2017/09/07/10/25/logo-2724481_1280.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
-      </a>
-      <span class="navbar-text" style="color:white">RevSpeed</span>
-  
-      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse justify-content-end  " id="collapsibleNavbar" >
-      <ul class="navbar-nav nav-pills justify-content-end  ">
+<nav class="navbar navbar-expand-sm h6 sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img
+        src="https://cdn.pixabay.com/photo/2017/09/07/10/25/logo-2724481_1280.png"
+        alt="Avatar Logo"
+        style="width: 40px"
+        class="rounded-pill"
+      />
+    </a>
+    <span class="navbar-text" style="color: rgb(22, 21, 21)">RevSpeed</span>
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="collapsibleNavbar"
+    >
+      <ul class="navbar-nav nav-pills justify-content-end">
         <li class="nav-item">
-          <a class="nav-link btn" data-bs-toggle="pill" routerLink="../front-page">Home</a>
+          <a
+            class="nav-link btn"
+            data-bs-toggle="pill"
+            routerLink="../front-page"
+            >Home</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link btn" data-bs-toggle="pill" routerLink="../front-page/fibernet-broadband">FibernetBroadband</a>
+          <a
+            class="nav-link btn"
+            data-bs-toggle="pill"
+            routerLink="../front-page/fibernet-broadband"
+            >FibernetBroadband</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link btn"data-bs-toggle="pill" routerLink="../front-page/business-broadband">Busibess BroadBand</a>
+          <a
+            class="nav-link btn"
+            data-bs-toggle="pill"
+            routerLink="../front-page/business-broadband"
+            >Busibess BroadBand</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link btn"data-bs-toggle="pill"  routerLink="./contact-us">Contact Us</a>
+          <a
+            class="nav-link btn"
+            data-bs-toggle="pill"
+            routerLink="./contact-us"
+            >Contact Us</a
+          >
         </li>
-  
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle btn" routerLink="./about-us" role="button" data-bs-toggle="dropdown" >About us</a>
-          <!-- <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="./contact-us">font page</a></li>
-            <li><a class="dropdown-item" routerLink="">Another link</a></li>
-            <li><a class="dropdown-item" href="#">A third link</a></li>
-          </ul> -->
-        </li>
-      
+
         <li class="nav-item">
-          <a class="nav-link btn"data-bs-toggle="pill" routerLink="../login" >Login</a>
+          <a class="nav-link btn" routerLink="./about-us" role="button"
+            >About us</a
+          >
         </li>
-        <li class="nav-item">
-          <a class="nav-link btn"data-bs-toggle="pill" routerLink="../registeration">Register</a>
-        </li>
+
+        <div *ngIf="!isLogedIn" class="login-regis">
+          <li class="nav-item">
+            <a class="nav-link btn" data-bs-toggle="pill" routerLink="../login"
+              >Login</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link btn"
+              data-bs-toggle="pill"
+              routerLink="../registeration"
+              >Register</a
+            >
+          </li>
+        </div>
+        <div *ngIf="isLogedIn" class="login-div">
+          <img
+            [matMenuTriggerFor]="menu"
+            aria-label="Example icon-button with a menu"
+            alt=""
+            src="../../../../../assets/images/home-page/profilr-svg.jpg"
+            style=""
+          />
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <span routerLink="/user/user-profile"> Profile</span>
+            </button>
+            <button mat-menu-item>
+              <span routerLink="/user">DashBoard</span>
+            </button>
+            <button mat-menu-item>
+              <span (click)="logOut()" routerLink="/login">Log Out</span>
+            </button>
+          </mat-menu>
+        </div>
       </ul>
     </div>
-    
-    </div>
-  </nav>
+  </div>
+</nav>

@@ -1,0 +1,54 @@
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Adjust margin as needed */
+  }
+  
+  .card {
+    cursor: pointer;
+    padding: 30px; /* Increase padding for larger cards */
+    border: 2px solid #ccc; /* Increase border size */
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+    flex-grow: 1; /* Cards take equal space */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center text vertically */
+    margin-right: 30px;
+  
+    &.business {
+      background-color: #3498db; /* Blue color for business card */
+      color: #fff; /* White text on blue background */
+    }
+  
+    &.broadband {
+      background-color: #e74c3c; /* Red color for broadband card */
+      color: #fff; /* White text on red background */
+    }
+  
+    &:hover {
+      background-color: #f0f0f0; /* Change background color on hover */
+    }
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .add-container {
+    margin-right: 10px; /* Add space between the add button and search input */
+  }
+  
+  .add-plan-button {
+    margin-bottom: 20px;
+  }
+  
+  .search-container {
+    flex-grow: 1; /* Make the search input fill the remaining space */
+  }
+  
+  
+  
