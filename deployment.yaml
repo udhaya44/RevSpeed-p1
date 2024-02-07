@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: angular
-        image: revspeed-angular-gke-image:1.0 # Image that will be used to containers in the cluster
+        image: revspeed-angular-gke-image:0.0.1 # Image that will be used to containers in the cluster
         ports:
         - containerPort: 80 # The port that the container is running on in the cluster
 ---

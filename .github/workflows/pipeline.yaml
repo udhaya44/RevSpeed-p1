@@ -71,4 +71,4 @@ jobs:
           ./kustomize build . | kubectl apply -f -
           kubectl apply -f deployment.yaml
           kubectl rollout status deployment/$DEPLOYMENT_NAME
-          kubectl get services -o wide
+          kubectl get services -o wide
