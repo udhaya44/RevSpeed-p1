@@ -120,6 +120,7 @@ export class RegistrationComponent {
  
   
   onSubmit() {
+    
 
     console.log(this.myGroup.value);
     this.auth.registerNewUser(this.myGroup.value).subscribe((response) => {

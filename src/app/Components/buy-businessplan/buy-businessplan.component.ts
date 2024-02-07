@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../Services/auth.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { BuyPlanComponent } from '../buy-plan/buy-plan.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-buy-businessplan',
@@ -15,7 +16,7 @@ export class BuyBusinessplanComponent {
   loginuserId=localStorage.getItem("userId");
   // You may need to add necessary properties and methods here
 
-  constructor(public router:Router, public auth:AuthService, public dialogRef: MatDialogRef<BuyBusinessplanComponent>) { }
+  constructor(private snackBar: MatSnackBar,public router:Router, public auth:AuthService, public dialogRef: MatDialogRef<BuyBusinessplanComponent>) { }
 
 
   Businessplandlinkdata = {
@@ -54,6 +55,7 @@ export class BuyBusinessplanComponent {
     if(localStorage.getItem("token")){
       this.auth.purchesBroadbandPlan(this.Businessplandlinkdata).subscribe((data)=>{
         console.log(data);   
+        this.openSnackBar();
       })
     }
     else{
@@ -66,6 +68,12 @@ export class BuyBusinessplanComponent {
 
 
     this.closeDialog();
+  }
+
+  openSnackBar() {
+    this.snackBar.open('Registration success', 'close', {
+      duration: 3000,
+    });
   }
 
 
