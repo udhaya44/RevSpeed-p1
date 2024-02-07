@@ -1,1 +1,152 @@
-<p>speedtest works!</p>
+<div class="home-container">
+  <div class="hero-section">
+    <h1>Speed Test</h1>
+  </div>
+  <div class="row-1">
+    <div class="left-content-1">
+      <h2>About Network Speed</h2>
+      <p>
+        Network speed refers to the data transfer rate over a network
+        connection. It is typically measured in megabits per second (Mbps) or
+        gigabits per second (Gbps). Higher network speeds result in faster data
+        downloads and uploads, providing a smoother internet experience.
+      </p>
+
+      <h2>Internet Services</h2>
+      <p>
+        Internet services encompass a variety of offerings, including broadband,
+        DSL, fiber-optic, and satellite connections. Broadband services, like
+        cable and fiber-optic, are popular for their high-speed capabilities,
+        enabling users to stream videos, play online games, and engage in other
+        bandwidth-intensive activities.
+      </p>
+
+      <h2>Broadband Uses</h2>
+      <p>
+        Broadband is a high-speed internet connection that enables users to
+        access the internet and digital services efficiently. Common uses of
+        broadband include online streaming, video conferencing, online gaming,
+        telecommuting, and accessing cloud-based applications.
+      </p>
+    </div>
+
+    <div class="right-content-1">
+      <iframe
+        class="iframe-test"
+        src="https://www.metercustom.net/plugin/"
+      ></iframe>
+      <div class="plans">
+        <div class="plan">
+          <h1>Revtspeed Internet</h1>
+          <p>
+            Upgrade your company to new levels with Revspeed Broadband and
+            Internet.
+          </p>
+        </div>
+        <div class="plan">
+          <h1>Business internet</h1>
+          <p>
+            Stream, browse, shop, and work from home with Revspeed internet.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-2">
+    <div class="left-content-2">
+      <div class="img-tag">
+        <img
+          src="../../../../../assets/images/fibernet-broadband/speed-test.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="right-content-2">
+      <h2>How an Internet Speed Test Works</h2>
+      <ul>
+        <li>
+          To gauge your upload and download speed, a speed test sends simple
+          binary files to your device that are programmed to be sent back
+          immediately.
+        </li>
+        <li>
+          The speed test judges your connection’s upload and download speed
+          based on how quickly that data transfer occurs.
+        </li>
+        <li>
+          To measure latency (and get an accurate ping rate), the test sends
+          HTTP requests from your device to the server and measures how long it
+          takes to receive a response.
+        </li>
+        <li>
+          For a good test of your internet speed, you want a high download and
+          upload speed and a low ping rate.
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row-3">
+    <div class="left-content-3">
+      <h2>About Revspeed</h2>
+      <p>
+        RevSpeed brings high-speed internet to areas in the Midwest and
+        Southeastern U.S.
+      </p>
+      <ul>
+        <li>
+          With our simple billing structure, you’ll never worry about hidden
+          fees
+        </li>
+        <li>
+          Our internet plans provide strong, reliable Wi-Fi to our customers
+        </li>
+        <li>Revspeed Wi-Fi supports you as you stream, surf, and work</li>
+      </ul>
+      <div class="btn">
+        <button
+          class="center-btn"
+          mat-raised-button
+          routerLink="../../front-page/plans"
+        >
+          View More Plans
+        </button>
+      </div>
+    </div>
+    <div class="right-content-3">
+      <div class="img-tag">
+        <img
+          src="../../../../../assets/images/business-broadband/devices-for-poster.jpeg"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+  <div class="p404-error">
+    <div class="grey-border">
+      <p>Learn how Revspeed supports the Affordable Connectivity Program.</p>
+      <div class="btn">
+        <button class="center-btn" mat-raised-button routerLink="../about-us">
+          See More Here
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="faq-content">
+    <h2 class="faq-headline-h2">Speed Test FAQs</h2>
+    <mat-accordion>
+      <mat-expansion-panel
+        *ngFor="let faq of faqs"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ faq.question }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>{{ faq.answer }}</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>
