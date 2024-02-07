@@ -8,9 +8,10 @@ import { Observable } from 'rxjs';
 })
 export class DashboardService {
 
+  private readonly baseUrl = 'http://34.30.17.215';
   constructor(private http:HttpClient,private rout:Router) { }
 
   getUserAllPlansDetails(id: any): Observable<any[]> {
-    return this.http.get<any[]>(`http://localhost:8081/userservicelink/getUserServicesDetails/${id}`);
+    return this.http.get<any[]>(`${this.baseUrl}/userservicelink/getUserServicesDetails/${id}`);
   }
 }

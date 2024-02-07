@@ -47,7 +47,9 @@ export interface BroadbandPlanPayload {
 })
 export class AdminService {
 
-  private apiUrl = 'http://localhost:8081/admin';
+  private readonly baseUrl = 'http://34.30.17.215'
+
+  // private apiUrl = 'http://localhost:8081/admin';
   private userUpdateSubject = new Subject<string>();
 
   constructor(private http: HttpClient, private authService: AuthService) {}
@@ -55,12 +57,12 @@ export class AdminService {
 
   //get-broadband-plans
   getPlans(): Observable<any[]> {
-    return this.http.get<any[]>(`http://localhost:8081/broadbandplans/GetAllBroadBandPlanswithott`, { headers: this.authService.createAuhtorizationHeader() || {}});
+    return this.http.get<any[]>(`${this.baseUrl}/broadbandplans/GetAllBroadBandPlanswithott`, { headers: this.authService.createAuhtorizationHeader() || {}});
   }
   
    //get-business-plans
   getBusinessPlans(): Observable<any[]> {
-    return this.http.get<any[]>(`http://localhost:8081/businessplans/getbusinessplans`, { headers: this.authService.createAuhtorizationHeader() || {}});
+    return this.http.get<any[]>(`${this.baseUrl}/businessplans/getbusinessplans`, { headers: this.authService.createAuhtorizationHeader() || {}});
 
   }
 
@@ -73,23 +75,23 @@ export class AdminService {
 
   //get plan by id
   getPlanById(planId: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}plans/${planId}`);
+    return this.http.get<any>(`${this.baseUrl}/plans/${planId}`);
   }
 
   getAllUsers():Observable<any[]> {
     const token = this.authService.getToken();
     // Include the token in the request headers
   
-    return this.http.get<any[]>(`${this.apiUrl}/getUsers`,{ headers: this.authService.createAuhtorizationHeader() || {}
+    return this.http.get<any[]>(`${this.baseUrl}/getUsers`,{ headers: this.authService.createAuhtorizationHeader() || {}
     });
   }
 
   deletePlan(planId: number): Observable<any> {
-    return this.http.delete<any>(`http://localhost:8081/businessplans/deletePlan/${planId}`, { headers: this.authService.createAuhtorizationHeader() || {} });
+    return this.http.delete<any>(`${this.baseUrl}/businessplans/deletePlan/${planId}`, { headers: this.authService.createAuhtorizationHeader() || {} });
   }
 
   deleleBroadbandplan(planId:number):Observable<any>{
-    return this.http.delete<any>(`http://localhost:8081/broadbandplans/deletePlan/${planId}`, { headers: this.authService.createAuhtorizationHeader() || {} });
+    return this.http.delete<any>(`${this.baseUrl}/broadbandplans/deletePlan/${planId}`, { headers: this.authService.createAuhtorizationHeader() || {} });
   }
   
   //add-form submit for plans
@@ -108,7 +110,7 @@ export class AdminService {
       ott: this.extractSelectedOTTs(formData.otts) // Extract selected OTTs
     };
     console.log(requestPayload);
-    return this.http.post('http://localhost:8081/broadbandplans/add', requestPayload);
+    return this.http.post(`${this.baseUrl}/broadbandplans/add`, requestPayload);
   }
 
   extractSelectedOTTs(otts: { [key: string]: boolean }): { ottName: string }[] {
@@ -134,7 +136,7 @@ export class AdminService {
 
     console.log(requestPayload);
 
-    return this.http.post('http://localhost:8081/businessplans/addBusinessplan', requestPayload);
+    return this.http.post(`${this.baseUrl}/businessplans/addBusinessplan`, requestPayload);
   }
 
   private getPlanType(validity: number): string {
@@ -163,13 +165,13 @@ export class AdminService {
       }
     };
 
-    return this.http.put(`http://localhost:8081/businessplans/updatePlan/${planId}`, requestPayload
+    return this.http.put(`${this.baseUrl}/businessplans/updatePlan/${planId}`, requestPayload
     );
   }
 
   //get active subscribers
     getActiveSubscriptions(): Observable<any[]> {
-    return this.http.get<any[]>(`http://localhost:8081/admin/getactivesub`, { headers: this.authService.createAuhtorizationHeader() || {} });
+    return this.http.get<any[]>(`${this.baseUrl}/admin/getactivesub`, { headers: this.authService.createAuhtorizationHeader() || {} });
   }
 
   //get chart details 
@@ -186,12 +188,12 @@ export class AdminService {
  
   addBusinessUser(formData: any){
     console.log(formData);
-    return this.http.post('http://localhost:8081/admin/createBusinessUser', formData,{ headers: this.authService.createAuhtorizationHeader() || {} } );
+    return this.http.post(`${this.baseUrl}/admin/createBusinessUser`, formData,{ headers: this.authService.createAuhtorizationHeader() || {} } );
   }
 
   updateBusinessUser(userId: number, formData: any){
     console.log(formData);
-    return this.http.post(`http://localhost:8081/admin/updateBusinessUser/${userId}`, formData, { headers: this.authService.createAuhtorizationHeader() || {} });
+    return this.http.post(`${this.baseUrl}/admin/updateBusinessUser/${userId}`, formData, { headers: this.authService.createAuhtorizationHeader() || {} });
   }
 
   notifyUserUpdate(status: string) {
