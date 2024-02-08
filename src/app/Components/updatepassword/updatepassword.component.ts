@@ -19,7 +19,9 @@ export class UpdatepasswordComponent implements OnInit {
       confirmnewpassword:new FormControl('',Validators.required)
     })
   }
+  userId:any;
   ngOnInit(): void {
+    this.userId = localStorage.getItem("userId");
     this.updatePassword();
     throw new Error('Method not implemented.');
   }
@@ -40,7 +42,7 @@ export class UpdatepasswordComponent implements OnInit {
         console.log(this.fpemail,this.formControls.newpassword);
         
         console.log("password update sucessfully");
-        // this.openSnackBar();
+        this.openSnackBar();
         // this.router.navigate(["/login"])
         
       }else{
