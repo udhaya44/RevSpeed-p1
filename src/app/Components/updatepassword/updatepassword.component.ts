@@ -35,17 +35,16 @@ export class UpdatepasswordComponent implements OnInit {
 
     updatePassword(){
       console.log(this.formControls.newpassword,this.formControls.confirmnewpassword);
-      
       if(this.formControls.newpassword === this.formControls.confirmnewpassword){
-      
         this.auth.updatePassword(this.fpemail,this.formControls.newpassword).subscribe(data=>{
-          console.log(this.fpemail,this.formControls.newpassword);
+        console.log(this.fpemail,this.formControls.newpassword);
+        
         
         console.log("password update sucessfully");
-        this.openSnackBar();
         this.router.navigate(["/login"])
+        this.openSnackBar();  
+        console.log("login routing working");
         
-
         })
         
       }else{

@@ -43,7 +43,7 @@ h1{
   
   }
   .rotate{
-    background-color: antiquewhite;
+    // background-color: #cccccc;
   }
   .container {
     position: relative;
@@ -186,5 +186,7 @@ h1{
 
 /* Hover effect for buttons */
 .contain_of_button button:hover {
-  background-color: #3e78c1; /* Change color as needed */
+  background-color: #f6fff7;
+  color: #006fff;
+  border: 2px solid #006fff;
 }

@@ -195,7 +195,7 @@
     max-width: 30rem;
   
     margin-right: 15px; // Add some spacing between cards
-    background-color: #e26060; // Card background color
+    background-color: #006fff; // Card background color
     color: white; // Text color
     border: 1px solid #b34c4c; // Card border color
     border-radius: 10px; // Card border radius
@@ -266,6 +266,7 @@ body {
   padding: 4%;
   .btn{
     text-align: center;
+    border: none;
   }
 }
 
@@ -322,7 +323,7 @@ content: "";
   display: inline-block;
   width: 20px;
   height: 2px;
-  background-color: red;
+  background-color: #006fff;
   margin: 0 10px;
 }
 

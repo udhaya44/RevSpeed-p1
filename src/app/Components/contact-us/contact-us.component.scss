@@ -4,7 +4,7 @@
     padding: 0;
 }
 .rs-headline{
-    color: #00629b;
+    color:#006fff ;
     font-size: 1.8rem;
     line-height: 2.4rem;
     font-weight: 400;
@@ -66,7 +66,7 @@
     justify-content: center;
     margin-top: 10px;
     font-weight: bold;
-    color: #00629b;
+    color: #006fff;
     text-decoration: none;
 }
 
@@ -85,7 +85,7 @@ h2 {
     font-size: 48px;
     font-family: 'Poppins', sans-serif;
     color: white;
-    background-color: #00629b;
+    background-color: #006fff;
     padding: 20px;
     border-radius: 8px;
     line-height: 1.5; 
@@ -267,4 +267,28 @@ h2 {
 
 .active h3 {
   font-weight: 700;
+}
+
+.faq-content {
+  width: 100%;
+  padding: 50px;
+
+  .faq-headline-h2 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    font-size: calc(2.7777777777777777vw + 18.666666666666668px);
+    text-align: center;
+  }
+
+  ::ng-deep .mat-expansion-indicator::after {
+    color: #0a0a0a;
+  }
+
+  mat-accordion {
+    mat-panel-title {
+      color: #0b0e12;
+      font-size: 1.125rem;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-<h1 class="contain_of_button">All plans</h1>
+<h1 class="contain_of_button" style="font-size:40px; margin-bottom: 70px;" >All plans</h1>
 
 <div class="contain_of_button">
   <button (click)="getBroadBandPlans() " [class.clicked]="broadbandplanClicked">Broadband Plans</button>
@@ -14,7 +14,7 @@
 </mat-form-field> 
 
 <div *ngIf="broadbanddata">
-  <h1>BroadBand Plans</h1>
+  <h1 style="font-size:40px;">BroadBand Plans</h1>
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
   
@@ -86,7 +86,7 @@
 </div>
 
 <div *ngIf="businessdata">
-  <h1>Business Plans</h1>
+  <h1 style="font-size:40px;">Business Plans</h1>
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="businessplandata" matSort>
   
@@ -171,10 +171,10 @@
 <!-- top rotating carousel starts -->
 
 <div class="rotate">
-  <h1 class="contain_of_button">Features</h1>
-  <div class="top">
-    <div class="container">
-      <div class="carousel">
+  <h1 class="contain_of_button" style="font-size: 40px; padding-top: 20px; font-weight: 50px; background-color: #cccccc; margin: 50px 20px 0 20px; padding: 20px; ">Features</h1>
+  <div class="top" > 
+    <div class="container" >
+      <div class="carousel" >
         <div class="carousel__face">
           <div><span></span></div>
         </div>

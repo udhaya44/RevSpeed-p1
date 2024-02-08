@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateProfileComponent } from '../update-profile/update-profile.component';
 import { AuthService } from '../Services/auth.service';
@@ -10,24 +10,29 @@ import { ResetdialogComponent } from '../resetdialog/resetdialog.component';
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.scss'
 })
-export class UserProfileComponent {
+export class UserProfileComponent implements OnInit {
   userData:any;
   constructor(public dialog: MatDialog, private auth:AuthService){
- 
+   
+   
+  }
+  ngOnInit(): void {
+    this.userDatamethod();
+    throw new Error('Method not implemented.');
+  }
+  // openDialog() {
+  //   this.dialog.open(UpdateProfileComponent);
+  // }
+
+  userDatamethod(){
     this.auth.getUserDetails().subscribe(data=>{
       this.userData=data;
       console.log(this.userData);
       
     })
   }
-  // openDialog() {
-  //   this.dialog.open(UpdateProfileComponent);
-  // }
 
   user: any;
-
-
-
 
   openDialog(
     enterAnimationDuration: string,
@@ -61,14 +66,10 @@ export class UserProfileComponent {
       enterAnimationDuration,
       exitAnimationDuration,
     });
-    dialogRef.afterClosed().subscribe((updatedUser: any) => {
-      if (updatedUser) {
-
-        // this.sessionService.setUser(updatedUser);
-      }
-      (error: any) => {
-        console.log(error);
-      };
+    dialogRef.componentInstance.profileUpdated.subscribe(() => {
+      console.log("data updated when dialog close");
+      
+      this.userDatamethod(); // Update user data when profile is updated
     });
   }
 
