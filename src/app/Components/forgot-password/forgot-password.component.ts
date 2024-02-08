@@ -58,7 +58,8 @@ export class ForgotPasswordComponent {
             console.log(response,"return otp");
             sessionStorage.setItem('otp',response);
             this.isuserpresent=false;
-            sessionStorage.setItem("forgotpassword-email",this.formControls['email'].value)  
+            sessionStorage.setItem("forgotpassword-email",this.formControls['email'].value)  ;
+            this.openDialog();
             console.log('Password reset email sent successfully.');
           },
           (error) => {
