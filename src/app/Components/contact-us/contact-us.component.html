@@ -47,26 +47,20 @@
 </div>
 
 
-<!-- FAQs section starts-->
-<!-- <h1></h1> -->
-<div class="faq-headline">
-<h2 class="faq-headline-h2">Frequently Asked Questions</h2>
-</div>
-
-
-<section class="faq-container">
-<div class="wrapper">
-<div class="questions__accordions">
-  <div class="question-answer__accordion" *ngFor="let faq of faqs; let i = index">
-    <div class="question" (click)="toggleAccordion(i)" [class.active]="i === activeIndex">
-
-      <h3 class="title__question">{{ faq.question }}</h3>
-      <img src="../../../assets/images/business-broadband/icon-arrow-down.svg">
-    </div>        
-    <div class="answer" [ngClass]="{'active': i === activeIndex}">
-      {{ faq.answer }}
-    </div>
+<div class="faq-content">
+    <h2 class="faq-headline-h2">Frequently Asked Questions</h2>
+    <mat-accordion>
+      <mat-expansion-panel
+        *ngFor="let faq of faqs"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ faq.question }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>{{ faq.answer }}</p>
+      </mat-expansion-panel>
+    </mat-accordion>
   </div>
-</div>
-</div>
-</section>

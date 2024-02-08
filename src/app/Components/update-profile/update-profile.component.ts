@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, EventEmitter, Inject, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AuthService } from '../Services/auth.service';
@@ -12,6 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class UpdateProfileComponent {
   existingData: any;
+  @Output() profileUpdated: EventEmitter<any> = new EventEmitter<any>(); // Event emitter
 
   constructor(  private snackBar: MatSnackBar,private auth:AuthService,private dialogRef: MatDialogRef<ResetdialogComponent>){}
 
@@ -56,16 +57,11 @@ export class UpdateProfileComponent {
     
     this.auth.updateUserProfile(this.userId,this.myGroup.value).subscribe((data)=>{
       console.log(data);
-      this.openSnackBar();
-
-      
+      this.profileUpdated.emit();
+      this.openSnackBar();  
     })
     console.log(this.myGroup.value);
-    
-    // Add your update profile logic here
-    // You can access the updated values using this.myGroup.value
     this.dialogRef.close();
-
 }
 
 openSnackBar() {
@@ -73,7 +69,4 @@ openSnackBar() {
     duration: 3000,
   });
 }
-
-
-
 }

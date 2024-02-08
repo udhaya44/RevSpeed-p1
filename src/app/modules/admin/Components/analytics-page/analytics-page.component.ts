@@ -81,21 +81,23 @@ renderUserChart() {
  );
 }
 
-
 renderPlanChart() {
   // Make a service call to get data for the pie chart
   this.adminService.getUserServiceLinkTableDetails().subscribe(data => {
-
+    console.log('------------------', data);
     // Check if the required data is present
     if (data && Array.isArray(data)) {
       // Count users for different plan validity periods (based on days) for both business and broadband
-      const monthlyCount = data.filter(user => user.businessPlans && user.businessPlans.validity <= 30).length;
-      const quarterlyCount = data.filter(user => user.businessPlans && user.businessPlans.validity > 30 && user.businessPlans.validity <= 91).length;
-      const yearlyCount = data.filter(user => user.businessPlans && user.businessPlans.validity > 91 && user.businessPlans.validity <= 360).length;
+      const monthlyCount = data.filter(user => (user.businessPlans && user.businessPlans.validity <= 30) || (user.broadbandPlans && user.broadbandPlans.validity <= 30)).length;
 
+      const quarterlyCount = data.filter(user => (user.businessPlans && user.businessPlans.validity > 30 && user.businessPlans.validity <= 91) || (user.broadbandPlans && user.broadbandPlans.validity > 30 && user.broadbandPlans.validity <= 91)).length;
+
+      const yearlyCount = data.filter(user => (user.businessPlans && user.businessPlans.validity > 91 && user.businessPlans.validity <= 360) || (user.broadbandPlans && user.broadbandPlans.validity > 91 && user.broadbandPlans.validity <= 360)).length;
+
+      console.log(monthlyCount,quarterlyCount,yearlyCount)
       // Render the chart
       this.renderChart(['Monthly', 'Quarterly', 'Yearly'], [monthlyCount, quarterlyCount, yearlyCount], 'pie', 'piechart', '', ['rgba(255, 99, 132, 0.7)', 'rgba(54, 162, 235, 0.7)', 'rgba(255, 206, 86, 0.7)']);
-   }
+   }
 });
 }
 
