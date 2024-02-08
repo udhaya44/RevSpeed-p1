@@ -135,7 +135,7 @@ export class AuthService  {
   }
 
   updatePassword(email:any,newpassword:any){
-    this.http.put(`${this.baseUrl}/email/updatePassword/${email}/${newpassword}`,'')
+   return  this.http.put(`${this.baseUrl}/email/updatePassword/${email}/${newpassword}`,'')
   }
 
   getPlans(){return this.http.get("http://localhost:3000/plans")}

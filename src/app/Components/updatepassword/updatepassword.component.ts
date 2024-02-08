@@ -22,7 +22,7 @@ export class UpdatepasswordComponent implements OnInit {
   userId:any;
   ngOnInit(): void {
     this.userId = localStorage.getItem("userId");
-    this.updatePassword();
+    // this.updatePassword();
     throw new Error('Method not implemented.');
   }
 
@@ -38,12 +38,15 @@ export class UpdatepasswordComponent implements OnInit {
       
       if(this.formControls.newpassword === this.formControls.confirmnewpassword){
       
-        this.auth.updatePassword(this.fpemail,this.formControls.newpassword)
-        console.log(this.fpemail,this.formControls.newpassword);
+        this.auth.updatePassword(this.fpemail,this.formControls.newpassword).subscribe(data=>{
+          console.log(this.fpemail,this.formControls.newpassword);
         
         console.log("password update sucessfully");
         this.openSnackBar();
-        // this.router.navigate(["/login"])
+        this.router.navigate(["/login"])
+        
+
+        })
         
       }else{
         console.log("password does not match");
