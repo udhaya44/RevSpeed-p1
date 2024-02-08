@@ -47,7 +47,9 @@ export interface BroadbandPlanPayload {
 })
 export class AdminService {
 
-  private readonly baseUrl = 'http://34.30.17.215'
+  // private readonly baseUrl = 'http://34.30.17.215'
+  private readonly baseUrl = 'http://localhost:8081'
+
 
   // private apiUrl = 'http://localhost:8081/admin';
   private userUpdateSubject = new Subject<string>();
@@ -82,7 +84,7 @@ export class AdminService {
     const token = this.authService.getToken();
     // Include the token in the request headers
   
-    return this.http.get<any[]>(`${this.baseUrl}/getUsers`,{ headers: this.authService.createAuhtorizationHeader() || {}
+    return this.http.get<any[]>(`${this.baseUrl}/admin/getUsers`,{ headers: this.authService.createAuhtorizationHeader() || {}
     });
   }
 
@@ -199,6 +201,10 @@ export class AdminService {
   notifyUserUpdate(status: string) {
     this.userUpdateSubject.next(status);
   }
+
+  getUserServiceLinkTableDetails(): Observable<any> {
+    return this.http.get<any[]>(`${this.baseUrl}/admin/getUserServiceLikeTable`, { headers: this.authService.createAuhtorizationHeader() || {} });
+  }
 
   // getUserUpdateObservable(): Observable<string> {
   //   return this.userUpdateSubject.asObservable();
