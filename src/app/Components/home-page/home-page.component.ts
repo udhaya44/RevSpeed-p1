@@ -17,6 +17,48 @@ export class HomePageComponent {
 
   constructor(private auth: AuthService) {
     this.reviews = [];
+    this.reviews = [
+      {
+        "userName": "John Doe",
+        "companyName": "RevSpeed Internet",
+        "rating": "5",
+        "comment": "RevSpeed Internet provides an exceptional broadband service. The speed is incredible, and the connection is rock-solid.",
+        "submissionDate": "2024-02-08T10:00:00.000Z",
+        "id": 1
+      },
+      {
+        "userName": "Alice Smith",
+        "companyName": "RevSpeed Broadband",
+        "rating": "4",
+        "comment": "RevSpeed Broadband offers reliable and high-speed internet. Their service has greatly improved my online experience.",
+        "submissionDate": "2024-02-08T10:15:00.000Z",
+        "id": 2
+      },
+      {
+        "userName": "Emily Johnson",
+        "companyName": "RevSpeed Connectivity Solutions",
+        "rating": "5",
+        "comment": "RevSpeed Connectivity Solutions has transformed the way I do business online. Their broadband service is fast and dependable.",
+        "submissionDate": "2024-02-08T10:30:00.000Z",
+        "id": 3
+      },
+      {
+        "userName": "David Brown",
+        "companyName": "RevSpeed NetWave",
+        "rating": "4",
+        "comment": "RevSpeed NetWave offers top-notch internet connectivity. I'm impressed by the consistent speed and reliable connection.",
+        "submissionDate": "2024-02-08T10:45:00.000Z",
+        "id": 4
+      },
+      {
+        "userName": "Sophia Miller",
+        "companyName": "RevSpeed FastLink",
+        "rating": "5",
+        "comment": "RevSpeed FastLink delivers lightning-fast internet service. Their broadband connection has greatly improved my productivity.",
+        "submissionDate": "2024-02-08T11:00:00.000Z",
+        "id": 5
+      }
+    ];
   }
 
   cardTitle = 'Card Title';
