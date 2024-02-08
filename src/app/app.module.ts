@@ -54,6 +54,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BuyBusinessplanComponent } from './Components/buy-businessplan/buy-businessplan.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
@@ -117,6 +118,7 @@ import { MatStepperModule } from '@angular/material/stepper';
     FontAwesomeModule,
     MatTabsModule,
     MatStepperModule,
+    MatExpansionModule
     
 
 

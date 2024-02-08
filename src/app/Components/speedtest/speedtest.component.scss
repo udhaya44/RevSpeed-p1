@@ -1,0 +1,249 @@
+.home-container {
+    width: 100% !important;
+    text-align: justify;
+  
+    h2 {
+      color: #006fff;
+      font-weight: 800;
+      font-size: 50px;
+      text-align: center;
+      line-height: 50px;
+    }
+  
+    ul,
+    p {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 40px;
+    }
+  
+    .hero-section h1 {
+      text-align: left !important;
+      font-weight: 100;
+      font-size: 85px;
+      padding-left: 100px;
+      padding-top: 300px;
+    }
+  
+    .hero-section {
+      position: relative;
+      text-align: center;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 100px 0;
+      height: 500px;
+    }
+  
+    .hero-section::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("https://img.freepik.com/free-photo/6g-internet-connection-collage_23-2150913693.jpg?w=1380&t=st=1707222465~exp=1707223065~hmac=8566116d4eba9d4c9ca37ae5f97757b965f0b6fc21cf5219240f4146846f31e4")
+        center/cover no-repeat;
+      z-index: -1;
+    }
+  
+    .row-1,
+    .row-2,
+    .row-3,
+    .p404-error {
+      padding: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  
+      .left-content-1 {
+        width: 100%;
+        @media (min-width: 768px) {
+          width: 40%;
+        }
+      }
+  
+      .right-content-1 {
+        width: 100%;
+        padding-left: 0;
+        @media (min-width: 768px) {
+          width: 60%;
+          padding-left: 50px;
+        }
+  
+        .iframe-test {
+          width: 100%;
+          height: 500px;
+          border: none;
+        }
+  
+        .plans {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          padding-top: 30px;
+  
+          .plan {
+            flex: 1;
+            margin: 0 10px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease-in-out;
+  
+            h1 {
+              color: #006fff;
+              font-weight: 600;
+              font-size: 30px;
+              text-align: center;
+            }
+  
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
+  
+      .left-content-2 {
+        // padding-top: 30px;
+        padding-bottom: 20px;
+        width: 100%;
+        @media (min-width: 768px) {
+          width: 50%;
+        }
+  
+        .img-tag {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+  
+          img {
+            width: 80%;
+            height: 500px;
+          }
+        }
+      }
+  
+      .right-content-2 {
+        // padding-top: 50px;
+        padding-left: 0;
+        text-align: justify;
+        width: 100%;
+        @media (min-width: 768px) {
+          width: 50%;
+          padding-left: 50px;
+          // margin-top: 80px;
+        }
+      }
+  
+      .left-content-3 {
+        width: 100%;
+        padding-left: 0;
+        @media (min-width: 768px) {
+          width: 50%;
+          padding-left: 50px;
+        }
+  
+        .btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 40px;
+          border: none;
+  
+          .center-btn {
+            padding: 10px 20px;
+            background-color: #006fff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+  
+            &:hover {
+              background-color: #f6fff7;
+              color: #006fff;
+            }
+          }
+        }
+      }
+  
+      .right-content-3 {
+        width: 100%;
+        @media (min-width: 768px) {
+          width: 50%;
+        }
+  
+        .img-tag {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+  
+          img {
+            width: 80%;
+            height: 300px;
+          }
+        }
+      }
+    }
+  
+    .p404-error {
+      background-color: rgb(64, 64, 64) !important;
+      padding: 30px 50px 30px 50px;
+      margin-top: 50px;
+  
+      .grey-border {
+        p {
+          color: #f6fff7;
+          font-weight: 800;
+          font-size: 30px;
+          line-height: 40px;
+        }
+  
+        .btn {
+          border: none;
+          .center-btn {
+            padding: 10px 20px;
+            background-color: #006fff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+  
+            &:hover {
+              background-color: #f6fff7;
+              color: #006fff;
+            }
+          }
+        }
+      }
+    }
+  
+    .faq-content {
+      width: 100%;
+      padding: 50px;
+  
+      h2 {
+        padding-top: 80px;
+        padding-bottom: 30px;
+        font-weight: 800;
+        font-size: calc(2.7777777777777777vw + 18.666666666666668px);
+        text-align: center;
+      }
+  
+      ::ng-deep .mat-expansion-indicator::after {
+        color: #006fff;
+      }
+  
+      mat-accordion {
+        mat-expansion-panel {
+          mat-panel-title {
+            color: #006fff;
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }

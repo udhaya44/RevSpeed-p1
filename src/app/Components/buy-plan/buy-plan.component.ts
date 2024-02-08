@@ -73,7 +73,7 @@ export class BuyPlanComponent {
   }
 
   openSnackBar() {
-    this.snackBar.open('Registration success', 'close', {
+    this.snackBar.open('Plan purchased successfully!!', 'close', {
       duration: 3000,
     });
   }

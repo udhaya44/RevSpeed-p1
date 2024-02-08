@@ -10,13 +10,44 @@ html {
 }
 
 .spotlight-right {
-    width: 50%;
+    width: 45%;
     float: right;
     margin-left: 5%;
+
+    
 }
 
 .spotlight-left {
     margin-top: 5%;
+    
+    .plans {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 30px;
+
+        .plan {
+          flex: 1;
+          margin: 0 10px;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+          transition: transform 0.3s ease-in-out;
+          text-align: justify;
+
+          h1 {
+            color: #006fff;
+            font-weight: 600;
+            font-size: 30px;
+            text-align: center;
+          }
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
 }
 
 .spotlight-left h1 {
@@ -65,17 +96,20 @@ button {
   
   /* Styling the fiber button */
   .fiber-button {
-    background-color: #e84e4e; /* Light red color */
+    background-color: #006fff; /* Light red color */
     color: #fff; /* White text color */
     border-radius: 7px;
     transition: background-color 0.3s ease; /* Smooth color transition */
-    margin-left: 15%;
+    margin-left: 20%;
     margin-top: 5%;
+
   }
   
   /* Hover effect for the button */
   .fiber-button:hover {
-    background-color: #f9b877; /* Slightly darker red on hover */
+    background-color:#f6fff7 ; /* Slightly darker red on hover */
+    color: #006fff;
+    border: 2px solid #006fff;
   }
   
   /* Media query for responsiveness */
@@ -93,7 +127,7 @@ button {
 
 .what{
     padding: 4%;
-    background-color: rgb(247, 182, 203);
+    background-color: #cccccc;
     margin: 5%;
     
     border-radius: 70px 0 0 0;
@@ -102,7 +136,7 @@ button {
 
 
 .guidance{
-    background-color: rgb(237, 219, 221);
+    // background-color: rgb(237, 219, 221);
 }
 /* Your existing styles */
 
@@ -156,8 +190,8 @@ section1{
     margin: 0 10px;
     cursor: pointer;
     border: none;
-    background-color: #f69c9c; /* Light red color */
-    color: #fff; /* White text color */
+    background-color: #006fff; /* Light red color */
+    color: #f6fff7; /* White text color */
     border-radius: 5px;
     transition: background-color 0.3s ease; /* Smooth color transition */
 }
@@ -165,7 +199,9 @@ section1{
 /* Hover effect for the buttons */
 .support-button:hover,
 .call-button:hover {
-    background-color: #b34141; /* Slightly darker red on hover */
+    background-color:#f6fff7 ; /* Slightly darker red on hover */
+    color: #006fff;
+    border: 2px solid #006fff ;
 }
 
 /* Media query for responsiveness */
@@ -225,8 +261,10 @@ section {
   /* Style the carousel control icons */
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
-    background-color: #f15252; /* Set the control icon background color */
+    background-color: #006fff; /* Set the control icon background color */
     border-radius: 50%; /* Optional: Add border-radius for rounded icons */
+    width: 40px; /* Set the width of the control icon */
+    height: 40px; 
   }
   
   /* Style the visually hidden class for screen readers */
