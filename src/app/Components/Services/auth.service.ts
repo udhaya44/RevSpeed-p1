@@ -8,8 +8,9 @@ import { Observable, catchError, throwError } from 'rxjs';
 })
 export class AuthService  {
   [x: string]: any;
-  // private readonly baseUrl = 'http://34.30.17.215'
-  private readonly baseUrl = 'http://localhost:8081'
+  private readonly baseUrl = 'http://35.222.3.175'
+  
+  // private readonly baseUrl = 'http://localhost:8081'
 
   constructor(private http:HttpClient,private rout:Router) { }
 

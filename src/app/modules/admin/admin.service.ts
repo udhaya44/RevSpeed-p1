@@ -47,8 +47,8 @@ export interface BroadbandPlanPayload {
 })
 export class AdminService {
 
-  // private readonly baseUrl = 'http://34.30.17.215'
-  private readonly baseUrl = 'http://localhost:8081'
+  private readonly baseUrl = 'http://35.222.3.175'
+  // private readonly baseUrl = 'http://localhost:8081'
 
 
   // private apiUrl = 'http://localhost:8081/admin';
